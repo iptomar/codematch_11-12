@@ -1,0 +1,2 @@
+Criei um novo repositorio mas não consigo fazer o clone. Dá-me o erro
+"fatal:Couldn't find remote ref HEAD"

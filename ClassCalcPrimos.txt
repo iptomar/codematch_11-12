@@ -8,12 +8,12 @@ public CalculoPrimos() {
 			for(cont = n2; cont >= 2; cont–) {
 				r = n % cont;
 				if(r == 0) {
-					System.out.println("O numero "+ n +" não é primo!");
+					System.out.println("O numero "+ n +" nao e primo!");
 					cont=1;
 				}
 			}
 			if(r!=0) {
-				System.out.println("O numero "+ n +" é primo!");
+				System.out.println("O numero "+ n +" e primo!");
 			}
 			n++;
 		}

@@ -5,7 +5,7 @@ public CalculoPrimos() {
 		float r=0;
 		while(n < 100){
 			n2=n-1;
-			for(cont = n2; cont >= 2; cont–) {
+			for(cont = n2; cont >= 2; contï¿½) {
 				r = n % cont;
 				if(r == 0) {
 					System.out.println("O numero "+ n +" nao e primo!");
@@ -16,6 +16,4 @@ public CalculoPrimos() {
 				System.out.println("O numero "+ n +" e primo!");
 			}
 			n++;
-		}
-	}
-}
+		}}}

@@ -1,4 +1,4 @@
-public CalculoPrimos() {
+﻿public CalculoPrimos() {
 }
 	public static void main(String a[]){
 		int n=1, n2, cont;
@@ -16,4 +16,6 @@ public CalculoPrimos() {
 				System.out.println("O numero "+ n +" e primo!");
 			}
 			n++;
-		}}}
+		}
+	}
+}

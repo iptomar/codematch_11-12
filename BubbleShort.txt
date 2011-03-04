@@ -49,7 +49,7 @@ public class BubbleSort {
 		arr.insert(12);
 		arr.insert(00);
 		arr.insert(55);
-		arr.insert(33);
+		arr.insert(78);
 
 
 		arr.display();

@@ -1,0 +1,13 @@
+Aviso a todos os programadores:
+
+Pessoal, comentem o código o melhor possível, linha a linha se necessário!
+
+Por enquanto, há pouco código e poucos scripts!
+
+daqui a 1 mês não será assim!
+
+Quando mais rápida for a leitura dos ficheiros, mais rapido podemos reaproveita-los ok?
+
+Obrigado pela compreensão.
+
+David Semião.

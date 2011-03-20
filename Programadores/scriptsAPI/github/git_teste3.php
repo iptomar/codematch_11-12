@@ -14,8 +14,8 @@
 	//Imprime a lista de resultados
 	
 	
-	foreach($json->user as $arg) {
-		print_r(" Nome: ".$args->name." Localizacao: ".$args->location." Blog: ".$args->blog." Email: ".$args->email);
+	//foreach($json->user as $arg) {
+		print_r(" Nome: ".$json->name." Localizacao: ".$json->location." Blog: ".$args->blog." Email: ".$args->email);
 		print_r(" Repositorios publicos: ".$args->public_repo_count." Numero de Seguidores: ".$args->followers_count);
-	}	
+	//}	
 ?>

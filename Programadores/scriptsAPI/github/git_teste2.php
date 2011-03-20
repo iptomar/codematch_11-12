@@ -1,9 +1,9 @@
 <?php
 
-	//lista todos os utilizadores que tem o parametro de pesquisa "semi"
+	//lista todos os utilizadores que tem o parametro de pesquisa "sem"
 
 	$ch = @curl_init();
-	curl_setopt($ch, CURLOPT_URL, "http://github.com/api/v2/json/user/search/semi");
+	curl_setopt($ch, CURLOPT_URL, "http://github.com/api/v2/json/user/search/sem");
 	curl_setopt($ch, CURLOPT_USERAGENT, 'Googlebot/2.1');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	$page = curl_exec( $ch);

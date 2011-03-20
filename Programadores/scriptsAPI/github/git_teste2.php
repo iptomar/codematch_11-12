@@ -14,7 +14,7 @@
 	//Imprime a lista de resultados
 	
 	foreach($json->users as $arg) {
-		print_r("Nome: ".$args->name." Localizacao: ".$args->location." Username: ".$args->username."<br>");
-		print_r(" &nbsp &nbsp User ID: ".$args->id." Repositorios: ".$args->repos." Seguidores: ".$args->followers." Valor Incidencia: ".$args->score." <br> <br>");
+		print_r("<b>Nome:</b> ".$arg->name." <b>Localizacao:</b> ".$arg->location." <b>Username:</b> ".$arg->username."<br>");
+		print_r(" &nbsp &nbsp <b>User ID:</b> ".$arg->id." <b>Repositorios:</b> ".$arg->repos." <b>Seguidores:</b> ".$arg->followers." <b>Valor Incidencia:</b> ".$arg->score." <br> <br>");
 	}	
 ?>

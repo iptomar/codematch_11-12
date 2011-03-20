@@ -10,7 +10,7 @@
 	//descodifica uma string json
 	$json = json_decode($page);
 	
-	print_r("Nome: ".$json->organization->name." Organizacao ".$json->organization->company." Localizacao: ".$json->organization->location." Username: ".$json->organization->blog."<br>");
+	print_r("Nome: ".$json->organization->name." Organizacao ".$json->organization->company."<br> Localizacao: ".$json->organization->location." Blog: ".$json->organization->blog."<br>");
 
 
 ?>

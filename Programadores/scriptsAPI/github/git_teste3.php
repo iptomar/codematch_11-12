@@ -13,7 +13,7 @@
 
 	//Imprime a lista de resultados
 	
-		print_r(" Nome: ".$json->user->name." Localizacao: ".$json->user->location." Blog: ".$json->user->blog." Email: ".$json->user->email "<br>");
-		print_r(" &nbsp &nbsp Repositorios publicos: ".$json->user->public_repo_count." Numero de Seguidores: ".$json->user->followers_count "<br> <br>");
+		print_r(" Nome: ".$json->user->name." Localizacao: ".$json->user->location." Blog: ".$json->user->blog." Email: ".$json->user->email."<br>");
+		print_r(" &nbsp &nbsp Repositorios publicos: ".$json->user->public_repo_count." Numero de Seguidores: ".$json->user->followers_count."<br> <br>");
 
 ?>

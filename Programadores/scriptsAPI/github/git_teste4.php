@@ -1,16 +1,17 @@
 <?php
-	//lista todos os utilizadores que tem o parametro de pesquisa "sem"
+	print_r("Dados de uma organização (github)");
 
-	$ch = @curl_init();
-	curl_setopt($ch, CURLOPT_URL, "http://github.com/api/v2/json/organizations/github");
-	curl_setopt($ch, CURLOPT_USERAGENT, 'Googlebot/2.1');
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	$page = curl_exec( $ch);
-	curl_close($ch);
-	//descodifica uma string json
-	$json = json_decode($page);
+	//Definição dos parametros da pesquisa
+	$ch = @curl_init(); //iniciar uma nova sessão
+	curl_setopt($ch, CURLOPT_URL, "http://github.com/api/v2/json/organizations/github"); //pesquisar por organizações que contenham 'github'
+	curl_setopt($ch, CURLOPT_USERAGENT, 'Googlebot/2.1'); //utilizar como agente de pesquisa o Googlebot versão 2.1
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //definir o retorno como string
+	$page = curl_exec( $ch); //executa a sessão estabelecida com as opções definidas previamente
+	curl_close($ch);//encerra a sessão e liberta os recursos utilizados
 	
-	print_r("Nome: ".$json->organization->name." Organizacao ".$json->organization->company."<br> Localizacao: ".$json->organization->location." Blog: ".$json->organization->blog."<br>");
+	$json = json_decode($page);//descodifica uma string json
+	
+	print_r("Nome: ".$json->organization->name." Organizacao ".$json->organization->company."<br> Localizacao: ".$json->organization->location." Blog: ".$json->organization->blog."<br>"); //imprime o nome da organização, localização e blog
 
 
 ?>

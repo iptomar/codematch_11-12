@@ -13,8 +13,8 @@
 
 	//Imprime a lista de resultados
 	
-	foreach($json->users as $arg) {
-		print_r("<b>Nome:</b> ".$arg->name." <b>Localizacao:</b> ".$arg->location." <b>Username:</b> ".$arg->username."<br>");
-		print_r(" &nbsp &nbsp <b>User ID:</b> ".$arg->id." <b>Repositorios:</b> ".$arg->repos." <b>Seguidores:</b> ".$arg->followers." <b>Valor Incidencia:</b> ".$arg->score." <br> <br>");
+	foreach($json->users as $args) {
+		print_r("<b>Nome:</b> ".$args->name." <b>Localizacao:</b> ".$args->location." <b>Username:</b> ".$args->username."<br>");
+		print_r(" &nbsp &nbsp <b>User ID:</b> ".$args->id." <b>Repositorios:</b> ".$args->repos." <b>Seguidores:</b> ".$args->followers." <b>Valor Incidencia:</b> ".$args->score." <br> <br>");
 	}	
 ?>

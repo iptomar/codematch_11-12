@@ -1,5 +1,5 @@
 <?php
-	print_r("Apresentar utilizadores com 'sem'");
+	print_r("Apresentar utilizadores com 'sem' <br><br>");
 
 	//Definição dos parametros da pesquisa
 	$ch = @curl_init(); //iniciar uma nova sessão

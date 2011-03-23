@@ -1,6 +1,6 @@
 <?php
 
-	print_r("Dados do utilizador apocas");
+	print_r("Dados do utilizador apocas <br><br>");
 
 	//Definição dos parametros da pesquisa
 	$ch = @curl_init(); //iniciar uma nova sessão

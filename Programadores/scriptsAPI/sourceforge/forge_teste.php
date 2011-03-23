@@ -3,7 +3,7 @@
 	//o ideial era apanhar o numero do ultimo projecto no ssourceforge criado para ser um numero certo, não um numero aleatorio
 	//o exemplo abaixo lista os projecto activos dos primeiros 800 projectos criados
 	$aux=0;//variavel para mostrar quantos projectos estão activos
-	$total=800;
+	$total=20;
 	$pp ="programming-languages";
 	for($teste= 1;$teste<=$total;$teste++)
 	{

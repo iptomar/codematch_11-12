@@ -1,5 +1,5 @@
 <?php
-	print_r("Dados de uma organização (github)");
+	print_r("Dados de uma organização (github) <br><br>");
 
 	//Definição dos parametros da pesquisa
 	$ch = @curl_init(); //iniciar uma nova sessão

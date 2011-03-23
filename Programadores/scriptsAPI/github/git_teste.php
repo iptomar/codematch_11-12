@@ -1,5 +1,5 @@
 <?php
-	print_r("Apresentar repositórios de 'ruby' + 'testing'");
+	print_r("Apresentar repositórios de 'ruby' + 'testing' <br><br>");
 	
 	//Definição dos parametros da pesquisa
 	$ch = @curl_init(); //iniciar uma nova sessão

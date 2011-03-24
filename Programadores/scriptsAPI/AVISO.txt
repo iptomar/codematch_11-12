@@ -11,3 +11,7 @@ Quando mais rápida for a leitura dos ficheiros, mais rapido podemos reaproveita-
 Obrigado pela compreensão.
 
 David Semião.
+
+Gostaria de acrescentar que os ficheiros em PHP não deverão ter caracteres especiais como acentos ou cedilhas.
+
+Mauro Santos

@@ -7,7 +7,7 @@
 	//descodifica uma string json
 	$jsonobj = json_decode($response);
 	//Imprime os resultados
-	print_r(" Nome: ".$jsonobj->user->name." Localizacao: ".$jsonobj->user->location." Blog: ".$jsonobj->user->blog." Email: ".$jsonobj->user->email."<br>"); //imprime nome, localização, blog e email
+	print_r(" Nome: ".$jsonobj->user->name." Localizacao: ".$jsonobj->user->location." Blog: ".$jsonobj->user->blog." Email: ".$jsonobj->user->email."<br>"); //imprime nome, localizacao, blog e email
 	print_r(" &nbsp &nbsp Repositorios publicos: ".$jsonobj->user->public_repo_count." Numero de Seguidores: ".$jsonobj->user->followers_count."<br> <br>"); //imprime o numero de repositorios publicos e numero de seguidores 
 
 ?>

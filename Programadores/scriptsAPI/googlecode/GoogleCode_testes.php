@@ -1,8 +1,8 @@
 <?php
 
-//Pesquisa de projectos no Google Code por linguagem de programação
+//Pesquisa de projectos no Google Code por linguagem de programacao
 //Usando o url abaixo definido conseguimos listar os projectos existentes nesse server
-//A pesquisa é definida pelo parametro 'label:' seguido da linguagem de programação
+//A pesquisa e definida pelo parametro 'label:' seguido da linguagem de programacao
 //Devolve uma listagem de pesquisa como o Google normal indexada e paginada.
 
 $url = "http://code.google.com/hosting/search?q=label:Java";

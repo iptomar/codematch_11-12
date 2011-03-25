@@ -19,7 +19,7 @@
 	}
 	//mostra as opcoes/tag de cada projecto
 	echo "<br><br><hr>";
-	echo "<h2>Opções/Tags de cada Projecto.</h2>";
+	echo "<h2>Opcoes/Tags de cada Projecto.</h2>";
 	echo "Mais info em: <b>https://launchpad.net/+apidoc/1.0.html#project</b>";
 	echo "<br><br>";
 	foreach($json->entries[1] as $key => $value) {

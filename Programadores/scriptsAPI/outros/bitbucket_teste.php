@@ -12,7 +12,7 @@
 	echo "<br><br>";
 	//slug serve de nome para o URL do projecto
 	//mostra o nome do projecto
-	//no bitbucket as tag's do projecto não têm opção de ver quem é o owner do projecto
+	//no bitbucket as tag's do projecto nao tem opcao de ver quem e' o owner do projecto
 	foreach($json->repositories as $arg) {
 		print_r("<b>Projecto:</b> ".$arg->name." - <b>Autor:</b> <a href='https://bitbucket.org/".$json->user->username."/".trim($arg->slug)."'>".trim($arg->slug)."</a><br>");
 	}

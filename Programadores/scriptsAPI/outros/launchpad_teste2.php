@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<form name="form1" method="post" action="" align="center">
 		<b style="font-size:12px;">Pesquisar por:</b> <input name="word" type="text" id="word"><br><br>
 		<b style="font-size:12px;">Quantas pesquisas (0-150) (default: 75):</b> <input name="tamanho" type="text" id="tamanho"><br><br>
-		<input type="checkbox" name="mostra_array[]" value="No"> Mostrar em array<br><br>
+		<input type="checkbox" name="mostra_array[]" value="No"> Mostrar em array</input><br><br>
 		<input type="submit" name="Submit" value="Pesquisar ...">
 	</form>   
 </body>

@@ -1,0 +1,4 @@
+http://cpansearch.perl.org/src/DCONWAY/Class-Multimethods-1.70/tutorial.html
+
+http://www.nntp.perl.org/group/perl.beginners/2010/03/msg111498.html
+

@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 }
 //#################################################################################################################################
-//função para pesquisar
+//funcaoo para pesquisar
 function search($word,$lenght,$offset=0) {
 	//pagina do api
 	$request ='http://api.search.live.net/json.aspx?Appid=83019BDA3590E9CC61CBB51C2385A72F93810B47&Query='.$word.'&Sources=Web&Web.Count='.$lenght.'&Web.Offset='.$offset.'';
@@ -87,7 +87,7 @@ function search($word,$lenght,$offset=0) {
 	//returna a string
 	return $resultados_a_mostrar;
 }
-//função para pesquisar
+//funcaoo para pesquisar
 function searchfull($word,$lenght,$offset=0) {
 	//pagina do api
 	$request ='http://api.search.live.net/json.aspx?Appid=83019BDA3590E9CC61CBB51C2385A72F93810B47&Query='.$word.'&Sources=Web&Web.Count='.$lenght.'&Web.Offset='.$offset.'';

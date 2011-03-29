@@ -4,7 +4,7 @@ if ($_GET["word"]) {
 }
 //#################################################################################################################################
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if ((empty($_POST['word'])) && ($_POST['radiobt']!='array')) {
+	if (!(empty($_POST['word']))) {
 		$lenght = trim($_POST['tamanho']); //quantas pesquisas
 		//controla o valor de pesquisas inserido
 		if (($lenght < 0) || ($lenght > 50) || (empty($lenght))) {
@@ -39,9 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		else if ($_POST['radiobt']=='githuball') {
 			$word = '"http://github.com/"site:github.com';  //palavra a pesquisar
 			$i=0;
-			file_put_contents("dados/dadosgit.txt", "");
-			while ($i <= 1000) {
-				file_put_contents("dados/dadosgit.txt", searchfull($word,$lenght,$i), FILE_APPEND);
+			file_put_contents("dados/dadosgithub.txt", "");
+			while ($i <= 230) {
+				file_put_contents("dados/dadosgithub.txt", searchfull($word,$lenght,$i), FILE_APPEND);
 				$i=$i+$lenght;
 			}
 			$resultados_a_mostrar = "Concluido<br><a href='dados/dadosgit.txt'>Link ficheiro txt com os resultados!</a>";
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$word = '"http://sourceforge.net/projects/"site:sourceforge.net';  //palavra a pesquisar
 			$i=0;
 			file_put_contents("dados/dadossource.txt", "");
-			while ($i <= 1000) {
+			while ($i <= 230) {
 				file_put_contents("dados/dadossource.txt", searchfull($word,$lenght,$i), FILE_APPEND);
 				$i=$i+$lenght;
 			}
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$word = '"http://launchpad.net/"site:launchpad.net';  //palavra a pesquisar
 			$i=0;
 			file_put_contents("dados/dadoslaunchpad.txt", "");
-			while ($i <= 1000) {
+			while ($i <= 230) {
 				file_put_contents("dados/dadoslaunchpad.txt", searchfull($word,$lenght,$i), FILE_APPEND);
 				$i=$i+$lenght;
 			}
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$word = '"http://bitbucket.org/"site:bitbucket.org';  //palavra a pesquisar
 			$i=0;
 			file_put_contents("dados/dadosbitbucket.txt", "");
-			while ($i <= 1000) {
+			while ($i <= 230) {
 				file_put_contents("dados/dadosbitbucket.txt", searchfull($word,$lenght,$i), FILE_APPEND);
 				$i=$i+$lenght;
 			}
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$word = '"http://code.google.com/p/"site:code.google.com';  //palavra a pesquisar
 			$i=0;
 			file_put_contents("dados/dadosgoogle.txt", "");
-			while ($i <= 1000) {
+			while ($i <= 230) {
 				file_put_contents("dados/dadosgoogle.txt", searchfull($word,$lenght,$i), FILE_APPEND);
 				$i=$i+$lenght;
 			}
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 }
 //#################################################################################################################################
-//funcaoo para pesquisar
+//funcao para pesquisar
 function search($word,$lenght,$offset=0) {
 	//pagina do api
 	$request ='http://api.search.live.net/json.aspx?Appid=83019BDA3590E9CC61CBB51C2385A72F93810B47&Query='.$word.'&Sources=Web&Web.Count='.$lenght.'&Web.Offset='.$offset.'';
@@ -123,7 +123,7 @@ function search($word,$lenght,$offset=0) {
 		$resultados_a_mostrar .= "<br>";
 		//link para retroceder nos resultados
 		if ($offset != 0) {
-			$resultados_a_mostrar .= '<a href=\'bing_teste.php?word='.$word.'&lenght='.$lenght.'&offset='.($lenght-$offset).'\'>Less</a> | ';
+			$resultados_a_mostrar .= '<a href=\'bing_teste.php?word='.$word.'&lenght='.$lenght.'&offset='.(($lenght-$offset)*(-1)).'\'>Less</a> | ';
 		}
 		//link para avancar nos resultados
 		$resultados_a_mostrar .= '<a href=\'bing_teste.php?word='.$word.'&lenght='.$lenght.'&offset='.($lenght+$offset).'\'>More</a>';
@@ -131,7 +131,7 @@ function search($word,$lenght,$offset=0) {
 	//returna a string
 	return $resultados_a_mostrar;
 }
-//funcaoo para pesquisar
+//funcao para pesquisar all
 function searchfull($word,$lenght,$offset=0) {
 	//pagina do api
 	$request ='http://api.search.live.net/json.aspx?Appid=83019BDA3590E9CC61CBB51C2385A72F93810B47&Query='.$word.'&Sources=Web&Web.Count='.$lenght.'&Web.Offset='.$offset.'';
@@ -139,19 +139,13 @@ function searchfull($word,$lenght,$offset=0) {
 	$response = file_get_contents($request);
 	//descodifica a pagina
 	$jsonobj = json_decode($response);
-	//opcao de mostrar array ou nao
-	if ($_POST['radiobt']=='array') {
-		$resultados_a_mostrar = $jsonobj;
-	}
-	else {
-		//total de pesquisas feitas
-		$end = $jsonobj->SearchResponse->Web->Total;
-		//mostra o total de pesquisas
-		$resultados_a_mostrar = "";
-		//mostra os resultados no seguinte formato: titulo - url
-		foreach($jsonobj->SearchResponse->Web->Results as $arg) {
-			$resultados_a_mostrar .= $arg->Title."|".$arg->Url."\n";
-		}
+	//total de pesquisas feitas
+	$end = $jsonobj->SearchResponse->Web->Total;
+	//mostra o total de pesquisas
+	$resultados_a_mostrar = "";
+	//mostra os resultados no seguinte formato: titulo - url
+	foreach($jsonobj->SearchResponse->Web->Results as $arg) {
+		$resultados_a_mostrar .= $arg->Title."|".$arg->Url."\n";
 	}
 	//returna a string
 	return $resultados_a_mostrar;
@@ -168,7 +162,7 @@ function searchfull($word,$lenght,$offset=0) {
 	<div style="position: relative;clear: both;">
 	<form name="form1" method="post" action="" align="center">
 		<div style="position: relative;float: left;width: 40%; ">
-			<b style="font-size:12px;">Pesquisar por:</b> <input name="word" type="text" id="word" value=""><br><br>
+			<b style="font-size:12px;">Pesquisar por:</b> <input name="word" type="text" id="word" value="php"><br><br>
 			<b style="font-size:12px;">Quantas pesquisas a mostrar (0-50) (default: 10):</b> <input name="tamanho" type="text" id="tamanho" value="10"><br><br>
 			<input type="submit" name="Submit" value="Pesquisar ...">
 		</div>

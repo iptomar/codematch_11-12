@@ -7,19 +7,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if ((!empty($_POST['word'])) || ($_POST['radiobt']=='github') || ($_POST['radiobt']=='sourceforge') || ($_POST['radiobt']=='launchpad') || ($_POST['radiobt']=='bitbucket') || ($_POST['radiobt']=='google') || ($_POST['radiobt']=='githuball')) {
 		//radio button gihtub activado
 		if ($_POST['radiobt']=='github') {
-			$word = '"github"site:github.com/'; //palavra a pesquisar
+			$word = '"http://github.com/+/+"site:github.com'; //palavra a pesquisar
 		}
 		else if ($_POST['radiobt']=='sourceforge') {
-			$word = '"sourceforge"site:sourceforge.net/projects/';  //palavra a pesquisar
+			$word = '"http://sourceforge.net/projects/+"site:sourceforge.net';  //palavra a pesquisar
 		}
 		else if ($_POST['radiobt']=='launchpad') {
-			$word = '"launchpad"site:launchpad.net/';  //palavra a pesquisar
+			$word = '"http://launchpad.net/+"site:launchpad.net';  //palavra a pesquisar
 		}
 		else if ($_POST['radiobt']=='bitbucket') {
-			$word = '"bitbucket"site:bitbucket.org/';  //palavra a pesquisar
+			$word = '"http://bitbucket.org/+"site:bitbucket.org';  //palavra a pesquisar
 		}
 		else if ($_POST['radiobt']=='google') {
-			$word = '"code.google"site:code.google.com/p/';  //palavra a pesquisar
+			$word = '"http://code.google.com/p/+"site:code.google.com';  //palavra a pesquisar
 		}
 		else {
 			$word = trim($_POST['word']); //palavra a pesquisar
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		}
 		//radio button activado do githuball
 		if ($_POST['radiobt']=='githuball') {
-			$word = '"github"site:github.com/';  //palavra a pesquisar
+			$word = '"http://github.com/+/+"site:github.com';  //palavra a pesquisar
 			//pagina do api
 			$request ='http://api.search.live.net/json.aspx?Appid=83019BDA3590E9CC61CBB51C2385A72F93810B47&Query='.$word.'&Sources=Web&Web.Count=1';
 			//recebe as pagina

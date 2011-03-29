@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$word = '"http://github.com/"site:github.com'; //palavra a pesquisar
 		}
 		else if ($_POST['radiobt']=='sourceforge') {
-			$word = '"http://sourceforge.net/projects/+"site:sourceforge.net';  //palavra a pesquisar
+			$word = '"http://sourceforge.net/projects/"site:sourceforge.net';  //palavra a pesquisar
 		}
 		else if ($_POST['radiobt']=='launchpad') {
 			$word = '"http://launchpad.net/"site:launchpad.net';  //palavra a pesquisar

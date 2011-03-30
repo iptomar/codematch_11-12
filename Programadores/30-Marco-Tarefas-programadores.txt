@@ -1,0 +1,15 @@
+Tarefas Programadores:
+
+4 - 
+
+Documento Linguagens /Tipo Ficheiro
+Olá Mundo
+
+5 - 
+
+Normalizar scripts de pesquisa
+Inserir projectos na BD
+Chamar scripts das APIs para buscar metadados
+
+6 - 
+Listar informação estatística da BD

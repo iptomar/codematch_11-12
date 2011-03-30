@@ -1,0 +1,11 @@
+Campos da tbl:
+
+Tipo: UTF8Type
+
+Atributos
+	tm_nomeprojecto -
+	tm_origem -
+	tm_repositorio -
+	tm_autor -
+	tm_linguagem -
+	tm_ultimaactualizacao -

@@ -1,0 +1,21 @@
+Como quase todos têm tarefas e para dar continuidade ás mesmas proponho a seguinte distribuição (com base nos grupos definidos anteriormente):
+
+Tarefas Programadores:
+
+4 - <<DBCola Staff>>
+
+Documento Linguagens /Tipo Ficheiro
+Olá Mundo
+
+5 - <<Motores de busca - Seguimento do trabalho desenvolvido>> 
+
+Normalizar scripts de pesquisa
+Inserir projectos na BD  <<Motores de busca ou DBCola>> 
+Chamar scripts das APIs para buscar metadados
+
+6 - <<DBCola Staff>> 
+Listar informação estatística da BD
+
+Quem não estiver incluido em nenhum destes grupos que deixe notação e siga o trabalho 5 - 2)Inserir projectos na BD
+
+NOTA: Dispatcher não incluido por ter tarefa definida anteriormente.

@@ -1,11 +1,11 @@
-Como quase todos têm tarefas e para dar continuidade ás mesmas proponho a seguinte distribuição (com base nos grupos definidos anteriormente):
+Como quase todos tï¿½m tarefas e para dar continuidade ï¿½s mesmas proponho a seguinte distribuiï¿½ï¿½o (com base nos grupos definidos anteriormente):
 
 Tarefas Programadores:
 
 4 - <<DBCola Staff>>
 
 Documento Linguagens /Tipo Ficheiro
-Olá Mundo
+Olï¿½ Mundo
 
 5 - <<Motores de busca - Seguimento do trabalho desenvolvido>> 
 
@@ -14,8 +14,10 @@ Inserir projectos na BD  <<Motores de busca ou DBCola>>
 Chamar scripts das APIs para buscar metadados
 
 6 - <<DBCola Staff>> 
-Listar informação estatística da BD
+Listar informaï¿½ï¿½o estatï¿½stica da BD
 
-Quem não estiver incluido em nenhum destes grupos que deixe notação e siga o trabalho 5 - 2)Inserir projectos na BD
+Quem nï¿½o estiver incluido em nenhum destes grupos que deixe notaï¿½ï¿½o e siga o trabalho 5 - 2)Inserir projectos na BD
 
-NOTA: Dispatcher não incluido por ter tarefa definida anteriormente.
+NOTA: Dispatcher nï¿½o incluido por ter tarefa definida anteriormente.
+
+Bruno, a tarefa 4 ja foi comecada por mim, com 50 linguagens. Pedi ao joao que coloca-se na wiki, onde achar melhor.

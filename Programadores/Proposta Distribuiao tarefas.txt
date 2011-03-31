@@ -20,4 +20,4 @@ Quem n�o estiver incluido em nenhum destes grupos que deixe nota��o e siga
 
 NOTA: Dispatcher n�o incluido por ter tarefa definida anteriormente.
 
-Bruno, a tarefa 4 ja foi comecada por mim, com 50 linguagens. Pedi ao joao que coloca-se na wiki, onde achar melhor.
+Bruno, a tarefa 4 ja foi comecada por mim, com 50 linguagens. Coloquei em Wiki/Linguagens-Extensoes-HelloWorld. Espero que ajude - Mauro

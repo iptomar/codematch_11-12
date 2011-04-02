@@ -1,0 +1,49 @@
+﻿Como quase todos tem tarefas e para dar continuidade as mesmas proponho a seguinte distribuicao 
+(com base nos grupos definidos anteriormente)
+
+
+..:: Tarefas Programadores ::..
+
+	4 - <<DBCola Staff>>
+
+		- Documento Linguagens/Tipo Ficheiro
+		- Ola Mundo
+
+	5 - <<Motores de busca - Seguimento do trabalho desenvolvido>> 
+
+		- Normalizar scripts de pesquisa
+		- Inserir projectos na BD  <<Motores de busca ou DBCola>> 
+		- Chamar scripts das APIs para buscar metadados
+
+	6 - <<DBCola Staff>> 
+		
+		- Listar informacao estatistica da BD
+
+
+
+
+Notas: 
+- Quem nao estiver incluido em nenhum destes grupos que deixe notacao e siga o trabalho 5 - 2)Inserir projectos na BD
+- Dispatcher nao incluido por ter tarefa definida anteriormente.
+
+
+
+
+
+
+..:: Tarefas Distribuidas ::..
+
+Mauro:
+- A tarefa 4 ja foi comecada por mim, com 50 linguagens. 
+- Coloquei em Wiki/Linguagens-Extensoes-HelloWorld. 
+- Espero que ajude.
+
+
+Goncalo Esteves:
+- Estou de volta da normalizacao dos scriptAPI.
+- Estou a integrar num unico script do Bing.
+
+
+
+
+

@@ -1,0 +1,12 @@
+BASE DE DADOS "Keyspaces"
+
+Keyspaces>
+  <Keyspace Name="Tolmai">
+    <ColumnFamily CompareWith="UTF8Type"  Name="tm_nameproj "/>
+    <ColumnFamily CompareWith="UTF8Type" Name="tm_source"/>
+    <ColumnFamily CompareWith="UTF8Type" Name="tm_repository"/>
+    <ColumnFamily CompareWith="UTF8Type" Name="tm_author "/>
+    <ColumnFamily CompareWith="UTF8Type"  Name="tm_language "/>
+    <ColumnFamily CompareWith="UTF8Type"  Name="tm_lastupdate"/>   
+  </Keyspace>
+</Keyspaces>

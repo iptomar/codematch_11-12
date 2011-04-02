@@ -43,7 +43,8 @@ Goncalo Esteves:
 - Estou de volta da normalizacao dos scriptAPI.
 - Estou a integrar num unico script do Bing.
 
-
+Alvaro gonçalves
+- Estou a melhorar o script do yahoo e depois vou implementar a normalização.
 
 
 

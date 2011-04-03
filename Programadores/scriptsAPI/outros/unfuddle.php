@@ -1,6 +1,7 @@
 <?php
 
-//Editar aqui os nossos dados conforme configurações da sua conta.
+//Editar aqui os nossos dados conforme configurações da sua conta..
+
 $config_method = 'GET';
 $config_userpass = 'username:password';
 $config_headers[] = 'Accept: application/xml';

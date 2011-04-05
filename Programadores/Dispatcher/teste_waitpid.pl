@@ -3,8 +3,8 @@
 use IPC::Open3;
 
 my ($wrt, $rdr, $err);
-my $cmd = "cd c:\Perl64 "; #comando a efectuar
-my $pid = open3($wrt, $rdr, $err, $cmd);
+my $cmd = "cd c:\ "; #comando a efectuar
+my $pid = open3($wrt, $rdr, $err, $cmd); #links d escrita, leitura e de erros
 
 waitpid( $pid, 0 ) or die "$!\n"; #esperar que o processo acabe
 

@@ -1,23 +1,50 @@
-Como quase todos t�m tarefas e para dar continuidade �s mesmas proponho a seguinte distribui��o (com base nos grupos definidos anteriormente):
+﻿Como quase todos tem tarefas e para dar continuidade as mesmas proponho a seguinte distribuicao 
+(com base nos grupos definidos anteriormente)
 
-Tarefas Programadores:
 
-4 - <<DBCola Staff>>
+..:: Tarefas Programadores ::..
 
-Documento Linguagens /Tipo Ficheiro
-Ol� Mundo
+	4 - <<DBCola Staff>>
 
-5 - <<Motores de busca - Seguimento do trabalho desenvolvido>> 
+		- Documento Linguagens/Tipo Ficheiro
+		- Ola Mundo
 
-Normalizar scripts de pesquisa
-Inserir projectos na BD  <<Motores de busca ou DBCola>> 
-Chamar scripts das APIs para buscar metadados
+	5 - <<Motores de busca - Seguimento do trabalho desenvolvido>> 
 
-6 - <<DBCola Staff>> 
-Listar informa��o estat�stica da BD
+		- Normalizar scripts de pesquisa
+		- Inserir projectos na BD  <<Motores de busca ou DBCola>> 
+		- Chamar scripts das APIs para buscar metadados
 
-Quem n�o estiver incluido em nenhum destes grupos que deixe nota��o e siga o trabalho 5 - 2)Inserir projectos na BD
+	6 - <<DBCola Staff>> 
+		
+		- Listar informacao estatistica da BD
 
-NOTA: Dispatcher n�o incluido por ter tarefa definida anteriormente.
 
-Bruno, a tarefa 4 ja foi comecada por mim, com 50 linguagens. Coloquei em Wiki/Linguagens-Extensoes-HelloWorld. Espero que ajude - Mauro
+
+
+Notas: 
+- Quem nao estiver incluido em nenhum destes grupos que deixe notacao e siga o trabalho 5 - 2)Inserir projectos na BD
+- Dispatcher nao incluido por ter tarefa definida anteriormente.
+
+
+
+
+
+
+..:: Tarefas Distribuidas ::..
+
+Mauro:
+- A tarefa 4 ja foi comecada por mim, com 50 linguagens. 
+- Coloquei em Wiki/Linguagens-Extensoes-HelloWorld. 
+- Espero que ajude.
+
+
+Goncalo Esteves:
+- Estou de volta da normalizacao dos scriptAPI.
+- Estou a integrar num unico script do Bing.
+
+Alvaro gonçalves
+- Estou a melhorar o script do yahoo e depois vou implementar a normalização.
+
+
+

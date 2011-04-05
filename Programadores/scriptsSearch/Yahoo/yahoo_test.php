@@ -1,8 +1,8 @@
 <?php
 	echo"###############GITHUB##################";
-	$query = 'github.com+php';
+	$query = 'php';
     //pagina do api+site:www.github.com
-	$request ='http://boss.yahooapis.com/ysearch/web/v1/'.$query.'?appid=po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-&format=xml$&start=0&count=20';
+	$request ='http://boss.yahooapis.com/ysearch/web/v1/'.$query.'+sites:github.com?appid=po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-&format=xml$&start=0&count=20';
 	//recebe as pagina
 	$response = file_get_contents($request);
 	//descodifica a pagina

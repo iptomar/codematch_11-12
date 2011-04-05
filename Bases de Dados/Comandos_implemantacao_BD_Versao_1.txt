@@ -1,0 +1,21 @@
+"Comandos para implementação da base de dados no Cassandra"
+
+create keyspace tolmai;                                                                                        // criar keyspace com o nome 'tolmai'
+use tolmai;                                                                                                                  // usar a keyspace 'tolmai'
+create column family tm with comparator='UTF8Type';                             // criar column family com o nome tm e tipo de dados UTF8Type
+update column family tm with column_metadata=
+[
+{column_name: tm_id, validation_class:UTF8Type},
+{column_name: tm_nameproj, validation_class:UTF8Type},
+{column_name: tm_source, validation_class:UTF8Type},
+{column_name: tm_repository, validation_class:UTF8Type},
+{column_name: tm_author, validation_class:UTF8Type},
+{column_name: tm_language, validation_class:UTF8Type},
+{column_name: tm_lastupdate, validation_class:UTF8Type},
+{column_name: tm_logo, validation_class:UTF8Type}
+];                                                                                                                           // criar os campos dentro da column family tm
+
+
+
+
+Mensagem: Esta implementação já está inserida no cassandra. Agora só nos falta ver as supercolunas para o campo language. Abraços

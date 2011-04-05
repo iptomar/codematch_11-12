@@ -1,92 +1,51 @@
 <?php
-	echo"###############GITHUB##################";
-	$query = 'php';
-    //pagina do api+site:www.github.com
-	$request ='http://boss.yahooapis.com/ysearch/web/v1/'.$query.'+sites:github.com?appid=po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-&format=xml$&start=0&count=20';
-	//recebe as pagina
-	$response = file_get_contents($request);
-	//descodifica a pagina
-	$json = json_decode($response);
-	//foreach($json as $arg) {
-		//$resultados .= "<b>Titulo:</b> ".$arg->Title." - <b>Url:</b> ".$arg->Url."<br>";
-	//}
-	//$resultados .= "<br>";
-	echo "<pre>";
-	//mostra array
-	print_r($json);
-	echo "</pre>";
-	echo "<br />";
+$yahooAPIKey = "po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-";
+
+$YahooSearchAPI = "http://boss.yahooapis.com/ysearch/web/v1/";
+
+$UrlAppid = "?appid=" . $yahooAPIKey;
+
+$format = "&format=json";
+
+$SiteGH = "&sites=github.com";
+
+$SiteSF = "&sites=sourceforge.net";
+
+$SiteBB = "&sites=bitbucket.org";
+
+$SiteLP = "&sites=launchpad.net";
+
+$SiteGG = "&sites=code.google.com";
+
+$query = urlencode("php");
+
+$pages ="&start=0&count=20";
+
+
+$fullURL = $YahooSearchAPI . $query . $UrlAppid . $format . $SiteGH . $pages;
+
+$session = curl_init($fullURL);
+
+curl_setopt($session, CURLOPT_HEADER, false); 
+
+curl_setopt($session, CURLOPT_RETURNTRANSFER, true); 
+
+$resultsJson = curl_exec($session); 
+
+curl_close($session);
+
+$results = json_decode($resultsJson);
+
+foreach ($results->{'ysearchresponse'}->{'resultset_web'} as $result) 
+
+{
+
+echo "<h3><a href=\"{$result->{'clickurl'}}\">{$result->{'title'}}</a></h3>\n";
+
+echo "<p>{$result->{'abstract'}}</p>\n";
+
+}
+
 	
-	echo"###############SOURCEFORGE##################";
-	$query = 'sourceforge.net+php';
-    //pagina do api+site:www.github.com
-	$request ='http://boss.yahooapis.com/ysearch/web/v1/'.$query.'?appid=po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-&format=xml$&start=0&count=20';
-	//recebe as pagina
-	$response = file_get_contents($request);
-	//descodifica a pagina
-	$json = json_decode($response);
-	//foreach($json as $arg) {
-		//$resultados .= "<b>Titulo:</b> ".$arg->Title." - <b>Url:</b> ".$arg->Url."<br>";
-	//}
-	//$resultados .= "<br>";
-	echo "<pre>";
-	//mostra array
-	print_r($json);
-	echo "</pre>";
-	echo "<br />";
-	
-	echo"###############BITBUCKET##################";
-	$query = 'bitbucket.org+php';
-    //pagina do api+site:www.github.com
-	$request ='http://boss.yahooapis.com/ysearch/web/v1/'.$query.'?appid=po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-&format=xml$&start=0&count=20';
-	//recebe as pagina
-	$response = file_get_contents($request);
-	//descodifica a pagina
-	$json = json_decode($response);
-	//foreach($json as $arg) {
-		//$resultados .= "<b>Titulo:</b> ".$arg->Title." - <b>Url:</b> ".$arg->Url."<br>";
-	//}
-	//$resultados .= "<br>";
-	echo "<pre>";
-	//mostra array
-	print_r($json);
-	echo "</pre>";
-	echo "<br />";
-	
-	echo"###############LAUNCHPAD##################";
-	$query = 'launchpad.net+php';
-    //pagina do api+site:www.github.com
-	$request ='http://boss.yahooapis.com/ysearch/web/v1/'.$query.'?appid=po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-&format=xml$&start=0&count=20';
-	//recebe as pagina
-	$response = file_get_contents($request);
-	//descodifica a pagina
-	$json = json_decode($response);
-	//foreach($json as $arg) {
-		//$resultados .= "<b>Titulo:</b> ".$arg->Title." - <b>Url:</b> ".$arg->Url."<br>";
-	//}
-	//$resultados .= "<br>";
-	echo "<pre>";
-	//mostra array
-	print_r($json);
-	echo "</pre>";
-	echo "<br />";
-	
-	echo"###############GOOGLE##################";
-	$query = 'code.google.com+php';
-    //pagina do api+site:www.github.com
-	$request ='http://boss.yahooapis.com/ysearch/web/v1/'.$query.'?appid=po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-&format=xml$&start=0&count=20';
-	//recebe as pagina
-	$response = file_get_contents($request);
-	//descodifica a pagina
-	$json = json_decode($response);
-	//foreach($json as $arg) {
-		//$resultados .= "<b>Titulo:</b> ".$arg->Title." - <b>Url:</b> ".$arg->Url."<br>";
-	//}
-	//$resultados .= "<br>";
-	echo "<pre>";
-	//mostra array
-	print_r($json);
-	echo "</pre>";
-	echo "<br />";
 	
 ?>

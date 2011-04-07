@@ -1,25 +1,13 @@
-//untested
-
 <?php
+require_once('phpcassa/connection.php');
+require_once('phpcassa/columnfamily.php');
 
-echo "git projects statistics .\n";
+$conn = new Connection('tolmai');
 
-$conn = new Connection('Keyspace');
-$column_family= new ColumnFamily($conn , 'tolmai');
+$column_family= new ColumnFamily($conn , 'tm');
 
-//create index columns
-$index_exp = CassandraUtil::creat_index_expression('tm_repository',github);
-//index clause
-$index_clause = CassandraUtil::create_index_clause(array($index_exp));
-//retrieve results
-$rows = $column_family->get indexed_slices($index_clause);
-
-$count = 0;
-foreach($rows as $key => $columns) {
-  //Do stuff with $key => $columns
-  $count ++;
-  }
-  Print_r($count);
+$result =$column_family->get('1',$columns=array('tm_nomeproj'));
+print_r($result);
 
 
 ?>

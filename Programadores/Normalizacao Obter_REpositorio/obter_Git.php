@@ -7,8 +7,8 @@
 	/*este nao esta completo porque nao esta a inserir 
      *automaticamente porque nao sabemos o numero de linhas 
 	 *que a tabela tem.
-	 *Falta alguns campos pa tabela, mas nao informacao
-	 *da API nao encontrei.
+	 *Falta alguns campos pa tabela, mas na informacao
+	 *da API nao encontrei o nome dos campos que faltam.
 	 */
 	
 	function obter_github($projecto){

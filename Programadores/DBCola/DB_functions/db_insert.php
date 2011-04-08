@@ -24,7 +24,7 @@ $column_family->insert('$Name',array('tm_source' =>$Source,'tm_repository' =>$Re
 $status ="Sucess to insert / update DB";
 return $status;
 
-}catch(Exception x){
+}catch(Exception $x){
 	$status = "Fail to insert / update DB" ;
 	return $status;
 }

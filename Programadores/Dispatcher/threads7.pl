@@ -2,8 +2,10 @@
 
 #Libraries
 #Libraries necessary for the correct implementation
+
 use threads
 use threads::shared
+use IPC::Open3;
 
 #GlobaL VARIABLES
 #Keeps the parameters values
@@ -11,28 +13,49 @@ use threads::shared
 @arr_thr = ();
 
 #Code
+
 #The main code controls the flow of function callin
+
+#-----------------------------------------------------------------
 
 #startin php service
 	$thrphp = threads->new(\&startphp);
 	$thrphp->join;
 
 #keep pid
-	push (@arr_thr, ); #keep record of php service pid
+
+	my $temp1 = open3(\*WRITER, \*READER, \*ERROR, $cmd);
+	
+	waitpid( $temp, 0 ) or die "$!\n";
+	
+	push (@arr_thr, $temp); #keep record of php service pid
+
+#detach from thread
 	
 	$thrphp->detach;
 
+#-----------------------------------------------------------------
+	
 #startin cassandra service
 	$thrcas-> threads->new(\&startcas);
 	$thrcas->join;
 	
 #keep pid
-	push (@arr_thr, ); #keep record of cassandra service pid
+
+	my $temp2 = open3(\*WRITER, \*READER, \*ERROR, $cmd);
 	
+	waitpid( $temp2, 0 ) or die "$!\n";
+
+	push (@arr_thr, ); #keep record of cassandra service pid
+
+#detach from thread
+
 	$thrcas->detach;
 
+#--------------------------------------------------------------------
 
 #Functions
+
 #Sub functions posses the code for init, regulate and terminate threads(Services)
 
 sub startphp(){

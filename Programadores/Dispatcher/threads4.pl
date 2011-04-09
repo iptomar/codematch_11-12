@@ -12,6 +12,6 @@
         while (1) {
             $a++;
             print "\$a is $a\n";
-            sleep 1;
+            sleep 5;
         }
     }

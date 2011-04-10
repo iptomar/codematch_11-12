@@ -2,7 +2,7 @@
 
 //This function inserts/update data on DB and returns the function stats due to sucess or fail of the operation
 // Usage:
-// include 'db_insert'; -> API search script file
+// include 'db_insert.php'; -> on API search script file
 // db_insert(<arguments>); 9 arguments accepted - if some are inexistent use Zero value to maintain DB structure
 
 function insert_db($Name,$Source,$Repo,$Author,$Lang_P,$Lang_S,$Lang_T,$LsUp,$Logo){

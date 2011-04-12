@@ -1,0 +1,1 @@
+Pequeno exemplo que demonstra como funciona o ajax.

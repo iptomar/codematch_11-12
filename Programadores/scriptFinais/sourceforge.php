@@ -13,7 +13,7 @@ function get_project_sourceforge($project) {
 	$response = file_get_contents($request);
 	//descodifica uma string json
 	$sourceforge_json = json_decode($response);
-	return array($sourceforge_json->Project->name, get_user_sourceforge($project), $sourceforge_json->Project->created, get_logo_sourceforge("http://sourceforge.net/projects/$project/"));	
+	return array($sourceforge_json->Project->name, get_user_sourceforge($project), get_lang_sourceforge($project), $sourceforge_json->Project->created, get_logo_sourceforge("http://sourceforge.net/projects/$project/"));
 }
 
 // Parametros:
@@ -33,6 +33,25 @@ function get_user_sourceforge($project) {
 		array_push($users, $arg->name);
 	}
 	return $users;
+}
+
+// Parametros:
+//	- $project (nome do projecto) 
+// Retorna: 
+//	- array() (retorna array com os seguintes dados:)
+//		- linguas
+function get_lang_sourceforge($project) {
+	//pagina do api
+	$request = "http://sourceforge.net/api/project/name/$project/json";
+	//le o ficheiro para uma string
+	$response = file_get_contents($request);
+	//descodifica uma string json
+	$sourceforge_json = json_decode($response);
+	$language = array();
+	foreach($sourceforge_json->Project->programming-languages as $arg) {
+		array_push($language, $arg);
+	}
+	return $language;
 }
 
 //nao esta a funcionar

@@ -28,7 +28,7 @@ $column_family->insert($Name,array('tm_fullname' =>$Fullname,'tm_source' =>$Sour
 
 //author insert
 for($i = 0; $i <= $comp; i++){
-	$column_family -> insert($Name,'tm_author' => $Author[$i]);
+	$column_family -> insert($Name,array('tm_author' => array($Author[$i] => $Author[i]));
 }
 
 $status ="Sucess to insert / update DB";

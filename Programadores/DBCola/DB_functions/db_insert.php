@@ -27,8 +27,8 @@ $comp = count($Author);
 $column_family->insert($Name,array('tm_fullname' =>$Fullname,'tm_source' =>$Source,'tm_repository' =>$Repo, 'tm_language' =>array('tm_Main' => $Lang_[0], 'tm_Secundary' => $Lang_[1], 'tm_terciary' => $Lang_[2]), 'tm_lastupdate' =>$LsUp, 'tm_logo' =>$Logo));
 
 //author insert
-for($i = 0; $i <= $comp; i++){
-	$column_family -> insert($Name,array('tm_author' => array($Author[$i] => $Author[i]));
+for($i = 0; $i <= $comp; $i++){
+	$column_family -> insert($Name,array('tm_author' => array($Author[$i] => $Author[$i])));
 }
 
 $status ="Sucess to insert / update DB";

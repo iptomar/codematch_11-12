@@ -21,7 +21,19 @@ function get_project_launchpad($project) {
 	} else {
 		$string_name = null;
 	}
+	if(isset($launchpad_json->title)){
+		$string_title = $launchpad_json->title;
+	} else {
+		$string_title = null;
+	}
+	if(isset($launchpad_json->web_link)){
+		$string_source = $launchpad_json->web_link;
+	} else {
+		$string_source = null;
+	}
 	if(isset($launchpad_json->owner_link)){
+		//preg_match("/https:\/\/api.launchpad.net\/~(.*)/", $launchpad_json->owner_link, $match);
+		//print_r($match);
 		$string_owner = $launchpad_json->owner_link;
 	} else {
 		$string_owner = null;
@@ -41,6 +53,6 @@ function get_project_launchpad($project) {
 	} else {
 		$string_logo = null;
 	}	
-	return array($string_name, $string_owner, preg_split('/,/', $string_lang, -1), $string_date, $string_logo);	
+	return array($string_name, $string_title, $string_source, array($string_owner), preg_split('/,/', $string_lang, -1), $string_date, $string_logo);	
 }
 ?>

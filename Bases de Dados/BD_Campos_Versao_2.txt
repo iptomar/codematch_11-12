@@ -1,0 +1,15 @@
+BASE DE DADOS
+
+"Modelo de dados"
+
+Nome da base de dados: TOLMAI
+
+Campos:
+
+tm_fullname        (nome completo do projecto)
+tm_source           (de onde vem o projecto ex: github)
+tm_repository    (repositorio onde se encontra o projecto)
+tm_author           (autor do projecto)
+tm_language      (linguagem de programação utilizada)
+tm_lastupdate   (ultima actualização)
+tm_logo                (logotipo do projecto)

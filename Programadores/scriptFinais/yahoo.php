@@ -1,7 +1,9 @@
 <?php
 include "launchpad.php"; //include da api launchpad
 include "github.php"; //include da api github
-include "sourceforge.php"; //include da api sourceforge
+//include "sourceforge.php"; //include da api sourceforge
+include "Programadores/DBCola/DB_functions/db_insert.php";
+include "Programadores/DBCola/DB_functions/git_getStats.php";
 //require_once('launchpad.php');
 //require_once('github.php');
 //require_once('sourceforge.php');

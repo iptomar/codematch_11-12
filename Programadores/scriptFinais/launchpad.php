@@ -16,6 +16,31 @@ function get_project_launchpad($project) {
 	$page = curl_exec( $ch);
 	curl_close($ch);
 	$launchpad_json = json_decode($page);
-	return array($launchpad_json->display_name, $launchpad_json->owner_link, $launchpad_json->programming_language, $launchpad_json->date_created, $launchpad_json->logo_link);	
+	if(isset($launchpad_json->name)){
+		$string_name = $launchpad_json->name;
+	} else {
+		$string_name = null;
+	}
+	if(isset($launchpad_json->owner_link)){
+		$string_owner = $launchpad_json->owner_link;
+	} else {
+		$string_owner = null;
+	}
+	if(isset($launchpad_json->programming_language)){
+		$string_lang = $launchpad_json->programming_language;
+	} else {
+		$string_lang = null;
+	}
+	if(isset($launchpad_json->date_created)){
+		$string_date = $launchpad_json->date_created;
+	} else {
+		$string_date = null;
+	}	
+	if(isset($launchpad_json->logo_link)){
+		$string_logo = $launchpad_json->logo_link;
+	} else {
+		$string_logo = null;
+	}	
+	return array($string_name, $string_owner, preg_split('/,/', $string_lang, -1), $string_date, $string_logo);	
 }
 ?>

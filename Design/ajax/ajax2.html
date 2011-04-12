@@ -1,0 +1,47 @@
+<html>
+<head>
+<script type="text/javascript">
+function loadXMLDoc(objId)
+{
+var xmlhttp;
+//o objecto XMLHttpRequest é usado para trocar dados com servidor
+if (window.XMLHttpRequest)
+  {
+  // se o browser for IE7+, Firefox, Chrome, Opera, Safari
+  //cria novo objecto XMLHttpRequest para troca de dados
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {
+  // se o browser for for IE6, IE5
+  //cria novo objecto XMLHttpRequest para troca de dados
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  //onreadystatechange é o evento despoletado sempre que se altera o valor de readystate
+  //que por sua vez guarda o status do objecto XMLHttpRequest
+xmlhttp.onreadystatechange=function()
+  {
+  //se o pedido foi enviado e a resposta foi recebida
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+	//a funcao vai alterar o conteudo do div e vai buscar o que e retornado pelo ficheiro 
+	//php como string
+    //document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+	document.getElementById(objId).innerHTML = xmlhttp.responseText;
+    }
+  }
+  //abre ficheiro php que vai retornar dados. "Get" para poucos dados, "Post" para muitos dados. "Post" é mais seguro.
+  //true= asyncronous
+xmlhttp.open("POST","echo.php",true);
+	//envia pedido para servidor. 
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+
+<div id="myDiv"><h2>O AJAX vai alterar este texto</h2></div>
+<button type="button" onclick="loadXMLDoc('myDiv')">Alterar conteúdo</button>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+Este link aponta para um site onde é possível gerar imagens animadas (personalizáveis) para apresentar no ecrã enquanto o servidor está a "trabalhar" os dados pedidos pelo utilizador:
+
+http://www.ajaxload.info/

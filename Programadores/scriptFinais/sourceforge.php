@@ -1,7 +1,4 @@
 <?php
-//exemplo de um projecto com logo
-//print_r(get_logo_sourceforge("http://sourceforge.net/projects/mynes/"));
-
 // Parametros:
 //	- $project (nome do projecto) 
 // Retorna: 
@@ -46,9 +43,12 @@ function get_logo_sourceforge($url) {
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);	//define o retorno como string
     $page = curl_exec($ch);	//executa as opcoes definidas
     curl_close($ch);	//encerra sessao
-	preg_match("/<img alt=(.*)/", $page, $match) 
-	if (!empty($match[1])) {
-		return $match[1];
+	preg_match('/alt="(.*)" src="(.*)" height="48" width="48"\/>/', $page, $match); 
+	if (empty($match[2])) {
+		return 0;
+	}
+	else {
+		return $match[2]; 
 	}
 }
 ?>

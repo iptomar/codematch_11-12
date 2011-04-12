@@ -36,21 +36,21 @@ include "sourceforge.php"; //include da api sourceforge
 //}
 
 //o ciclo while e para ir mudando de pagina
-//$i=0;
-//while ($i <= 230) {
-//	$bing_array = get_bing_sourceforge(10, $i);
-//	foreach($bing_array as $arg) {
-//		list ($name_project, $owner, $created_date, $logo) = $arg;
-//		print_r("<b>Project:</b> ".$name_project."<br>");
-//		print_r("<b>Source:</b> Sourceforge<br>");
-//		foreach($arg[1] as $arg_owner) {
-//			print_r("<b>Owner:</b> ".$arg_owner."<br>");
-//		}
-//		print_r("<b>Date Created:</b> ".$created_date."<br>");
-//		print_r("<b>Logo:</b> <img src='".$logo."'><br><hr><br>");
-//	}
-//	$i=$i+10;
-//}
+$i=0;
+while ($i <= 10) {
+	$bing_array = get_bing_sourceforge(10, $i);
+	foreach($bing_array as $arg) {
+		list ($name_project, $owner, $created_date, $logo) = $arg;
+		print_r("<b>Project:</b> ".$name_project."<br>");
+		print_r("<b>Source:</b> Sourceforge<br>");
+		foreach($arg[1] as $arg_owner) {
+			print_r("<b>Owner:</b> ".$arg_owner."<br>");
+		}
+		print_r("<b>Date Created:</b> ".$created_date."<br>");
+		print_r("<b>Logo:</b> <img src='".$logo."'><br><hr><br>");
+	}
+	$i=$i+10;
+}
 
 //###########################################################################################################
 

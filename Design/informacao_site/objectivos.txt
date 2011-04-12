@@ -1,0 +1,5 @@
+Objectivos do Projecto:
+
+Garantir que os seus utilizadores têm acesso a informações sobre os projectos alojados na Internet como por exemplo no GitHub.
+Deve-se garantir uma correcta informação sobre cada projecto pesquisado, nomeadamente o seu autor, onde se aloja e a principal linguagem de programação utilizada.
+Os projectos mais recentes estão colocados em destaque para se garantir a actualização constante da informação apresentada.

@@ -10,7 +10,7 @@ while ($i <= 10) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
 			if (empty($language)) {
-				$language = array(null);
+				array_push($language, "0");
 			}
 			insert_db($name_project, $title, $source, "Launchpad", $owner, $language, $created_date, $logo);
 			print_r("<b>Project:</b> ".$name_project."<br>");

@@ -24,7 +24,9 @@ $comp = count($Author);
 //Single columns ->tm_fullname - fullname; tm_source - project url; tm_repository - repository url ;
 // tm_author [Array]- projects author; tm_language [Array] - project languages ; tm_lastupdate - projects last update; tm_logo - projects logo url
 //SuperColumn tm_language -> To decide how many entries will take, this function draft takes 3 entries ordered by project relevance
-$column_family->insert($Name,array('tm_fullname' =>$Fullname,'tm_source' =>$Source,'tm_repository' =>$Repo, 'tm_language' =>array('tm_Main' => $Lang_[0], 'tm_Secundary' => $Lang_[1], 'tm_terciary' => $Lang_[2]), 'tm_lastupdate' =>$LsUp, 'tm_logo' =>$Logo));
+$column_family->insert($Name,array('tm_fullname' =>$Fullname,'tm_source' =>$Source,'tm_repository' =>$Repo, 'tm_language' =>$Lang_, 'tm_lastupdate' =>$LsUp, 'tm_logo' =>$Logo));
+
+
 
 //author insert
 for($i = 0; $i <= $comp; $i++){

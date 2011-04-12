@@ -5,7 +5,7 @@
 // include 'db_insert.php'; -> on API search script file
 // db_insert(<arguments>); 10 arguments accepted - if some are inexistent use Zero value to maintain DB structure
 
-function insert_db($Name,$Fullname='',$Source,$Repo,$Author,$Lang_,$LsUp,$Logo=''){
+function insert_db($Name,$Fullname='',$Source,$Repo,$Author,$Lang_='',$LsUp,$Logo=''){
 try{
 require_once('phpcassa/connection.php');
 require_once('phpcassa/columnfamily.php');
@@ -24,14 +24,14 @@ $comp = count($Author);
 //Single columns ->tm_fullname - fullname; tm_source - project url; tm_repository - repository url ;
 // tm_author [Array]- projects author; tm_language [Array] - project languages ; tm_lastupdate - projects last update; tm_logo - projects logo url
 //SuperColumn tm_language -> To decide how many entries will take, this function draft takes 3 entries ordered by project relevance
-$column_family->insert($Name,array('tm_fullname' =>$Fullname,'tm_source' =>$Source,'tm_repository' =>$Repo, 'tm_language' =>$Lang_, 'tm_lastupdate' =>$LsUp, 'tm_logo' =>$Logo));
+$column_family->insert($Name,array('tm_fullname' =>$Fullname,'tm_source' =>$Source,'tm_repository' =>$Repo,'tm_author'=>$Author, 'tm_language' =>$Lang_, 'tm_lastupdate' =>$LsUp, 'tm_logo' =>$Logo));
 
 
 
 //author insert
-for($i = 0; $i <= $comp; $i++){
-	$column_family -> insert($Name,array('tm_author' => array($Author[$i] => $Author[$i])));
-}
+//for($i = 0; $i <= $comp; $i++){
+//	$column_family -> insert($Name,array('tm_author' => array($Author[$i] => $Author[$i])));
+//}
 
 $status ="Sucess to insert / update DB";
 return $status;

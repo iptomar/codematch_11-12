@@ -1,0 +1,9 @@
+Funcionalidades do Projecto:
+
+Com a utilização do Tolmai os seus utilizadores podem ter acesso aos projectos alojados na Internet e visualizar informação sobre os mesmos.
+É possível visualizar os Repositórios existentes, os projectos que alojam e ainda as linguagens de programação utilizadas em cada projecto.
+Sobre cada repositório é criada um ranquing de linguagens mais utilizadas em todos os seus projectos.
+Sobre cada projecto para além da informação sobre quem foi o seu autor e a data de criação, é possível visualizar a data da última actualização que esse mesmo projecto sofreu. 
+Será disponibilizado um URL para que o utilizador possa aceder directamente ao projecto desejado.
+
+

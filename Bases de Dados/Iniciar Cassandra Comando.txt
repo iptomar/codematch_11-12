@@ -1,0 +1,4 @@
+/opt$ cassandra/bin/cassandra-cli -h localhost
+ 
+
+Iniciar Cassandra

@@ -1,5 +1,0 @@
-cores do accordion:
-barra tolmai : #e9796a
-barra repository: #ffdf57
-barra projects: #55b920
-barra programming: #7b87f9

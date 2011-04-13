@@ -1,0 +1,12 @@
+As pesquisas com o cassandra sao complicadas de fazer usando SuperColumns
+como descrito aqui -> 
+
+http://groups.google.com/group/phpcassa/browse_thread/thread/1d8b9a9aac4b3aaa#
+
+A solucao passa por, ou transformamos a nossa BD em standard, 
+tudo singleColumn ou apenas podemos pesquisar com range e/ou 
+nome do projecto.
+
+A pesquisa por indexs nao e suportada de todo :( o que e pena.
+
+Aguardo FeedBack do grupo de BD, testers de BD e programadores de API's

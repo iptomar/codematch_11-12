@@ -7,7 +7,7 @@ Nome da base de dados: TOLMAI
 Campos:
 
 tm_fullname        (nome completo do projecto)
-tm_source           (de onde vem o projecto ex: github, sourceforge,etc)
+tm_source           (de onde vem o projecto : url)
 tm_repository    (repositorio onde se encontra o projecto)
 tm_author           (autor do projecto)
 tm_language      ("super-coluna" com linguagens de programação utilizada)

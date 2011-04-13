@@ -1,17 +1,39 @@
 <?php
 include "launchpad.php"; //include da api launchpad
+include "db_insert.php";
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
-while ($i <= 230) {
+while ($i <= 10) {
 	$bing_array = get_bing_launchpad(10, $i);
 	foreach($bing_array as $arg) {
-		list ($name_project, $owner, $language, $created_date, $logo) = $arg;
+		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
+			if (empty($title)) {
+				$title = "n/a";
+			}
+			if (empty($source)) {
+				$source = "n/a";
+			}
+			if (empty($owner[0])) {
+				$owner[0] = "n/a";
+			}
+			if (empty($language[0])) {
+				$language[0] = "n/a";
+			}
+			if (empty($created_date)) {
+				$created_date = "n/a";
+			}
+			if (empty($logo)) {
+				$logo = "n/a";
+			}
+			insert_db($name_project, $title, $source, "Launchpad", $owner, $language, $created_date, $logo);
 			print_r("<b>Project:</b> ".$name_project."<br>");
-			print_r("<b>Source:</b> Launchpad<br>");
-			print_r("<b>Owner:</b> ".$owner."<br>");
-			foreach($arg[2] as $arg_lang) {
+			print_r("<b>Title:</b> ".$title."<br>");
+			print_r("<b>Source:</b> ".$source."<br>");
+			print_r("<b>Repository:</b> Launchpad<br>");
+			print_r("<b>Owner:</b> ".$owner[0]."<br>");
+			foreach($language as $arg_lang) {
 				print_r("<b>Languages:</b> ".$arg_lang."<br>");
 			}
 			print_r("<b>Date Created:</b> ".$created_date."<br>");

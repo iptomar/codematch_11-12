@@ -31,7 +31,7 @@ function get_bing_github($lenght, $offset) {
 	$bing_array = array(); //cria o array
 	foreach($bing_json->SearchResponse->Web->Results as $arg) {
 		//retira o nome do projecto e utilizador atraves do URL
-		preg_match("/https:\/\/github.com\/([A-Za-z0-9]*)\/([A-Za-z0-9-_]*).*/", $arg->Url, $match);
+		preg_match("/https:\/\/github.com\/([A-Za-z0-9]*)\/([A-Za-z0-9-_~]*).*/", $arg->Url, $match);
 		if ((isset($match[2])) && ($match[1]!="blog")) { //o nome do utilizador nao pode ser blog
 			//match[1] = utilizador, match[2] =  nome projecto
 			array_push($bing_array, get_project_github($match[1],$match[2])); //adiciona os projectos ao array

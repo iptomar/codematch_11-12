@@ -13,6 +13,7 @@ try{
 $comp = count($author);
 $cp = count($lang);
 
+
 //make connection with database
 $conn = new Connection('tolmai');
 
@@ -36,7 +37,7 @@ for($i = 0; $i < $comp; $i++){
 }
 
 //single insert
-$column_family-> insert($name,array("tm_lastupdate" =>array('lastup' => $lastup)));
+$column_family-> insert($name,array("tm_date" =>array('creation' => $lastup[0], 'lastup' =>$lastup[1])));
 $column_family-> insert($name,array("tm_logo" =>array('logo' => $logo)));
 
 // $result = $column_family -> get($name);

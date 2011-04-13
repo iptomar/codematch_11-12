@@ -1,3 +1,5 @@
+Bruno
+
 As pesquisas com o cassandra sao complicadas de fazer usando SuperColumns
 como descrito aqui -> 
 
@@ -10,3 +12,15 @@ nome do projecto.
 A pesquisa por indexs nao e suportada de todo :( o que e pena.
 
 Aguardo FeedBack do grupo de BD, testers de BD e programadores de API's
+
+
+###########################################################################
+
+Filipe Coquim
+
+
+Tens razao bruno, ando a fazer uns testes e deparei-me com esse problema.
+
+Na minha opinião deviamos passar tudo para singleColumn o que simplifica muita coisa.
+
+##########################################################################

@@ -15,6 +15,31 @@ function get_project_github($user, $project) {
 	$response = file_get_contents($request);
 	//descodifica uma string json
 	$github_json = json_decode($response);
-	return array($github_json->repository->name, $github_json->repository->source, $github_json->repository->owner, $github_json->repository->language, $github_json->repository->created_at);	
+	if(isset($github_json->repository->name)){
+		$string_name = $github_json->repository->name;
+	} else {
+		$string_name = null;
+	}
+	if(isset($github_json->repository->source)){
+		$string_source = $github_json->repository->source;
+	} else {
+		$string_source = null;
+	}
+	if(isset($github_json->repository->owner)){
+		$string_owner = $github_json->repository->owner;
+	} else {
+		$string_owner = null;
+	}
+	if(isset($github_json->repository->language)){
+		$string_lang = $github_json->repository->language;
+	} else {
+		$string_lang = null;
+	}
+	if(isset($github_json->repository->created_at)){
+		$string_date = $github_json->repository->created_at;
+	} else {
+		$string_date = null;
+	}		
+	return array($string_name, $string_source, $string_owner, preg_split('/,/', $string_lang, -1), $string_date);	
 }
 ?>

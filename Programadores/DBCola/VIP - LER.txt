@@ -21,6 +21,6 @@ Filipe Coquim
 
 Tens razao bruno, ando a fazer uns testes e deparei-me com esse problema.
 
-Na minha opinião deviamos passar tudo para singleColumn o que simplifica muita coisa.
+Na minha opiniao deviamos passar tudo para singleColumn o que simplifica muita coisa.
 
 ##########################################################################

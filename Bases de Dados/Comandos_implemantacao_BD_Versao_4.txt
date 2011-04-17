@@ -1,0 +1,26 @@
+"Comandos para implementacao da base de dados no Cassandra"
+
+create keyspace tolmai;               // make keyspace 'tolmai'
+
+use tolmai;                                         // usar  keyspace 'tolmai'    
+
+     
+
+create column family tm with comparator='UTF8Type';                     // make column family with name Project and comparator UTF8Type                                                                                                                  
+                                                                                                                                // to add controls to how row keys are indexed and sorted - index UTF8 characters 
+update column family tm with column_metadata=
+[
+{column_name: tm_fullname, validation_class:UTF8Type},
+{column_name: tm_source, validation_class:UTF8Type},
+{column_name: tm_repository, validation_class:UTF8Type, index_type: KEYS},
+{column_name: tm_author, validation_class:UTF8Type},
+{column_name: tm_language_P, validation_class:UTF8Type, index_type: KEYS},  
+{column_name: tm_language_S, validation_class:UTF8Type, index_type: KEYS}, 
+{column_name: tm_language_T, validation_class:UTF8Type ,index_type: KEYS},                                                                    
+{column_name: tm_date_c, validation_class:LongType, index_type: KEYS}, 
+{column_name: tm_date_l, validation_class:LongType, index_type: KEYS},                             
+{column_name: tm_logo, validation_class:UTF8Type}
+];               
+
+
+NOTA: este modelo de dados ja esta implementado!

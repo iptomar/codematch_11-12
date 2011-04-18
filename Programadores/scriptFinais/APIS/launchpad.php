@@ -34,10 +34,12 @@ function get_project_launchpad($project) {
 		$string_source = "n/a";
 	}
 	if(isset($launchpad_json->owner_link)){
-		//preg_match("/https:\/\/api.launchpad.net\/~(.*)/", $launchpad_json->owner_link, $match);
-		//print_r($match);
+		//retira o nome do owner do url
+		preg_match("/https:\/\/api.launchpad.net\/(.*)/", $launchpad_json->owner_link, $match);
+		$match[1] = str_replace('1.0/~', '', $match[1], $count);
+		$match[1] = str_replace('~', '', $match[1], $count);
 		$string_owner = array();
-		array_push($string_owner, $launchpad_json->owner_link);
+		array_push($string_owner, $match[1]);
 	} else {
 		$string_owner = array("n/a");
 	}
@@ -47,6 +49,8 @@ function get_project_launchpad($project) {
 	} else {
 		$string_lang = array("n/a");
 	}
+	//faz replace da Visual Basic por VB/VBS
+	$string_lang=str_replace('Visual Basic', 'VB/VBS', $string_lang, $count);
 	if(isset($launchpad_json->date_created)){
 		$string_date = array();
 		preg_match("/(.*)T/", $launchpad_json->date_created, $match);

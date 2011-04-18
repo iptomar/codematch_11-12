@@ -45,6 +45,8 @@ function get_project_sourceforge($project) {
 	} else {
 		$string_lang = array("n/a");
 	}
+	//faz replace da Visual Basic por VB/VBS
+	$string_lang=str_replace('Visual Basic', 'VB/VBS', $string_lang, $count);
 	if(isset($sourceforge_json->Project->created)){
 		$string_date = array();
 		array_push($string_date, date("Ymd", strtotime($sourceforge_json->Project->created)));

@@ -34,8 +34,6 @@ function get_project_github($user, $project) {
 		$string_source = "n/a";
 	}
 	if(isset($github_json->repository->owner)){
-		//preg_match("/https:\/\/api.launchpad.net\/~(.*)/", $launchpad_json->owner_link, $match);
-		//print_r($match);
 		$string_owner = array();
 		array_push($string_owner, $github_json->repository->owner);
 	} else {
@@ -47,6 +45,8 @@ function get_project_github($user, $project) {
 	} else {
 		$string_lang = array("n/a");
 	}
+	//faz replace da Visual Basic por VB/VBS
+	$string_lang=str_replace('Visual Basic', 'VB/VBS', $string_lang, $count);
 	if(isset($github_json->repository->created_at)){
 		$string_date = array();
 		preg_match("/[0-9]*\\/[0-9]*\\/[0-9]*/", $github_json->repository->created_at, $match);

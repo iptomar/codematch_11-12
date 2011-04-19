@@ -1,0 +1,22 @@
+BASE DE DADOS
+
+"Modelo de dados"
+
+Nome da base de dados: TOLMAI
+
+Campos:
+
+tm_fullname     (nome completo do projecto)
+tm_source       (url do projecto)
+tm_repository   (repositorio onde se encontra o projecto)
+tm_author       (autor do projecto em string separados por , ou ; -> ex: autor;autor1;.... )
+tm_language_P   (single column - linguagem principal)
+tm_language_S   (single column - linguagem secundaria)
+tm_language_T   (single column - linguagem terciaria)
+tm_date_c       (data de criacao)
+tm_date_l	(data da ultima actualizacao)
+tm_logo         (logotipo do projecto)
+
+Desciption:
+Due to query dificulties, we suggest this new database model to simplify and to raise the option for search.
+Droping SuperColumn model to implement SingleColumn model

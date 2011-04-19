@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Troubleshooting &middot; Isotope Docs</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="doc ">
+
+  
+  <nav id="docs-nav">
+    <h1><a href="../index.html">Isotope</a> Docs</h1>
+    
+    <ul>
+      
+        
+        <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+        <li><a href="../docs/options.html">Options</a>
+        
+      
+        
+        <li><a href="../docs/methods.html">Methods</a>
+        
+      
+        
+        <li><a href="../docs/layout-modes.html">Layout modes</a>
+        
+      
+        
+        <li><a href="../docs/filtering.html">Filtering</a>
+        
+      
+        
+        <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+        <li><a href="../docs/animating.html">Animating</a>
+        
+      
+        
+        <li><a href="../docs/adding-items.html">Adding items</a>
+        
+      
+        
+        <li class="current"><a href="#content">Troubleshooting</a>
+          <ul class="toc">
+            
+            <li><a href="#reporting_bugs_and_issues">Reporting bugs and issues</a></li>
+            
+            <li><a href="#support_license">Support license</a></li>
+            
+            <li><a href="#additional_resources">Additional resources</a></li>
+            
+            <li><a href="#unloaded_media">Unloaded media</a></li>
+            
+            <li><a href="#images">Images</a></li>
+            
+            <li><a href="#fontface_fonts">@font-face fonts</a></li>
+            
+            <li><a href="#css_transforms_in_opera">CSS transforms in Opera</a></li>
+            
+            <li><a href="#infinite_scroll_with_filtering_or_sorting">Infinite Scroll with filtering or sorting</a></li>
+            
+            <li><a href="#prepending_items">Prepending items</a></li>
+            
+            <li><a href="#flash">Flash</a></li>
+            
+          </ul>
+        </li>
+        
+      
+        
+        <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+  </nav> <!-- #docs-nav -->
+  
+  <section id="content">
+    
+    <h1>Troubleshooting</h1>
+
+    <h2 id='reporting_bugs_and_issues'>Reporting bugs and issues</h2>
+
+<p><a href='http://github.com/desandro/isotope/issues'>Report bugs and issues on GitHub</a>.</p>
+
+<h3 id='issues-guidelines'>Guidelines</h3>
+
+<ul>
+<li>Look over open and closed issues before submitting yours.</li>
+
+<li>Add a link to a live site with the bug. If the project is confidential, try re-creating it in <a href='http://jsfiddle.net'>jsFiddle</a>.</li>
+</ul>
+
+<p>The issues tracker is for bugs and issues &#8212; when Isotope doesn&#8217;t work as expected. It is not for implementation issues &#8212; when you are having trouble setting up Isotope. Consider a <a href='http://metafizzy.co/#support-license'>Support License</a> for implementation issues. If you&#8217;re not sure, go ahead and submit an issue.</p>
+
+<h2 id='support_license'>Support license</h2>
+
+<p>If you&#8217;ve tried everything and would really like to get my eyes looking at your code, you can purchase a <a href='http://metafizzy.co/#support-license'>Support License from Metafizzy</a>.</p>
+
+<p>Support License is included with Isotope Commercial License.</p>
+
+<h2 id='additional_resources'>Additional resources</h2>
+
+<ul>
+<li>The <a href='http://metafizzy.co/blog/'>Metafizzy blog</a> has posts that cover specialized use cases</li>
+
+<li><a href='http://www.delicious.com/desandro/using:isotope'>Sites using Isotope</a></li>
+
+<li><a href='http://www.delicious.com/desandro/re:isotope'>Miscelleanous Isotope content</a></li>
+
+<li><a href='http://www.delicious.com/desandro/re:isotope+stackoverflow'>Stack Overflow questions on Isotope</a></li>
+</ul>
+
+<h2 id='unloaded_media'>Unloaded media</h2>
+
+<p>Most layout modes (i.e masonry, fitRows) need to measure the size of each item to appropriately account for its space in the layout. Unloaded media files like images and @font-face fonts can throw off layout and cause item elements to overlap one another. Ideally, Isotope layouts should be initialized after all inner content has loaded.</p>
+
+<h2 id='images'>Images</h2>
+
+<h3 id='inline_dimensions'>Inline dimensions</h3>
+
+<p>For images, the best method is to specify the width and height of images inline.</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;img</span> <span class='na'>src=</span><span class='s'>&quot;img-file.jpg&quot;</span> <span class='na'>width=</span><span class='s'>&quot;280&quot;</span> <span class='na'>height=</span><span class='s'>&quot;160&quot;</span> <span class='nt'>/&gt;</span>
+</code></pre>
+</div>
+<p>If you’re using a PHP-based CMS, you can use the <a href='http://php.net/manual/en/function.getimagesize.php'>getimagesize</a> function.</p>
+
+<h3 id='imagesloaded_plugin'>imagesLoaded plugin</h3>
+
+<p>The next best solution is to use the imagesLoaded plugin included with Isotope. It&#8217;s a fork of <a href='https://gist.github.com/268257'>Paul Irish&#8217;s plugin</a> that finds all the images in a context, and fires a callback function once all the images have loaded.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>imagesLoaded</span><span class='p'>(</span> <span class='kd'>function</span><span class='p'>(){</span>
+  <span class='nx'>$</span><span class='p'>(</span><span class='k'>this</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+    <span class='nx'>itemSelector</span> <span class='o'>:</span> <span class='s1'>&#39;.item&#39;</span><span class='p'>,</span>
+  <span class='p'>});</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h3 id='id1'><code>$(window).load()</code></h3>
+
+<p>Another solution is to initialize Isotope inside <code>$(window).load()</code> instead of <code>$(document).ready()</code>. This will trigger Isotope after all the media on the page has loaded.</p>
+<div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='nb'>window</span><span class='p'>).</span><span class='nx'>load</span><span class='p'>(</span><span class='kd'>function</span><span class='p'>(){</span>
+  <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
+    <span class='c1'>// options...</span>
+  <span class='p'>});</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<h2 id='fontface_fonts'>@font-face fonts</h2>
+
+<p>Both Typekit and Google WebFont Loader provide font events to control scripts based on how fonts are loaded.</p>
+
+<ul>
+<li><a href='http://blog.typekit.com/2010/10/18/more-control-with-typekits-font-events/'>Typekit font events</a></li>
+
+<li><a href='http://code.google.com/apis/webfonts/docs/webfont_loader.html#Events'>Google WebFont Loader: Events</a></li>
+</ul>
+
+<h2 id='css_transforms_in_opera'>CSS transforms in Opera</h2>
+
+<p>Currently, <a href='http://dropshado.ws/post/1260101028/opera-transform-issues'>using CSS transforms in Opera distorts text rendering</a>. To avoid this issue, I recommend disabling Isotope to use transforms.</p>
+
+<p>Isotope&#8217;s default options are already set to not use CSS transforms in Opera.</p>
+<div class='highlight'><pre><code class='javascript'><span class='c1'>// Isotope default options</span>
+<span class='nx'>hiddenStyle</span> <span class='o'>:</span> <span class='nx'>Modernizr</span><span class='p'>.</span><span class='nx'>csstransforms</span> <span class='o'>&amp;&amp;</span> <span class='o'>!</span><span class='nx'>$</span><span class='p'>.</span><span class='nx'>browser</span><span class='p'>.</span><span class='nx'>opera</span> <span class='o'>?</span> 
+  <span class='p'>{</span> <span class='nx'>opacity</span> <span class='o'>:</span> <span class='mi'>0</span><span class='p'>,</span> <span class='nx'>scale</span> <span class='o'>:</span> <span class='mf'>0.001</span> <span class='p'>}</span> <span class='o'>:</span> <span class='c1'>// browsers support CSS transforms, not Opera</span>
+  <span class='p'>{</span> <span class='nx'>opacity</span> <span class='o'>:</span> <span class='mi'>0</span> <span class='p'>},</span> <span class='c1'>// other browsers, including Opera</span>
+<span class='nx'>visibleStyle</span> <span class='o'>:</span> <span class='nx'>Modernizr</span><span class='p'>.</span><span class='nx'>csstransforms</span> <span class='o'>&amp;&amp;</span> <span class='o'>!</span><span class='nx'>$</span><span class='p'>.</span><span class='nx'>browser</span><span class='p'>.</span><span class='nx'>opera</span> <span class='o'>?</span> 
+  <span class='p'>{</span> <span class='nx'>opacity</span> <span class='o'>:</span> <span class='mi'>1</span><span class='p'>,</span> <span class='nx'>scale</span> <span class='o'>:</span> <span class='mi'>1</span> <span class='p'>}</span> <span class='o'>:</span> <span class='c1'>// browsers support CSS transforms, not Opera</span>
+  <span class='p'>{</span> <span class='nx'>opacity</span> <span class='o'>:</span> <span class='mi'>1</span> <span class='p'>},</span> <span class='c1'>// other browsers, including Opera</span>
+<span class='nx'>animationEngine</span> <span class='o'>:</span> <span class='nx'>$</span><span class='p'>.</span><span class='nx'>browser</span><span class='p'>.</span><span class='nx'>opera</span> <span class='o'>?</span> <span class='s1'>&#39;jquery&#39;</span> <span class='o'>:</span> <span class='s1'>&#39;best-available&#39;</span><span class='p'>,</span>
+</code></pre>
+</div>
+<p>Also note that the <a href='animating.html#css_transitions'>recommended transition CSS</a> is missing declarations for Opera.</p>
+
+<h2 id='infinite_scroll_with_filtering_or_sorting'>Infinite Scroll with filtering or sorting</h2>
+
+<p>I recommend against using Infinite Scroll with filtering or sorting. This combination produces a unnecessarily complex user interaction that will frustrate your users. New content gets added, but part of it might be hidden. There is no way for the user to tell what gets hidden or re-arranged when Infinite Scroll adds more content. Exercise <a href='introduction.html#moderation'>moderation</a> with your Isotope implementation.</p>
+
+<p>If you do plan on implementing Infinite Scroll with filtering or sorting (which is a <em>bad idea</em>), use the <code>insert</code> method instead of <code>appended</code>.</p>
+
+<h2 id='prepending_items'>Prepending items</h2>
+
+<p>While there is no prepend method built into Isotope, you can add items to the beginning of a Isotope layout by using sorting and <a href='methods.html#getsortdata'><code>updateSortData</code></a>. See <a href='http://jsfiddle.net/desandro/zXWkw/4/'>Isotope - prepending items on jsFiddle</a>.</p>
+
+<h2 id='flash'>Flash</h2>
+
+<p><a href='http://dropshado.ws/post/4085720152/css-transforms-breaking-flash'>Using CSS transforms with Flash content is a bit buggy in Safari and Firefox</a>. This is problematic when using Isotope on item elements that contain Flash content like YouTube or Vimeo videos, Flash ads, or Flash audio players.</p>
+
+<p>The best way to resolve this issue is to disable CSS transforms by setting the <a href='options.html#transformsenabled'><code>transformsEnabled</code> option</a> to <code><span class='kc'>false</span></code>.</p>
+    
+    
+  <footer>
+    Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+  </footer>
+
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

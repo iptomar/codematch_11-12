@@ -23,12 +23,12 @@ function insert_db($name, $fullname, $source, $repo, $author, $lang, $date, $log
 		} else {
 			$column_family-> insert($name,array("tm_language_P" => "n/a"));
 		}	
-		if(isset($lang[1])){ //1º lingua no array
+		if(isset($lang[1])){ //2º lingua no array
 			$column_family-> insert($name,array("tm_language_S" => strtoupper($lang[1]))); 
 		} else {
 			$column_family-> insert($name,array("tm_language_S" => "n/a"));
 		}			
-		if(isset($lang[2])){ //1º lingua no array
+		if(isset($lang[2])){ //3º lingua no array
 			$column_family-> insert($name,array("tm_language_T" => strtoupper($lang[2]))); 
 		} else {
 			$column_family-> insert($name,array("tm_language_T" => "n/a"));

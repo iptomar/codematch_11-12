@@ -48,9 +48,8 @@ function get_project_launchpad($project) {
 		$string_lang = preg_split('/,/', $launchpad_json->programming_language, -1);
 	} else {
 		$string_lang = array("n/a");
-	}
-	//faz replace da Visual Basic por VB/VBS
-	$string_lang=str_replace('Visual Basic', 'VB/VBS', $string_lang, $count);
+	}	
+	$string_lang=str_replace('Visual Basic', 'VB/VBS', $string_lang, $count); //faz replace da Visual Basic por VB/VBS
 	if(isset($launchpad_json->date_created)){
 		$string_date = array();
 		preg_match("/(.*)T/", $launchpad_json->date_created, $match);

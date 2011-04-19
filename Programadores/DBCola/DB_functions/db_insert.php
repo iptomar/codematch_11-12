@@ -6,7 +6,7 @@ require_once('phpcassa/columnfamily.php');
 // require ("db_insert.php"); -> on API search script file
 // db_insert(<arguments>); 8 arguments accepted - if some are inexistent use Zero value to maintain DB structure
 
-function insert_db($name,$fullname,$source,$repo,$lang,$author,$lastup,$logo){
+function insert_db($name,$fullname,$source,$repo,$author,$lang,$lastup,$logo){
 try{
 
 //counters

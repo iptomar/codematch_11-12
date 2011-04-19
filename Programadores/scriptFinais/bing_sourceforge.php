@@ -4,29 +4,30 @@ include "db_insert.php";
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
-while ($i <= 10) {
+while ($i <= 230) {
 	$bing_array = get_bing_sourceforge(10, $i);
 	foreach($bing_array as $arg) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
-			//insert_db($name_project, $title, $source, "Sourceforge", $owner, $language, $created_date, $logo);
-			print_r("<b>Project:</b> ".$name_project."<br>");
-			print_r("<b>Title:</b> ".$title."<br>");
-			print_r("<b>Source:</b> ".$source."<br>");
-			print_r("<b>Repository:</b> Sourceforge<br>");
-			foreach($owner as $arg_owner) {
-				print_r("<b>Owner:</b> ".$arg_owner."<br>");
-			}
-			foreach($language as $arg_lang) {
-				print_r("<b>Languages:</b> ".$arg_lang."<br>");
-			}
-			print_r("<b>Date Created:</b> ".$created_date[0]."<br>");
-			print_r("<b>Date Updated:</b> ".$created_date[1]."<br>");
-			print_r("<b>Logo:</b> <img src='".$logo."'><br><hr><br>");
+			insert_db($name_project, $title, $source, "Sourceforge", $owner, $language, $created_date, $logo);
+//			print_r("<b>Project:</b> ".$name_project."<br>");
+//			print_r("<b>Title:</b> ".$title."<br>");
+//			print_r("<b>Source:</b> ".$source."<br>");
+//			print_r("<b>Repository:</b> Sourceforge<br>");
+//			foreach($owner as $arg_owner) {
+//				print_r("<b>Owner:</b> ".$arg_owner."<br>");
+//			}
+//			foreach($language as $arg_lang) {
+//				print_r("<b>Languages:</b> ".$arg_lang."<br>");
+//			}
+//			print_r("<b>Date Created:</b> ".$created_date[0]."<br>");
+//			print_r("<b>Date Updated:</b> ".$created_date[1]."<br>");
+//			print_r("<b>Logo:</b> <img src='".$logo."'><br><hr><br>");
 		}
 	}
 	$i=$i+10;
 }
+print_r("Done Bing Sourceforge ".date("Y-m-d"));
 
 // Parametros:
 //	- n/a

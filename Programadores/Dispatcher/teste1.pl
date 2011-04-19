@@ -15,3 +15,4 @@ print "######Separador######";
 print "\n";
 
 print $list;
+print "\n"

@@ -1,37 +1,31 @@
 <?php
-//nao finalizado!!!
+
 require_once('phpcassa/connection.php');
 require_once('phpcassa/columnfamily.php');
 
+//this function sort  tm_date in descending order by repository
 
-function get_date(){
+function get_date($repo){
 	$conn = new Connection('tolmai');
 	$column_family= new ColumnFamily($conn,'tm');
-	$repo='Github';
-//------------------- Search repository ----------------
+	
 	$index_exp = CassandraUtil::create_index_expression('tm_repository',$repo);
 	$index_clause = CassandraUtil::create_index_clause(array($index_exp));
 	$rows = $column_family->get_indexed_slices($index_clause);
-	$teste = array();
-	//project counter
-	$count =0;
+	
+	$date = array();
+
 	$i=1;
-foreach($rows as $key => $columns) {
-    //count matches
-	$count++;
-	asort($frutas);
-
-	$test=$column_family->get($key,$columns=array('tm_fullname','tm_date_c'));
 	
-	$teste[$i]=$test;
-
-	$i++;
-
-	arsort($teste);
-
+	foreach($rows as $key => $columns) 
+	{
+		$test=$column_family->get($key,$columns=array('tm_fullname','tm_date_c'));
+		$date[$i]=$test;
+		$i++;
 	}
-	
-	return ($teste);
+	//Sort an array in reverse order and maintain index association
+	arsort($date);
+	return ($date);
 	}
 
 

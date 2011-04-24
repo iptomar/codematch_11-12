@@ -45,7 +45,7 @@ function get_bing_sourceforge($lenght, $offset) {
 	foreach($bing_json->SearchResponse->Web->Results as $arg) {
 		//retira o nome do utilizador atraves do URL
 		preg_match("/http:\/\/sourceforge.net\/projects\/([A-Za-z0-9-_]*).*/", $arg->Url, $match);
-		if (!empty($match[1])) {
+		if (isset($match[1])) {
 			//match[1] = utilizador
 			array_push($bing_array, get_project_sourceforge($match[1])); //adiciona os projectos ao array
 		}

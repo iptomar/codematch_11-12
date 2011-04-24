@@ -1,0 +1,20 @@
+
+html, body {border: 0; margin: 0; padding: 0;}
+
+body {
+
+	background-image: url(../images/back.png);
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+  	min-width: 970px;
+  	color: black;
+}
+
+.banner{
+	float: left;
+}
+.header{
+	width:2560px;
+	height:272px;
+}

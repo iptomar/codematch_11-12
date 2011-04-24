@@ -1,6 +1,6 @@
 <?php
 include "APIS/github.php"; //include da api github
-include "db_insert.php";
+// include "db_insert.php";
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
@@ -10,7 +10,7 @@ while ($i <= 230) {
 	foreach($bing_array as $arg) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
-			insert_db($name_project, $title, $source, "Github", $owner, $language, $created_date, $logo);
+			// insert_db($name_project, $title, $source, "Github", $owner, $language, $created_date, $logo);
 //			print_r("<b>Project:</b> ".$name_project."<br>");
 //			print_r("<b>Title:</b> ".$title."<br>");
 //			print_r("<b>Source:</b> ".$source."<br>");

@@ -4,10 +4,10 @@ include "APIS/github.php"; //include da api github
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
-while ($i <= 1) {
+while ($i <= 100) {
 	//$argv[1] - argumento na linha de comandos
-	$yahoo_array = get_yahoo_github(10, $i);
-	foreach($yahoo_array as $arg) {
+	$yahoo_array = get_yahoo_github(100, $i);
+    foreach($yahoo_array as $arg) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
 			//insert_db($name_project, $title, $source, "Github", $owner, $language, $created_date, $logo);
@@ -22,9 +22,10 @@ while ($i <= 1) {
 			print_r("<b>Date Created:</b> ".$created_date[0]."<br>");
 			print_r("<b>Date Updated:</b> ".$created_date[1]."<br>");
 			print_r("<b>Logo:</b> <img src='".$logo."'><br><hr><br>");
-		}
+ 		}
+      $i=$i+1;
 	}
-	$i=$i+1;
+
 }
 
 // Parametros:
@@ -41,14 +42,29 @@ function get_yahoo_github($lenght, $offset) {
 	$yahoo_json = json_decode($page); //descodifica string JSON
 	$yahoo_array = array(); //cria o array
 	foreach($yahoo_json->ysearchresponse->resultset_web as $arg) {
-		//retira o nome do projecto e utilizador atraves do URL
-		preg_match("/https:\/\/github.com\/([A-Za-z0-9]*)\/([A-Za-z0-9-_~]*).*/", $arg->url, $match);
-		if ((isset($match[2])) && ($match[1]!="blog")) { //o nome do utilizador nao pode ser blog
-			//match[1] = utilizador, match[2] =  nome projecto
+     $match = array();
+    //retira o nome do projecto e utilizador atraves do URL
+        preg_match("/http:\/\/github.com\/([A-Za-z0-9]*)\/([A-Za-z0-9-_~]*).*/", $arg->url, $match);
+        //print_r("<pre>");
+//        print_r($match);
+//        print_r("</pre>");
+
+	   	// if ($match[1]!="" && $match[2]!="") {
+            //if(!empty($match)){
+            //if(isset($match[1])){
+            //$exe1 = $match[1];
+//             $exe2 = $match[2];
+        			//match[1] = utilizador, match[2] =  nome projecto
 			array_push($yahoo_array, get_project_github($match[1],$match[2])); //adiciona os projectos ao array
-		}
+
+          // }
+// }
+//        }
 	}
-	unset($yahoo_array[0]); //remove 1º posicao em branco
+    unset($yahoo_array[0]); //remove 1º posicao em branco
+//    print_r("<pre>");
+//    print_r($yahoo_array);
+//    print_r("</pre>");
 	return (array)$yahoo_array;
 }
 ?>

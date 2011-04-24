@@ -41,14 +41,27 @@ function get_yahoo_sourceforge($lenght, $offset) {
     curl_close($ch);	//encerra sessao
 	$yahoo_json = json_decode($page); //descodifica string JSON
 	$yahoo_array = array(); //cria o array
-	foreach($yahoo_json->ysearchresponse->resultset_web as $arg) {
+
+
+
+    foreach($yahoo_json->ysearchresponse->resultset_web as $args) {
+      $matches = array();
+      //print_r("<pre>");
+//    print_r($args);
+//    print_r("</pre>");
 		//retira o nome do utilizador atraves do URL
-		preg_match("/http:\/\/sourceforge.net\/projects\/([A-Za-z0-9-_]*).*/", $arg->url, $match);
-		if (!empty($match[1])) {
+        preg_match('/http:\\/\\/sourceforge.net\\/projects\\/([A-Za-z0-9-_]*).*/', $args->title, $matches);
+       // print_r("<pre>");
+//    print_r($matches);
+//    print_r("</pre>");
+        //if (!empty($match[1])) {
 			//match[1] = utilizador
-			array_push($yahoo_array, get_project_sourceforge($match[1])); //adiciona os projectos ao array
-		}
-	}
+			array_push($yahoo_array, get_project_sourceforge($matches[1])); //adiciona os projectos ao array
+		//}
+        //print_r("<pre>");
+//    print_r($yahoo_array);
+//    print_r("</pre>");
+	 }
 	unset($yahoo_array[0]); //remove 1º posicao em branco
 	return (array)$yahoo_array;
 }

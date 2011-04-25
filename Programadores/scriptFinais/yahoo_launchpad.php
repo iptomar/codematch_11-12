@@ -1,16 +1,16 @@
 <?php
 include "APIS/launchpad.php"; //include da api launchpad
-include "db_insert.php"; //include dos metodos para inserir os dados
+//include "db_insert.php"; //include dos metodos para inserir os dados
 
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
-while ($i <= 1) {
-	$yahoo_array = get_yahoo_launchpad(10, $i);
+while ($i <= 230) {
+	$yahoo_array = get_yahoo_launchpad(100, $i);
 	foreach($yahoo_array as $exe) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $exe;
 		if (isset($name_project)) {
-			insert_db($name_project, $title, $source, "Launchpad", $owner, $language, $created_date, $logo);
+			//insert_db($name_project, $title, $source, "Launchpad", $owner, $language, $created_date, $logo);
 			print_r("<b>Project:</b> ".$name_project."<br>");
 			print_r("<b>Title:</b> ".$title."<br>");
 			print_r("<b>Source:</b> ".$source."<br>");

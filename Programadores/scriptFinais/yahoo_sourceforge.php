@@ -4,7 +4,7 @@ include "APIS/sourceforge.php"; //include da api sourceforge
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
-while ($i <= 5) {
+while ($i <= 10) {
 	$yahoo_array = get_yahoo_sourceforge(10, $i);
 	foreach($yahoo_array as $arg) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
@@ -41,18 +41,21 @@ function get_yahoo_sourceforge($lenght, $offset) {
     $page = curl_exec($ch);	//executa as opcoes definidas
     curl_close($ch);	//encerra sessao
 	$yahoo_json = json_decode($page); //descodifica string JSON
-//	echo "<pre>";
-//	print_r($yahoo_json);
-//	echo "</pre>";
 	$yahoo_array = array(); //cria o array
 	foreach($yahoo_json->ysearchresponse->resultset_web as $arg) {
 		//retira o nome do utilizador atraves do URL
-		preg_match("/http:\/\/sourceforge.net\/projects\/([A-Za-z0-9-_]*).*/", $arg->title, $match);
-		if (isset($match[1])) {
+		//preg_match("/sourceforge.net\/projects\/([A-Za-z0-9-_]*).*/", 'http://sourceforge.net/projects/wdm/', $match);
+        $match = preg_split('@[/]@', $arg->title, -1);
+        //echo "<pre>";
+//	      print_r($match);
+//	      echo "</pre>";
+
+    if (isset($match[5])) {
 			//match[1] = utilizador
-			array_push($yahoo_array, get_project_sourceforge($match[1])); //adiciona os projectos ao array
-		}
+			array_push($yahoo_array, get_project_sourceforge($match[5])); //adiciona os projectos ao array
+
 	}
+    }
 	unset($yahoo_array[0]); //remove 1º posicao em branco
 	return (array)$yahoo_array;
 }

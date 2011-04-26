@@ -1,0 +1,23 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("input").keyup(function(){
+    txt=$("input").val();
+    $.post("gethint.php",{suggest:txt},function(result){
+      $("span").html(result);
+    });
+  });
+});
+</script>
+</head>
+<body>
+<p>Escrevendo uma letra obtém-se uma sugestão de nome</p>
+<p>Digite um nome:</p>
+Nome:
+
+<input type="text" />
+<p>Sugestões: <span></span></p>
+</body>
+</html>

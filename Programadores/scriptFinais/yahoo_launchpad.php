@@ -4,7 +4,7 @@ include "db_insert.php"; //include dos metodos para inserir os dados
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
-while ($i <= 230) {
+while ($i <= 1000) {
 	$yahoo_array = get_yahoo_launchpad(50, $i);
 	foreach($yahoo_array as $exe) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $exe;
@@ -23,7 +23,7 @@ while ($i <= 230) {
 //			print_r("<b>Logo:</b> <img src='".$logo."'><br><hr><br>");;
 		}
 	}
-	$i=$i+1;
+	$i=$i+50;
 }
 print_r("Done Yahoo Launchpad ".date("Y-m-d")."\n");
 
@@ -36,8 +36,11 @@ Parametros:
 	- array() (retorna array com os dados do get_project_launchpad)
 */
 function get_yahoo_launchpad($lenght, $offset) {
+	$thequery = urlencode('"http://launchpad.net/"site:launchpad.net');
+	$apikey = 'po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-';
+	$url = 'http://boss.yahooapis.com/ysearch/web/v1/'.$thequery.'?&format=json&count='.$lenght.'&appid='.$apikey.'&start='.$offset.'';
     $ch = @curl_init(); //inicia uma nova sessao
-    curl_setopt($ch, CURLOPT_URL, 'http://boss.yahooapis.com/ysearch/web/v1/http://launchpad.net/?appid=po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-&format=json&sites=launchpad.net&start='.$offset.'&count='.$lenght.'');  //faz a pesquisa contida no url
+    curl_setopt($ch, CURLOPT_URL, $url);  //faz a pesquisa contida no url
 	curl_setopt($ch, CURLOPT_USERAGENT, 'Googlebot/2.1'); //utiliza Googlebot 2.1
     curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);	//define o retorno como string
     $page = curl_exec($ch);	//executa as opcoes definidas
@@ -56,13 +59,4 @@ function get_yahoo_launchpad($lenght, $offset) {
 	unset($yahoo_array[0]); //remove 1º posicao em branco
 	return (array)$yahoo_array;
 }
-
-
-
 ?>
-
-
-
-
-
-

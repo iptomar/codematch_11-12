@@ -1,32 +1,31 @@
 <?php
 include "APIS/launchpad.php"; //include da api launchpad
-//include "db_insert.php"; //include dos metodos para inserir os dados
-
+include "db_insert.php"; //include dos metodos para inserir os dados
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
 while ($i <= 230) {
-	$yahoo_array = get_yahoo_launchpad(100, $i);
+	$yahoo_array = get_yahoo_launchpad(50, $i);
 	foreach($yahoo_array as $exe) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $exe;
 		if (isset($name_project)) {
-			//insert_db($name_project, $title, $source, "Launchpad", $owner, $language, $created_date, $logo);
-			print_r("<b>Project:</b> ".$name_project."<br>");
-			print_r("<b>Title:</b> ".$title."<br>");
-			print_r("<b>Source:</b> ".$source."<br>");
-			print_r("<b>Repository:</b> Launchpad<br>");
-			print_r("<b>Owner:</b> ".$owner[0]."<br>");
-			foreach($language as $exe_lang) {
-				print_r("<b>Languages:</b> ".$exe_lang."<br>");
-			}
-			print_r("<b>Date Created:</b> ".$created_date[0]."<br>");
-			print_r("<b>Date Updated:</b> ".$created_date[1]."<br>");
-			print_r("<b>Logo:</b> <img src='".$logo."'><br><hr><br>");;
+			insert_db($name_project, $title, $source, "Launchpad", $owner, $language, $created_date, $logo);
+//			print_r("<b>Project:</b> ".$name_project."<br>");
+//			print_r("<b>Title:</b> ".$title."<br>");
+//			print_r("<b>Source:</b> ".$source."<br>");
+//			print_r("<b>Repository:</b> Launchpad<br>");
+//			print_r("<b>Owner:</b> ".$owner[0]."<br>");
+//			foreach($language as $exe_lang) {
+//				print_r("<b>Languages:</b> ".$exe_lang."<br>");
+//			}
+//			print_r("<b>Date Created:</b> ".$created_date[0]."<br>");
+//			print_r("<b>Date Updated:</b> ".$created_date[1]."<br>");
+//			print_r("<b>Logo:</b> <img src='".$logo."'><br><hr><br>");;
+		}
 	}
 	$i=$i+1;
 }
-}
-
+print_r("Done Yahoo Launchpad ".date("Y-m-d")."\n");
 
 //###########################################################################################################
 

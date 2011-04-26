@@ -26,7 +26,7 @@ while ($i <= 230) {
 	}
 	$i=$i+10;
 }
-print_r("Done Bing Launchpad ".date("Y-m-d"));
+print_r("Done Bing Launchpad ".date("Y-m-d")."\n");
 
 // Parametros:
 //	- n/a

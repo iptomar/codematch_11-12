@@ -27,7 +27,7 @@ while ($i <= 10) {
 	}
 	$i=$i+1;
 }
-print_r("Done Yahoo Sourceforge ".date("Y-m-d"));
+print_r("Done Yahoo Sourceforge ".date("Y-m-d")."\n");
 
 // Parametros:
 //	- n/a

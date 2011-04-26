@@ -4,7 +4,7 @@ include "db_insert.php";
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
-while ($i <= 230) {
+while (($i+10) <= 1000) {
 	$bing_array = get_bing_sourceforge(10, $i);
 	foreach($bing_array as $arg) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;

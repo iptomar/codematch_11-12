@@ -25,12 +25,12 @@ function insert_db($name, $fullname, $source, $repo, $author, $lang, $date, $log
 			$column_family-> insert($name,array("tm_language_P" => "N/A"));
 		}	
 		if(isset($lang[1])){ //2º lingua no array
-			$column_family-> insert($name,array("tm_language_S" => $lang[1])); 
+			$column_family-> insert($name,array("tm_language_S" => $lan_array[1])); 
 		} else {
 			$column_family-> insert($name,array("tm_language_S" => "N/A"));
 		}			
 		if(isset($lang[2])){ //3º lingua no array
-			$column_family-> insert($name,array("tm_language_T" => $lang[2])); 
+			$column_family-> insert($name,array("tm_language_T" => $lan_array[2])); 
 		} else {
 			$column_family-> insert($name,array("tm_language_T" => "N/A"));
 		}

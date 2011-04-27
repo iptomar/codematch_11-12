@@ -22,17 +22,17 @@ function insert_db($name, $fullname, $source, $repo, $author, $lang, $date, $log
 		if(isset($lang[0])){ //1º lingua no array
 			$column_family-> insert($name,array("tm_language_P" =>$lan_array[0])); 
 		} else {
-			$column_family-> insert($name,array("tm_language_P" => "n/a"));
+			$column_family-> insert($name,array("tm_language_P" => "N/A"));
 		}	
 		if(isset($lang[1])){ //2º lingua no array
 			$column_family-> insert($name,array("tm_language_S" => $lang[1])); 
 		} else {
-			$column_family-> insert($name,array("tm_language_S" => "n/a"));
+			$column_family-> insert($name,array("tm_language_S" => "N/A"));
 		}			
 		if(isset($lang[2])){ //3º lingua no array
 			$column_family-> insert($name,array("tm_language_T" => $lang[2])); 
 		} else {
-			$column_family-> insert($name,array("tm_language_T" => "n/a"));
+			$column_family-> insert($name,array("tm_language_T" => "N/A"));
 		}
 		$owner="";
 		foreach($author as $arg) { //percorre o array do autor e junta numa string separados por ;

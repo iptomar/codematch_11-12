@@ -28,9 +28,9 @@ my $ctrl3 = 0;
 
 #Main Code
 
-
+print "$who\n";
 print "$input\n";
-print "$cmd";
+print "$cmd\n";
 
 $thr1 = threads->new(\&executa($cmd)); 
 #Starts $thread 1
@@ -115,7 +115,7 @@ print "*            TOLMAI DISPATCHER               *";
 print "*               Version 1.0                  *";
 print "**********************************************";
 print "*                                            *";
-print "*     	    Welcome, ".$who."           *";
+print "*     	      Welcome, $who              *";
 print "*                                            *";
 print "**********************************************";
 print "";

@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+#Feito por David Semiao e João Cardoso
+
 #Ignorar uma thread
     use threads;
 

@@ -26,19 +26,18 @@ my $ctrl3 = 0;
 
 #Main Code
 
-#Variable construction test $cmd
+
 print "$input\n";
 print "$cmd";
 
-#Starts $thread 1
 $thr1 = threads->new(\&executa($cmd)); 
+#Starts $thread 1
 
-#Starts $thread 2
 $thr2 = threads->new(\&executa($cmd)); 
+#Starts $thread 2
 
-#Starts $thread 3
 $thr3 = threads->new(\&executa($cmd)); 
-
+#Starts $thread 3
 
 # while($ctrl1 != 1 && $ctrl2 != 1 && $ctrl3 != 1){
 	
@@ -84,32 +83,19 @@ sub executa
 {	
 
 
-	#$comm - command to execute
-	
+
 	my $comm = $_[0];
-	
-	#Temporary variables
 	
 	my ($wrt, $read, $err);
 	
-	#Variable test write
-	
 	print "\n$comm\n\n";
 
-	#Open3 execution command
-	
 	my $pid = open3($wrt, $read, $err, $comm);
 
-	#Message test for process watch
-	
 	system('echo $_[0] | wall');
-	
-	#Wait dor process
 	
 	waitpid( $pid, 0 ) or die "$!\n";
 
-	#Keeps return from execution: 1 - Error; 0 - Well executed
-	
 	my $ret = $?;
 	
 	print "\n $ret - Good execution of process\n\n";

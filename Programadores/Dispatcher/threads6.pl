@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+#Feito por David Semiao e João Cardoso
+
     use threads;
     use threads::shared;
 

@@ -1,5 +1,7 @@
 #!/bin/usr/perl
 
+#Feito por David Semiao e João Cardoso
+
 #Libraries
 #Libraries necessary for the correct implementation
 

@@ -7,6 +7,7 @@ require_once('phpcassa/columnfamily.php');
 // db_insert(<arguments>); 11 arguments accepted - if some are inexistent use Zero value to maintain DB structure
 
 function insert_db($name, $fullname, $source, $repo, $author, $lang, $date, $logo){
+   $lan_array = array_map("strtoupper", $lang);
 	try{
 		//make connection with database
 		$conn = new Connection('tolmai');
@@ -19,19 +20,19 @@ function insert_db($name, $fullname, $source, $repo, $author, $lang, $date, $log
 		$column_family-> insert($name,array("tm_source" => $source));
 		$column_family-> insert($name,array("tm_repository" => $repo));
 		if(isset($lang[0])){ //1º lingua no array
-			$column_family-> insert($name,array("tm_language_P" => strtoupper($lang[0]))); 
+			$column_family-> insert($name,array("tm_language_P" =>$lan_array[0])); 
 		} else {
-			$column_family-> insert($name,array("tm_language_P" => "n/a"));
+			$column_family-> insert($name,array("tm_language_P" => "N/A"));
 		}	
 		if(isset($lang[1])){ //2º lingua no array
-			$column_family-> insert($name,array("tm_language_S" => strtoupper($lang[1]))); 
+			$column_family-> insert($name,array("tm_language_S" => $lang[1])); 
 		} else {
-			$column_family-> insert($name,array("tm_language_S" => "n/a"));
+			$column_family-> insert($name,array("tm_language_S" => "N/A"));
 		}			
 		if(isset($lang[2])){ //3º lingua no array
-			$column_family-> insert($name,array("tm_language_T" => strtoupper($lang[2]))); 
+			$column_family-> insert($name,array("tm_language_T" => $lang[2])); 
 		} else {
-			$column_family-> insert($name,array("tm_language_T" => "n/a"));
+			$column_family-> insert($name,array("tm_language_T" => "N/A"));
 		}
 		$owner="";
 		foreach($author as $arg) { //percorre o array do autor e junta numa string separados por ;

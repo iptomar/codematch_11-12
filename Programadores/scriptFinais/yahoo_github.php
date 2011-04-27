@@ -4,9 +4,9 @@ include "db_insert.php";
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
-while ($i <= 500) {
+while ($i <= 1) {
 	//$argv[1] - argumento na linha de comandos
-	$yahoo_array = get_yahoo_github(50, $i);
+	$yahoo_array = get_yahoo_github(10, $i);
     foreach($yahoo_array as $arg) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
@@ -23,7 +23,7 @@ while ($i <= 500) {
 			print_r("<b>Date Updated:</b> ".$created_date[1]."<br>");
 			print_r("<b>Logo:</b> <img src='".$logo."'><br><hr><br>");
  		}
-      $i=$i+50;
+      $i=$i+1;
 	}
 }
 print_r("Done Yahoo Github ".date("Y-m-d")."\n");

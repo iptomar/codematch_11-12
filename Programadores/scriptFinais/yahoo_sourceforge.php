@@ -4,8 +4,8 @@ include "APIS/sourceforge.php"; //include da api sourceforge
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
-while ($i <= 10) {
-	$yahoo_array = get_yahoo_sourceforge(20, $i);
+while ($i <= 1) {
+	$yahoo_array = get_yahoo_sourceforge(10, $i);
 	foreach($yahoo_array as $arg) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
@@ -34,8 +34,14 @@ print_r("Done Yahoo Sourceforge ".date("Y-m-d")."\n");
 // Retorna:
 //	- array() (retorna array com os dados do get_project_sourceforge)
 function get_yahoo_sourceforge($lenght, $offset) {
+
+    $thequery = urlencode('"http://sourceforge.net/projects/"site=sourceforge.net');
+	$apikey = 'po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-';
+	$url = 'http://boss.yahooapis.com/ysearch/web/v1/'.$thequery.'?&format=json&count='.$lenght.'&appid='.$apikey.'&start='.$offset.'';
+
+
     $ch = @curl_init(); //inicia uma nova sessao
-    curl_setopt($ch, CURLOPT_URL, 'http://boss.yahooapis.com/ysearch/web/v1/http://sourceforge.net/projects/?appid=po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E-&format=json&sites=sourceforge.net&start='.$offset.'&count='.$lenght.'');  //faz a pesquisa contida no url
+    curl_setopt($ch, CURLOPT_URL, $url);  //faz a pesquisa contida no url
 	curl_setopt($ch, CURLOPT_USERAGENT, 'Googlebot/2.1'); //utiliza Googlebot 2.1
     curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);	//define o retorno como string
     $page = curl_exec($ch);	//executa as opcoes definidas
@@ -44,7 +50,7 @@ function get_yahoo_sourceforge($lenght, $offset) {
 	$yahoo_array = array(); //cria o array
 	foreach($yahoo_json->ysearchresponse->resultset_web as $arg) {
 		//retira o nome do utilizador atraves do URL
-		//preg_match("/sourceforge.net\/projects\/([A-Za-z0-9-_]*).*/", 'http://sourceforge.net/projects/wdm/', $match);
+		// preg_match("/sourceforge.net\/projects\/([A-Za-z0-9-_]*).*/", $arg->title, $match);
         $match = preg_split('@[/]@', $arg->title, -1);
         //echo "<pre>";
 //	      print_r($match);

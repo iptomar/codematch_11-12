@@ -1,0 +1,36 @@
+http://developer.yahoo.com/faq/ -> perguntas frequentes
+
+http://info.yahoo.com/guidelines/us/yahoo/ydn/ydn-3955.html
+
+https://login.yahoo.com/config/login_verify2?.src=devnet&.done=http%3A%2F%2Fdeveloper.apps.yahoo.com%2Fwsregapp%2F -->create a account and a id yahoo
+
+http://en.wikipedia.org/wiki/Representational_State_Transfer -> about rest
+
+
+
+
+http://developer.yahoo.com/php/tutorials/water_bug_tutorial-making_rest_request.html > REST request
+
+http://developer.yahoo.com/search/rate.html ->limitador de pesquisas
+
+http://developer.yahoo.com/search/errors.html ->mensagens e codigo de erros
+
+http://developer.yahoo.com/everything.html ->todos os APIs que o yahoo tem
+
+http://info.yahoo.com/legal/us/yahoo/search/bosstos/bosstos-2317.html  ->termos de utilização para a search API
+
+http://info.yahoo.com/legal/us/yahoo/api/api-2140.html ->termos de utilização para todas as APIS
+
+
+Your application id is po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E- 
+Your shared secret is 90272fe45350c23063e1742374b6bab9 
+For application entrypoint -> http://www.tolmai.com/~alvaro
+
+BBAuth URL: http://www.tolmai.com/~alvaro
+ID: po6V4W7IkY2t6hn8Ab51nFT_HKtEocokU.E- 
+Shared Secret: 90272fe45350c23063e1742374b6bab9
+Scope: BOSS Search Service
+
+psi_alvaro@yahoo.com
+
+

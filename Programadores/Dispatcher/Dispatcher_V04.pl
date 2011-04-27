@@ -19,6 +19,8 @@ if (!$input){
 
 my $cmd = "perl ".$input." ";
 
+my $who = system('whoami');
+
 my $ctrl1 = 0;
 my $ctrl2 = 0;
 my $ctrl3 = 0;
@@ -103,6 +105,25 @@ sub executa
 	return;
 }
 
+#Menu Function
+
+sub menu{
+
+print "**********************************************";
+print "*                                            *";
+print "*            TOLMAI DISPATCHER               *";
+print "*               Version 1.0                  *";
+print "**********************************************";
+print "*                                            *";
+print "*     	    Welcome, ".$who."           *";
+print "*                                            *";
+print "**********************************************";
+print "";
+print "";
+print "";
+
+
+}
 
 #Wait for RETURN
 

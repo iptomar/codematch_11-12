@@ -1,17 +1,17 @@
 <?php
 include "APIS/sourceforge.php"; //include da api sourceforge
-// include "db_insert.php";
+include "db_insert.php";
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
-while ($i <= 1) {
+while ($i <= 1000) {
 	$yahoo_array = get_yahoo_sourceforge(50, $i);
 	foreach($yahoo_array as $arg) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
-			// insert_db($name_project, $title, $source, "Sourceforge", $owner, $language, $created_date, $logo);
-			print_r("<b>Project:</b> ".$name_project."<br>");
-			//print_r("<b>Title:</b> ".$title."<br>");
+			insert_db($name_project, $title, $source, "Sourceforge", $owner, $language, $created_date, $logo);
+//			print_r("<b>Project:</b> ".$name_project."<br>");
+//			print_r("<b>Title:</b> ".$title."<br>");
 //			print_r("<b>Source:</b> ".$source."<br>");
 //			print_r("<b>Repository:</b> Sourceforge<br>");
 //			foreach($owner as $arg_owner) {
@@ -25,7 +25,7 @@ while ($i <= 1) {
 //			print_r("<b>Logo:</b> <img src='".$logo."'><br><hr><br>");
 		}
 	}
-	$i=$i+1;
+	$i=$i+50;
 }
 print_r("Done Yahoo Sourceforge ".date("Y-m-d")."\n");
 

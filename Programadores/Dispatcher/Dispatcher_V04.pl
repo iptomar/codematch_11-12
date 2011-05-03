@@ -19,8 +19,6 @@ if (!$input){
 
 my $cmd = "perl ".$input." ";
 
-my $who = system('whoami');
-
 my $ctrl1 = 0;
 my $ctrl2 = 0;
 my $ctrl3 = 0;
@@ -28,17 +26,22 @@ my $ctrl3 = 0;
 
 #Main Code
 
-print "$who\n";
+menu();
+
 print "$input\n";
 print "$cmd\n";
 
-$thr1 = threads->new(\&executa($cmd)); 
+$thr1 = threads->create(\&executa($cmd)); 
 #Starts $thread 1
 
-$thr2 = threads->new(\&executa($cmd)); 
+$thr1->join();
+
+print "$thr1";
+
+$thr2 = threads->create(\&executa($cmd)); 
 #Starts $thread 2
 
-$thr3 = threads->new(\&executa($cmd)); 
+$thr3 = threads->create(\&executa($cmd)); 
 #Starts $thread 3
 
 # while($ctrl1 != 1 && $ctrl2 != 1 && $ctrl3 != 1){
@@ -84,23 +87,20 @@ para();
 sub executa
 {	
 
-
-
 	my $comm = $_[0];
 	
 	my ($wrt, $read, $err);
 	
-	print "\n$comm\n\n";
-
 	my $pid = open3($wrt, $read, $err, $comm);
-
-	system('echo $_[0] | wall');
+	
+	print "$pid\n\n";
+	#system('echo $_[0] | wall');
 	
 	waitpid( $pid, 0 ) or die "$!\n";
 
 	my $ret = $?;
 	
-	print "\n $ret - Good execution of process\n\n";
+	print "\n $ret returned - Good execution of process\n\n";
 	
 	return;
 }
@@ -109,15 +109,23 @@ sub executa
 
 sub menu{
 
-print "**********************************************";
-print "*                                            *";
-print "*            TOLMAI DISPATCHER               *";
-print "*               Version 1.0                  *";
-print "**********************************************";
-print "*                                            *";
-print "*     	      Welcome, $who              *";
-print "*                                            *";
-print "**********************************************";
+
+
+
+open FH, "whoami|" or die "Failed";
+
+my @who = qx{"whoami" 2>&1};
+
+
+print "**********************************************\n";
+print "*                                            *\n";
+print "*            TOLMAI DISPATCHER               *\n";
+print "*               Version 1.0                  *\n";
+print "**********************************************\n";
+print "                                              \n";
+print " 	          Welcome, $who[0]\n               ";
+print "                                              \n";
+print "**********************************************\n";
 print "";
 print "";
 print "";

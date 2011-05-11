@@ -14,7 +14,7 @@ $column_family= new ColumnFamily($conn,'tm');
 	
 //------------------- Search repository ----------------
 $index_exp = CassandraUtil::create_index_expression('tm_repository',$repo);
-$index_clause = CassandraUtil::create_index_clause(array($index_exp));
+$index_clause = CassandraUtil::create_index_clause(array($index_exp),'', $column_count=10000);
 $rows = $column_family->get_indexed_slices($index_clause);
 
 //project counter

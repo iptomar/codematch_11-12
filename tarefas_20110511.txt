@@ -3,13 +3,15 @@ NOTA - este documento foi feito com base na apresentação da aula teórica de hoje
 
 
 Tarefas:
+-->Construção do site: --------------------------------------------------------------------------------------------------------------- Raquel
+
 Vista inicial
 -->5 últimos projectos de cada repositório (últimos acedidos)
 -->Nuvem de linguagens
 
 
 Vista de repositório (Github, Launchpad,...)
--->Edição de HTML com:
+-->Edição de HTML com: --------------------------------------------------------------------------------------------------------------- Raquel (style)
 	lista de repositórios com
 	 -nome do repositório, 
 	 -descrição do repositório,
@@ -25,26 +27,25 @@ Vista de repositório (Github, Launchpad,...)
 
 
 
-
-Link de vista inicial (top linguagens):
---> Top de linguagens para cada repositório - Carma
+Link de vista inicial (Gráfico linguagens):
+--> Gráfico de linguagens para cada repositório -------------------------------------------------------------------------------------- Carma
 
 
 
 Vista de Projecto
 (esta vista abre depois da pesquisa de projecto ou depois da visualização dos 5 últimos projectos de cada repositório)
--->Percentagem do projecto em cada repositório
--->informação do projecto (uma das informações é a linguagem - link para vista de linguagens )
+-->Percentagem do projecto em cada repositório --------------------------------------------------------------------------------------- Raquel (style)
+-->informação do projecto (uma das informações é a linguagem - link para vista de linguagens ) --------------------------------------- Raquel (style)
 
 Vista de linguagens:
--->olá mundo da linguagem seleccionada na vista de projecto
--->percentagem da linguagem em cada repositório - Carma
+-->olá mundo da linguagem seleccionada na vista de projecto -------------------------------------------------------------------------- Raquel (style)
+-->percentagem da linguagem em cada repositório -------------------------------------------------------------------------------------- Carma 
 
 
 Construção de outras páginas:
 
--->Informação sobre o site (About)
+-->Informação sobre o site (About) --------------------------------------------------------------------------------------------------- Raquel (Pesquisa)
 -->Tutorial sobre o site
 
 Outras tarefas
--->Apresentação de dados com Ajax (coordenação entre programadores e designers) - Carma
+-->Apresentação de dados com Ajax (coordenação entre programadores e designers) ------------------------------------------------------ Carma

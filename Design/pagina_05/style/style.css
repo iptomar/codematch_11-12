@@ -1,0 +1,75 @@
+/*
+	Aplicacoes à pagina toda
+*/
+body{ 
+	font: 62.5% "Trebuchet MS", sans-serif;  
+	background: url(../image/background.png);
+	background-image: no-repeat;
+	margin: 10px;
+}
+
+h1{
+	margin:10px;
+	font-size: 22px;
+	font-family: Verdana;
+	text-align: justify;
+}
+
+p{
+	margin:10px;
+	font-size: 16px;
+	font-family: Verdana;
+	text-align: justify;
+}
+
+/*
+	Tamanho do accordion onde se coloca a informacao
+*/
+.demoHeaders{
+	height: 470px;
+	background-color: white;
+}
+
+/*
+	Código afecto as tabs
+*/
+.tabs{
+	 
+}
+.tabText{
+	height:313px;
+}
+.text{
+	margin: 9px;
+}
+.logo_text{
+	border: .2em dotted #400;
+	height:50px;
+	width:1206px;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+.logo{
+	border: .2em dotted #900;
+	width:150px;
+	float:left;
+}
+.texto{
+	border: .2em dotted #900;
+	vertical-align:middle;
+	width:1048px;
+	line-height:48px;
+	float:left;
+	height:48px;
+}
+.repoInfor{
+	width:1210px;
+	height:295px;
+	border: .2em dotted #900;
+}
+.img_logo{
+	align:left;
+	width:150px;
+	height:44px;
+}

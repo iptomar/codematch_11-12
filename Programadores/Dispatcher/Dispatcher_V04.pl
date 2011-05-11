@@ -24,27 +24,27 @@ my $cmd6 = "php yahoo_sourceforge.php";
 menu();
 print "\n\n\n\n";
 
-$thr1 = threads->create(\&executa($cmd1)); 
+$thr1 = threads->new(\&executa($cmd1)); 
 #Starts $thread 1
 print "Thread 1 Started!\n Command: $cmd1 \n\n";
 
-$thr2 = threads->create(\&executa($cmd2)); 
+$thr2 = threads->new(\&executa($cmd2)); 
 #Starts $thread 2
 print "Thread 2 Started!\n Command: $cmd2 \n\n";
 
-$thr3 = threads->create(\&executa($cmd3)); 
+$thr3 = threads->new(\&executa($cmd3)); 
 #Starts $thread 3
 print "Thread 3 Started!\n Command: $cmd3 \n\n";
 
-$thr4 = threads->create(\&executa($cmd4));
+$thr4 = threads->new(\&executa($cmd4));
 #Starts $thread 4
 print "Thread 4 Started!\n Command: $cmd4 \n\n";
 
-$thr5 = threads->create(\&executa($cmd5));
+$thr5 = threads->new(\&executa($cmd5));
 #Starts $thread 5
 print "Thread 5 Started!\n Command: $cmd5 \n\n";
 
-$thr6 = threads->create(\&executa($cmd6));
+$thr6 = threads->new(\&executa($cmd6));
 #Starts $thread 6
 print "Thread 6 Started!\n Command: $cmd6 \n\n";
 

@@ -1,0 +1,38 @@
+#tolmaipage{
+	height:700px;
+	width:2160px;
+	float: lefth;
+	margin:20px;
+	/*border: .2em dotted #950; */ 
+}
+.tolmaihome{
+	height:690px;
+	width:1500px;
+	/*border: .2em dotted #950; */ 
+	float: left;
+}
+.tolmaillinguagens{	
+	height:690px;
+	width:640px;
+	/*border: .2em dotted #950; */
+	float: left;
+}
+.simbolotolmai{
+	height:400px;
+	width:300px;
+	/*border: .2em dotted #950; */ 
+	float: left;
+}
+.funcioProjectoTol{
+	height:400px;
+	width:1180px;
+	/*border: .2em dotted #950; */ 
+	float: left;
+}
+.objTol{
+	height:270px;
+	width:1488px;
+	/*border: .2em dotted #950; */
+	float: left;
+	vertical-align:center;
+}

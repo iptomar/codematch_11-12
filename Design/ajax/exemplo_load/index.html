@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>AJAX with jQuery Example</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<style type="text/css">
+		#wrapper {
+			width: 240px;
+			height: 80px;
+			margin: auto;
+			padding: 10px;
+			margin-top: 10px;
+			border: 1px solid black;
+			text-align: center;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("#generate").click(function(){
+				$("#quote p").load("script.php");
+			});
+		});
+		</script>
+		<input type="submit" id="generate" value="Generate!"><br />
+		<div id="quote"><p></p></div>
+		</div>
+	</body>
+</html>

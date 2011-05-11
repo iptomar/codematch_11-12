@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+#Feito por David Semiao e João Cardoso
+
 #Aguardar que a thread termine
     use threads;
 

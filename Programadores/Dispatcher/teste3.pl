@@ -1,5 +1,7 @@
 #!/bin/usr/perl
 
+#Feito por David Semiao
+
 #Teste arrays com perl
 
 #Variables

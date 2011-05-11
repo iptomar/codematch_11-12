@@ -76,14 +76,14 @@ sub control(){
 		if($thr1->is_joinable()){	#tests state of Bing Script
 		
 			$thr1->join;
-			print "Thread 1 terminada";
+			print "\nThread 1 terminada\n";
 		
 		}
 		
 		if($thr2->is_joinable()){	#tests state of Google Script
 		
 			$thr2->join;
-			print "Thread 2 terminada";
+			print "Thread 2 terminada\n";
 			
 		
 		}
@@ -91,7 +91,7 @@ sub control(){
 		if($thr3->is_joinable()){	#tests state of Yahoo Script
 		
 			$thr3->join;
-			print "Thread 3 terminada";
+			print "Thread 3 terminada\n";
 		
 		}
 	

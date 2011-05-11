@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Combination filters &middot; Isotope Demo</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="demo ">
+
+
+  <p id="demo-nav"><a href="../index.html">Isotope</a> Demo</p>
+  
+  <h1>Combination filters</h1>
+  
+  <section id="copy">
+  <p>Filters can be combined. In addition to filtering for just <code>.red</code> or <code>.tall</code>, you can pass in a filter selector of both: <code>.red.tall</code>.</p>
+</section>
+
+<section id="options" class="clearfix combo-filters">
+  
+  <h3>Filters</h3>
+
+  
+    <div class="option-combo color">
+      <h4>color</h4>
+      <ul class="filter option-set floated clearfix "> 
+        <li><a href="#filter-color-any" data-filter="" data-group="color" class="selected">any</a>
+        
+          <li><a href="#filter-color-red" data-group="color" data-filter=".red">red</a>
+        
+          <li><a href="#filter-color-blue" data-group="color" data-filter=".blue">blue</a>
+        
+          <li><a href="#filter-color-yellow" data-group="color" data-filter=".yellow">yellow</a>
+        
+      </ul>
+    </div>
+  
+    <div class="option-combo size">
+      <h4>size</h4>
+      <ul class="filter option-set floated clearfix "> 
+        <li><a href="#filter-size-any" data-filter="" data-group="size" class="selected">any</a>
+        
+          <li><a href="#filter-size-small" data-group="size" data-filter=".small">small</a>
+        
+          <li><a href="#filter-size-wide" data-group="size" data-filter=".wide">wide</a>
+        
+          <li><a href="#filter-size-tall" data-group="size" data-filter=".tall">tall</a>
+        
+          <li><a href="#filter-size-big" data-group="size" data-filter=".big">big</a>
+        
+      </ul>
+    </div>
+  
+    <div class="option-combo shape">
+      <h4>shape</h4>
+      <ul class="filter option-set floated clearfix "> 
+        <li><a href="#filter-shape-any" data-filter="" data-group="shape" class="selected">any</a>
+        
+          <li><a href="#filter-shape-round" data-group="shape" data-filter=".round">round</a>
+        
+          <li><a href="#filter-shape-square" data-group="shape" data-filter=".square">square</a>
+        
+      </ul>
+    </div>
+  
+
+</section> <!-- #options -->
+
+<div id="container" class="clearfix">
+  
+    
+      
+        <div class="color-shape small round red"></div>
+      
+        <div class="color-shape small round blue"></div>
+      
+        <div class="color-shape small round yellow"></div>
+      
+    
+      
+        <div class="color-shape small square red"></div>
+      
+        <div class="color-shape small square blue"></div>
+      
+        <div class="color-shape small square yellow"></div>
+      
+    
+  
+    
+      
+        <div class="color-shape wide round red"></div>
+      
+        <div class="color-shape wide round blue"></div>
+      
+        <div class="color-shape wide round yellow"></div>
+      
+    
+      
+        <div class="color-shape wide square red"></div>
+      
+        <div class="color-shape wide square blue"></div>
+      
+        <div class="color-shape wide square yellow"></div>
+      
+    
+  
+    
+      
+        <div class="color-shape tall round red"></div>
+      
+        <div class="color-shape tall round blue"></div>
+      
+        <div class="color-shape tall round yellow"></div>
+      
+    
+      
+        <div class="color-shape tall square red"></div>
+      
+        <div class="color-shape tall square blue"></div>
+      
+        <div class="color-shape tall square yellow"></div>
+      
+    
+  
+    
+      
+        <div class="color-shape big round red"></div>
+      
+        <div class="color-shape big round blue"></div>
+      
+        <div class="color-shape big round yellow"></div>
+      
+    
+      
+        <div class="color-shape big square red"></div>
+      
+        <div class="color-shape big square blue"></div>
+      
+        <div class="color-shape big square yellow"></div>
+      
+    
+  
+  
+  
+  
+    
+      
+        <div class="color-shape small round red"></div>
+      
+        <div class="color-shape wide round red"></div>
+      
+        <div class="color-shape tall round red"></div>
+      
+        <div class="color-shape big round red"></div>
+      
+    
+      
+        <div class="color-shape small square red"></div>
+      
+        <div class="color-shape wide square red"></div>
+      
+        <div class="color-shape tall square red"></div>
+      
+        <div class="color-shape big square red"></div>
+      
+    
+  
+    
+      
+        <div class="color-shape small round blue"></div>
+      
+        <div class="color-shape wide round blue"></div>
+      
+        <div class="color-shape tall round blue"></div>
+      
+        <div class="color-shape big round blue"></div>
+      
+    
+      
+        <div class="color-shape small square blue"></div>
+      
+        <div class="color-shape wide square blue"></div>
+      
+        <div class="color-shape tall square blue"></div>
+      
+        <div class="color-shape big square blue"></div>
+      
+    
+  
+    
+      
+        <div class="color-shape small round yellow"></div>
+      
+        <div class="color-shape wide round yellow"></div>
+      
+        <div class="color-shape tall round yellow"></div>
+      
+        <div class="color-shape big round yellow"></div>
+      
+    
+      
+        <div class="color-shape small square yellow"></div>
+      
+        <div class="color-shape wide square yellow"></div>
+      
+        <div class="color-shape tall square yellow"></div>
+      
+        <div class="color-shape big square yellow"></div>
+      
+    
+  
+  
+</div> <!-- #container -->
+
+<script src="../js/jquery-1.5.1.min.js"></script>
+<script src="../jquery.isotope.min.js"></script>
+<script>
+
+  var $container = $('#container'),
+      filters = {};
+
+  // filter buttons
+  $('.filter a').click(function(){
+    var $this = $(this),
+        isoFilters = [],
+        prop, selector;
+    // store filter value in object
+    // i.e. filters.color = 'red'
+    filters[ $this.data('group') ] = $this.data('filter');
+    
+    for ( prop in filters ) {
+      isoFilters.push( filters[ prop ] )
+    }
+    selector = isoFilters.join('');
+    $container.isotope({ filter: selector });
+
+    return false;
+  });
+  
+  
+      // switches selected class on buttons
+      $('#options').find('.option-set a').click(function(){
+        var $this = $(this);
+
+        // don't proceed if already selected
+        if ( !$this.hasClass('selected') ) {
+          $this.parents('.option-set').find('.selected').removeClass('selected');
+          $this.addClass('selected');
+        }
+
+      });
+
+
+  $(function(){
+
+    $container.isotope({
+      itemSelector : '.color-shape',
+      masonry: {
+        columnWidth: 80
+      }
+    });
+    
+  });
+</script>
+  
+  
+  <footer>
+    Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+  </footer>
+
+  
+
+</body>
+</html>

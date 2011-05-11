@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Isotope</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+  
+</head>
+<body>
+  
+  <h1>Isotope</h1>
+  
+  <section id="options" class="clearfix">
+    <div class="option-combo">
+      <h2>Filter:</h2>
+      <ul id="filter" class="option-set floated clearfix">
+        <li><a href="#show-all" data-filter="*" class="selected">show all</a></li>
+        <li><a href="#features" data-filter=".feature">features</a></li>
+        <li><a href="#docs" data-filter=".doc">docs</a></li>
+        <li><a href="#demos" data-filter=".demo">demos</a></li>
+      </ul>
+    </div>
+    <div class="option-combo">
+      <h2>Sort:</h2>
+      <ul id="sort" class="option-set floated clearfix">
+        <li><a href="#type" data-sort="original-order" class="selected">original order</a></li>
+        <li><a href="#related" data-sort="related">related</a></li>
+        <li><a href="#width" data-sort="width">width</a></li>
+      </ul>
+    </div>
+    <div class="option-combo">
+      <h2>Layout: </h2>
+      <ul id="layouts" class="option-set floated clearfix">
+        <li><a href="#fitRows" class="selected">fitRows</a></li>
+        <li><a href="#straightDown">straightDown</a></li>
+        <li><a href="#masonry">masonry</a></li>
+      </ul>
+    </div>
+  </section>
+  
+  <ul id="super-list" class="fitRows clearfix">
+    
+    <li class="feature" data-category="feature" data-related="etc"><span>An exquisite jQuery plugin for magical layouts</span></li>
+    <li class="feature" data-category="feature" data-related="filtering"><span>Reveal &amp; hide items with filtering</span></li>
+    <li class="feature" data-category="feature" data-related="sorting"><span>Re&ndash;order items with sorting</span></li>
+    <li class="feature" data-category="feature" data-related="layout"><span>Dynamic, intelligent layouts</span></li>
+    <li class="feature" data-category="feature" data-related="animating"><span>Captivating animations</span></li>
+    <li class="feature" data-category="feature" data-related="sorting"><span>Sort items by just about anything</span></li>
+    <li class="feature" data-category="feature" data-related="methods"><span>Powerful methods, simple syntax</span></li>
+    <li class="feature" data-category="feature" data-related="animating"><span>Progressively enhanced for CSS3 transforms &amp; transitions</span></li>
+    
+      <li class="doc" data-category="doc" data-related="a-intro"><a href="./docs/introduction.html">Docs: Introduction</a></li>
+    
+      <li class="doc" data-category="doc" data-related="a-intro"><a href="./docs/options.html">Docs: Options</a></li>
+    
+      <li class="doc" data-category="doc" data-related="methods"><a href="./docs/methods.html">Docs: Methods</a></li>
+    
+      <li class="doc" data-category="doc" data-related="layout"><a href="./docs/layout-modes.html">Docs: Layout modes</a></li>
+    
+      <li class="doc" data-category="doc" data-related="filtering"><a href="./docs/filtering.html">Docs: Filtering</a></li>
+    
+      <li class="doc" data-category="doc" data-related="sorting"><a href="./docs/sorting.html">Docs: Sorting</a></li>
+    
+      <li class="doc" data-category="doc" data-related="animating"><a href="./docs/animating.html">Docs: Animating</a></li>
+    
+      <li class="doc" data-category="doc" data-related="methods"><a href="./docs/adding-items.html">Docs: Adding items</a></li>
+    
+      <li class="doc" data-category="doc" data-related="z-etc"><a href="./docs/troubleshooting.html">Docs: Troubleshooting</a></li>
+    
+      <li class="doc" data-category="doc" data-related="z-etc"><a href="./docs/license.html">Docs: License</a></li>
+    
+    
+      <li class="demo" data-category="demo" data-related="a-intro"><a href="./demos/basic.html">Demo: Basic</a></li>
+    
+      <li class="demo" data-category="demo" data-related="a-intro"><a href="./demos/elements-complete.html">Demo: Elements Complete</a></li>
+    
+      <li class="demo" data-category="demo" data-related="a-intro"><a href="./demos/elements-partial.html">Demo: Elements Partial</a></li>
+    
+      <li class="demo" data-category="demo" data-related="layouts"><a href="./demos/layout-modes.html">Demo: Layout modes</a></li>
+    
+      <li class="demo" data-category="demo" data-related="filtering"><a href="./demos/filtering.html">Demo: Filtering</a></li>
+    
+      <li class="demo" data-category="demo" data-related="sorting"><a href="./demos/sorting.html">Demo: Sorting</a></li>
+    
+      <li class="demo" data-category="demo" data-related="methods"><a href="./demos/relayout.html">Demo: reLayout</a></li>
+    
+      <li class="demo" data-category="demo" data-related="methods"><a href="./demos/adding-items.html">Demo: Adding items</a></li>
+    
+      <li class="demo" data-category="demo" data-related="layout"><a href="./demos/infinite-scroll.html">Demo: Infinite Scroll</a></li>
+    
+      <li class="demo" data-category="demo" data-related="z-etc"><a href="./demos/images.html">Demo: Images</a></li>
+    
+      <li class="demo" data-category="demo" data-related="filtering"><a href="./demos/combination-filters.html">Demo: Combination filters</a></li>
+    
+    <li class="link" data-related="z-etc"><a href="jquery.isotope.min.js">Download jquery.isotope.min.js</a></li>
+    <li class="link" data-related="z-etc"><a href="http://meta.metafizzy.co/files/isotope-site.zip">Download this project</a></li>
+    <li class="link" data-related="z-etc"><a href="http://github.com/desandro/isotope">Isotope on GitHub</a></li>
+  </ul>
+  
+  <div id="sites"></div>
+  
+  
+  <footer>
+    Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+  </footer>
+
+  
+  
+  <script src="js/jquery-1.5.1.min.js"></script>
+  <script src="jquery.isotope.min.js"></script>
+  <script>
+  
+    $list = $('#super-list');
+  
+    $('#filter a').click(function(){
+      var filterName = $(this).attr('data-filter');
+      $list.isotope({ filter : filterName });
+      return false;
+    });
+  
+    $('#sort a').click(function(){
+      var sortName = $(this).attr('data-sort');
+      $list.isotope({ sortBy : sortName });
+      return false;
+    });
+  
+    var currentLayout = 'fitRows';
+  
+    $('#layouts a').click(function(){
+      var layoutName = $(this).attr('href').slice(1);
+      $list.removeClass( currentLayout ).addClass( layoutName );
+      currentLayout = layoutName;
+      $list.isotope({ layoutMode : layoutName });
+      return false;
+    });
+  
+    
+      // switches selected class on buttons
+      $('#options').find('.option-set a').click(function(){
+        var $this = $(this);
+
+        // don't proceed if already selected
+        if ( !$this.hasClass('selected') ) {
+          $this.parents('.option-set').find('.selected').removeClass('selected');
+          $this.addClass('selected');
+        }
+
+      });
+
+
+
+    $(function(){
+      
+      $list.isotope({
+        layoutMode : 'fitRows',
+        masonry : {
+          columnWidth: 220
+        },
+        getSortData : {
+          related : function( $elem ) {
+            return $elem.attr('data-related');
+          },
+          width : function( $elem ) {
+            return $elem.width();
+          }
+        }
+      });
+      
+      // Sites using Isotope markup
+      var $sites = $('#sites'),
+          $sitesTitle = $('<h2 class="loading"><img src="http://i.imgur.com/qkKy8.gif" />Loading sites using Isotope</h2>'),
+          $sitesList = $('<ul class="clearfix"></ul>');
+          
+      $sites.append( $sitesTitle ).append( $sitesList );
+
+      $sitesList.isotope({
+        layoutMode: 'cellsByRow',
+        cellsByRow: {
+          columnWidth: 290,
+          rowHeight: 400
+        }
+      });
+      
+      var ajaxError = function(){
+        $sitesTitle.removeClass('loading').addClass('error')
+          .text('Could not load sites using Isotope :(');
+      };
+      
+      // dynamically load sites using Isotope from Ember app
+      $.getJSON('http://api.emberapp.com/users/view/' + 
+                  'desandro/collections/view/isotope.json?callback=?')
+        .error( ajaxError )
+        .success(function( data ){
+          
+          // proceed only if we have images
+          if ( !data.response || !data.response.images ) {
+            ajaxError();
+            return;
+          }
+          var images = data.response.images,
+              items = [],
+              item, image;
+          
+          for ( var i=0, len = images.length; i < len; i++ ) {
+            image = images[i];
+            item = '<li><a href="' + image.url + '">'
+              + '<b>' + image.name + '</b>'
+              + '<img src="' + image.file.src.replace('/m.', '/s.') + '" />'
+              + '</a></li>';
+            items.push( item );
+          }
+          
+          var $items = $( items.join('') );
+          
+          $items.imagesLoaded(function(){
+            $sitesTitle.removeClass('loading').text('Sites using Isotope');
+            $sitesList.isotope( 'insert', $items );
+          });
+          
+        });
+      
+      
+    });
+  </script>
+
+
+</body>
+</html>

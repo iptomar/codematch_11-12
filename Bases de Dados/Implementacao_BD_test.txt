@@ -1,0 +1,19 @@
+"Implementacao de base de dados "test" para poderem usar para testes"
+
+use tolmai; 
+
+create column family test with comparator='UTF8Type'; 
+
+update column family test with column_metadata=
+[
+{column_name: tm_fullname, validation_class:UTF8Type},
+{column_name: tm_source, validation_class:UTF8Type},
+{column_name: tm_repository, validation_class:UTF8Type, index_type: KEYS},
+{column_name: tm_author, validation_class:UTF8Type},
+{column_name: tm_language_P, validation_class:UTF8Type, index_type: KEYS},  
+{column_name: tm_language_S, validation_class:UTF8Type, index_type: KEYS}, 
+{column_name: tm_language_T, validation_class:UTF8Type ,index_type: KEYS},                                                                    
+{column_name: tm_date_c, validation_class:LongType, index_type: KEYS}, 
+{column_name: tm_date_l, validation_class:LongType, index_type: KEYS},                             
+{column_name: tm_logo, validation_class:UTF8Type}
+];     

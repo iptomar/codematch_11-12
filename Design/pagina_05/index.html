@@ -7,24 +7,75 @@
 		<link href="style/style.css" rel="stylesheet" type="text/css" media="screen" />
 		<link href="style/header.css" rel="stylesheet" type="text/css" media="screen" />
 		<link href="style/hometolmai.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="style/repoPage.css" rel="stylesheet" type="text/css" media="screen" />
 		
 		
 		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.11.custom.css" rel="stylesheet" />	
 		<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.11.custom.min.js"></script>
+		<script type="text/javascript" src="js/highcharts/highcharts.js"></script>
 		<script type="text/javascript">
 			$(function(){
 				// Accordion
 				$("#accordion").accordion({ header: "h3"});
-				
-				
-				
-	
- 
-				// Tabs
-				$('.tabs').tabs();
 			});
 		</script>	
+		<script type="text/javascript">
+			<!-- INICIO DO CODIGO PARA O GRAFICO QUEIJO--> 		
+			var chart;
+			$(document).ready(function() {
+				chart = new Highcharts.Chart({
+					chart: {
+						renderTo: 'container',
+						plotBackgroundColor: null,
+						plotBorderWidth: null,
+						plotShadow: false
+					},
+					title: {
+						text: ' '
+					},
+					tooltip: {
+						formatter: function() {
+							return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+						}
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+							dataLabels: {
+								enabled: true,
+								color: '#000000',
+								connectorColor: '#000000',
+								formatter: function() {
+									return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+								}
+							}
+						}
+					},
+				    series: [{
+						type: 'pie',
+						name: 'Browser share',
+						data: [
+							['Firefox',   45.0],
+							['IE',       26.8],
+							{
+								name: 'Chrome',    
+								y: 12.8,
+								sliced: true,
+								selected: true
+							},
+							['Safari',    8.5],
+							['Opera',     6.2],
+							['Others',   0.7]
+						]
+					}]
+				});
+			});
+				
+		</script>
+ <!-- FIM DO CODIGO PARA O GRAFICO QUEIJO--> 
+ 
 	</head>
 	<body>
 		<div>
@@ -82,8 +133,119 @@
 					<h3><a>Repositórios</a></h3>
 					<div>
 						<div class="demoHeaders">
-						<!-- Tabs -->
-						
+							<div id="detalhesRepo">
+								<p>Repositórios</p>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Projecto:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Projecto:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Projecto:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div id="topRepo">
+								<!--container do grafico QUEIJO-->
+								<h1>Top de Repositórios: </h1>
+								<br /><br /><br /><br />
+								<center>
+									<div id="container">
+									</div>
+								</center>
+							</div>
+							
+							<div id="repPesquisa">
+								<br /><br /><br />
+								<div class="divPesquisaExt">
+									<div class="divPesquisaInt">
+										<div class="nomePesquisas">
+											Shearch
+										</div>
+										
+										<div class="campoEscreverPesquisas">
+											 <input type="text" name="Pesquisa" id="pesquisaObjec" />
+										</div>
+										
+										<div class="buttonPesquisas">
+											<button type="button" id="buttonGo">Go</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

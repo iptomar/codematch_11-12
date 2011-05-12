@@ -1,6 +1,6 @@
-#!/usr/bin/perl -s
+#!/usr/bin/perl
 
-#Made by: David Semião
+#Made by: David Semião & Joao Cardoso
 
 
 #Libraries
@@ -8,72 +8,47 @@ use IPC::Open3;
 use threads;
 use threads::shared;
 
-#Control condition for argument $input
-if (!$input){
-	print STDERR "Erro: argumento inválido.\n\n Utilização: Dispatcher_V04.pl -input=<nome do ficheiro> \n\n";
-	exit (1);
-}
-
-
 #Variables
 
-my $cmd = "perl ".$input." ";
+my $cmd1 = "php bing_github.php";
+my $cmd2 = "php bing_launchpad.php";
+my $cmd3 = "php bing_sourceforge.php";
+my $cmd4 = "php yahoo_github.php";
+my $cmd5 = "php yahoo_launchpad.php";
+my $cmd6 = "php yahoo_sourceforge.php";
 
-my $who = system('whoami');
-
-my $ctrl1 = 0;
-my $ctrl2 = 0;
-my $ctrl3 = 0;
 
 
 #Main Code
 
-print "$who\n";
-print "$input\n";
-print "$cmd\n";
+menu();
+print "\n\n\n\n";
 
-$thr1 = threads->new(\&executa($cmd)); 
+$thr1 = threads->new(\&executa($cmd1)); 
 #Starts $thread 1
+print "Thread 1 Started!\n Command: $cmd1 \n\n";
 
-$thr2 = threads->new(\&executa($cmd)); 
+$thr2 = threads->new(\&executa($cmd2)); 
 #Starts $thread 2
+print "Thread 2 Started!\n Command: $cmd2 \n\n";
 
-$thr3 = threads->new(\&executa($cmd)); 
+$thr3 = threads->new(\&executa($cmd3)); 
 #Starts $thread 3
+print "Thread 3 Started!\n Command: $cmd3 \n\n";
 
-# while($ctrl1 != 1 && $ctrl2 != 1 && $ctrl3 != 1){
-	
-			
-		
-		# if($thr1->is_joinable()){	#tests $thr1
-		
-			
-			# system('echo "Thread 1 terminada" | more');
-			# $ctrl1 = 1;
-		
-		# } else {	system('echo "Thread 1 em execucao!!!" | wall');}
-		
-		# if($thr2->is_joinable()){	#tests thr2
-		
-			
-			# system('echo "Thread 2 terminada" | more');
-			# $ctrl2 = 1;
-			
-		
-		# } else {	system('echo "Thread 2 em execucao!!!" | wall');}
-		
-		# if($thr3->is_joinable()){	#tests thr3
-		
-			
-			# system('echo "Thread 3 terminada" | more');
-			# $ctrl3 = 1;
-		
-		# } else {	system('echo "Thread 3 em execucao!!!" | wall');}
-	
-		
-	# }
+$thr4 = threads->new(\&executa($cmd4));
+#Starts $thread 4
+print "Thread 4 Started!\n Command: $cmd4 \n\n";
 
-print "\n\nExiting...! \n Goodbye! \n";
+$thr5 = threads->new(\&executa($cmd5));
+#Starts $thread 5
+print "Thread 5 Started!\n Command: $cmd5 \n\n";
+
+$thr6 = threads->new(\&executa($cmd6));
+#Starts $thread 6
+print "Thread 6 Started!\n Command: $cmd6 \n\n";
+
+print "\n\nExiting...! \n\n Goodbye! \n\n";
 
 para();
 
@@ -84,40 +59,54 @@ para();
 sub executa
 {	
 
-
-
 	my $comm = $_[0];
 	
 	my ($wrt, $read, $err);
 	
-	print "\n$comm\n\n";
-
 	my $pid = open3($wrt, $read, $err, $comm);
-
-	system('echo $_[0] | wall');
+	
+	print "$pid\n\n";
+	
+	#Wait for process
 	
 	waitpid( $pid, 0 ) or die "$!\n";
 
 	my $ret = $?;
 	
-	print "\n $ret - Good execution of process\n\n";
+	my $output = $read;
 	
-	return;
+	print "$wrt";
+	#State return
+	
+
+		print "\n $ret returned - Good execution of process\n\n";
+
+	
+	
+	return $ret;
 }
 
 #Menu Function
 
 sub menu{
 
-print "**********************************************";
-print "*                                            *";
-print "*            TOLMAI DISPATCHER               *";
-print "*               Version 1.0                  *";
-print "**********************************************";
-print "*                                            *";
-print "*     	      Welcome, $who              *";
-print "*                                            *";
-print "**********************************************";
+
+
+
+open FH, "whoami|" or die "Failed";
+
+my @who = qx{"whoami" 2>&1};
+
+
+print "**********************************************\n";
+print "*                                            *\n";
+print "*            TOLMAI DISPATCHER               *\n";
+print "*               Version 1.0                  *\n";
+print "**********************************************\n";
+print "                                              \n";
+print " 	          Welcome, $who[0]\n               ";
+print "                                              \n";
+print "**********************************************\n";
 print "";
 print "";
 print "";
@@ -125,7 +114,7 @@ print "";
 
 }
 
-#Wait for RETURN
+#Wait for RETURN Fuction
 
 sub para
 {

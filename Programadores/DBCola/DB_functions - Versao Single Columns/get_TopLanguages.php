@@ -28,7 +28,7 @@ $counter = count($arr);
 for ($i = 1; $i <= $counter; $i++ ){
 
 $index_exp = CassandraUtil::create_index_expression('tm_language_P',$converted_array[$i]);
-$index_clause = CassandraUtil::create_index_clause(array($index_exp));
+$index_clause = CassandraUtil::create_index_clause(array($index_exp),'', $column_count=10000);
 $rows = $column_family->get_indexed_slices($index_clause);
 // returns an Iterator over;
 

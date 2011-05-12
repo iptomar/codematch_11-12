@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Images &middot; Isotope Demo</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="demo ">
+
+
+  <p id="demo-nav"><a href="../index.html">Isotope</a> Demo</p>
+  
+  <h1>Images</h1>
+  
+    <section id="copy">
+    <p>Isotope is triggered after all images are loaded with the <a href="../docs/troubleshooting.html#imagesloaded_plugin"><code>imagesLoaded</code> plugin</a>. </p>
+  </section>
+
+  <div id="container" class="photos clearfix">
+    
+      <div class="photo">
+        <a href="http://www.flickr.com/photos/nemoorange/5013039951/" title="Stanley by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4113/5013039951_3a47ccd509.jpg" alt="Stanley" /></a>
+      </div>
+    
+      <div class="photo">
+        <a href="http://www.flickr.com/photos/nemoorange/5013039885/" title="Officer by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4131/5013039885_0d16ac87bc.jpg" alt="Officer" /></a>
+      </div>
+    
+      <div class="photo">
+        <a href="http://www.flickr.com/photos/nemoorange/5013039583/" title="Tony by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4086/5013039583_26717f6e89.jpg" alt="Tony" /></a>
+      </div>
+    
+      <div class="photo">
+        <a href="http://www.flickr.com/photos/nemoorange/5013646070/" title="Kendra by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4146/5013646070_f1f44b1939.jpg" alt="Kendra" /></a>
+      </div>
+    
+      <div class="photo">
+        <a href="http://www.flickr.com/photos/nemoorange/5013039541/" title="Giraffe by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4144/5013039541_17f2579e33.jpg" alt="Giraffe" /></a>
+      </div>
+    
+      <div class="photo">
+        <a href="http://www.flickr.com/photos/nemoorange/5013039741/" title="Gavin by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4153/5013039741_d860fb640b.jpg" alt="Gavin" /></a>
+      </div>
+    
+      <div class="photo">
+        <a href="http://www.flickr.com/photos/nemoorange/5013039697/" title="Anita by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4113/5013039697_a15e41fcd8.jpg" alt="Anita" /></a>
+      </div>
+    
+      <div class="photo">
+        <a href="http://www.flickr.com/photos/nemoorange/5013646314/" title="Take My Portrait by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4124/5013646314_c7eaf84918.jpg"   alt="Take My Portrait" /></a>
+      </div>
+    
+      <div class="photo">
+        <a href="http://www.flickr.com/photos/nemoorange/5013040075/" title="Wonder by Dave DeSandro, on Flickr"><img src="http://farm5.static.flickr.com/4089/5013040075_bac12ff74e.jpg" alt="Wonder" /></a>
+      </div>
+    
+  </div> <!-- #container -->
+  
+  <nav id="page_nav">
+    <a href="../pages/2.html"></a>
+  </nav>
+
+  <script src="../js/jquery-1.5.1.min.js"></script>
+  <script src="../jquery.isotope.min.js"></script>
+  <script>
+    $(function(){
+
+      var $container = $('#container');
+    
+      $container.imagesLoaded( function(){
+        $(this).isotope({
+          itemSelector : '.photo'
+        });
+      });
+    
+    
+    });
+  </script>
+  
+  
+  <footer>
+    Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+  </footer>
+
+  
+
+</body>
+</html>

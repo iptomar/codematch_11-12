@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Filtering &middot; Isotope Demo</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="demo ">
+
+
+  <p id="demo-nav"><a href="../index.html">Isotope</a> Demo</p>
+  
+  <h1>Filtering</h1>
+  
+    <section id="copy">
+    <p>Filtering hides and reveals item elements.</p>
+    <p>See <a href="../docs/filtering.html">docs on filtering</a>.</p>
+  </section>
+  
+
+  <section id="options" class="clearfix">
+    
+    <h3>Filters</h3>
+
+    <ul id="filters" class="option-set floated clearfix">
+      <li><a href="#filter" data-filter="*" class="selected">show all</a></li>
+      <li><a href="#filter" data-filter=".metal">metal</a></li>
+      <li><a href="#filter" data-filter=".transition">transition</a></li>
+      <li><a href="#filter" data-filter=".post-transition">post-transition</a></li>
+      <li><a href="#filter" data-filter=".nonmetal">nonmetal</a></li>
+      <li><a href="#filter" data-filter=".inner-transition">inner-transition</a></li>
+      <li><a href="#filter" data-filter=".alkali, .alkaline-earth">alkali and alkaline-earth</a></li>
+      <li><a href="#filter" data-filter=":not(.transition)">not transition</a></li>
+      <li><a href="#filter" data-filter=".metal:not(.transition)">metal but not transition</a></li>
+    </ul>
+
+  </section> <!-- #options -->
+  
+  <div id="container" class="clearfix">
+    
+      
+      
+    <div class="element transition metal  " data-symbol="Hg" data-category="transition">
+      <p class="number">80</p>
+      <h3 class="symbol">Hg</h3>
+      <h2 class="name">Mercury</h2>
+      <p class="weight">200.59</p>
+    </div>
+    
+      
+      
+    <div class="element metalloid  " data-symbol="Te" data-category="metalloid">
+      <p class="number">52</p>
+      <h3 class="symbol">Te</h3>
+      <h2 class="name">Tellurium</h2>
+      <p class="weight">127.6</p>
+    </div>
+    
+      
+      
+    <div class="element post-transition metal  " data-symbol="Bi" data-category="post-transition">
+      <p class="number">83</p>
+      <h3 class="symbol">Bi</h3>
+      <h2 class="name">Bismuth</h2>
+      <p class="weight">208.9804</p>
+    </div>
+    
+      
+      
+    <div class="element transition metal  " data-symbol="Cd" data-category="transition">
+      <p class="number">48</p>
+      <h3 class="symbol">Cd</h3>
+      <h2 class="name">Cadmium</h2>
+      <p class="weight">112.411</p>
+    </div>
+    
+      
+      
+    <div class="element alkaline-earth metal  " data-symbol="Ca" data-category="alkaline-earth">
+      <p class="number">20</p>
+      <h3 class="symbol">Ca</h3>
+      <h2 class="name">Calcium</h2>
+      <p class="weight">40.078</p>
+    </div>
+    
+      
+      
+    <div class="element transition metal  " data-symbol="Re" data-category="transition">
+      <p class="number">75</p>
+      <h3 class="symbol">Re</h3>
+      <h2 class="name">Rhenium</h2>
+      <p class="weight">186.207</p>
+    </div>
+    
+      
+      
+    <div class="element post-transition metal  " data-symbol="Tl" data-category="post-transition">
+      <p class="number">81</p>
+      <h3 class="symbol">Tl</h3>
+      <h2 class="name">Thallium</h2>
+      <p class="weight">204.3833</p>
+    </div>
+    
+      
+      
+    <div class="element metalloid  " data-symbol="Sb" data-category="metalloid">
+      <p class="number">51</p>
+      <h3 class="symbol">Sb</h3>
+      <h2 class="name">Antimony</h2>
+      <p class="weight">121.76</p>
+    </div>
+    
+      
+      
+    <div class="element transition metal  " data-symbol="Co" data-category="transition">
+      <p class="number">27</p>
+      <h3 class="symbol">Co</h3>
+      <h2 class="name">Cobalt</h2>
+      <p class="weight">58.933195</p>
+    </div>
+    
+      
+      
+    <div class="element lanthanoid metal inner-transition  " data-symbol="Lu" data-category="lanthanoid">
+      <p class="number">71</p>
+      <h3 class="symbol">Lu</h3>
+      <h2 class="name">Lutetium</h2>
+      <p class="weight">174.9668</p>
+    </div>
+    
+      
+      
+    <div class="element noble-gas nonmetal  " data-symbol="Ar" data-category="noble-gas">
+      <p class="number">18</p>
+      <h3 class="symbol">Ar</h3>
+      <h2 class="name">Argon</h2>
+      <p class="weight">39.948</p>
+    </div>
+    
+      
+      
+    <div class="element alkali metal  " data-symbol="Rb" data-category="alkali">
+      <p class="number">37</p>
+      <h3 class="symbol">Rb</h3>
+      <h2 class="name">Rubidium</h2>
+      <p class="weight">85.4678</p>
+    </div>
+    
+      
+      
+    <div class="element other nonmetal  " data-symbol="N" data-category="other">
+      <p class="number">7</p>
+      <h3 class="symbol">N</h3>
+      <h2 class="name">Nitrogen</h2>
+      <p class="weight">14.0067</p>
+    </div>
+    
+      
+      
+    <div class="element actinoid metal inner-transition  " data-symbol="Np" data-category="actinoid">
+      <p class="number">93</p>
+      <h3 class="symbol">Np</h3>
+      <h2 class="name">Neptunium</h2>
+      <p class="weight">(237)</p>
+    </div>
+    
+      
+      
+    <div class="element actinoid metal inner-transition  " data-symbol="Ac" data-category="actinoid">
+      <p class="number">89</p>
+      <h3 class="symbol">Ac</h3>
+      <h2 class="name">Actinium</h2>
+      <p class="weight">(227)</p>
+    </div>
+    
+  </div> <!-- #container -->
+  
+  <script src="../js/jquery-1.5.1.min.js"></script>
+  <script src="../jquery.isotope.min.js"></script>
+  <script>
+  
+    var $container = $('#container');
+
+    // filter buttons
+    $('#filters a').click(function(){
+      var selector = $(this).attr('data-filter');
+      $container.isotope({ filter: selector });
+      return false;
+    });
+    
+    
+      // switches selected class on buttons
+      $('#options').find('.option-set a').click(function(){
+        var $this = $(this);
+
+        // don't proceed if already selected
+        if ( !$this.hasClass('selected') ) {
+          $this.parents('.option-set').find('.selected').removeClass('selected');
+          $this.addClass('selected');
+        }
+
+      });
+
+
+    $(function(){
+
+      $container.isotope({
+        itemSelector : '.element'
+      });
+      
+    });
+  </script>
+  
+
+  
+  
+  <footer>
+    Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+  </footer>
+
+  
+
+</body>
+</html>

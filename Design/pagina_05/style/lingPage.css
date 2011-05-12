@@ -1,16 +1,16 @@
 /*
 	1 Div, que contem os dados dos repositorios
 */
-.detalhesRepo{
+#detalhesPROJ{
 	height:467px;
-	width:620px;
+	width:1020px;
 	float: left;
 	border:1px solid #92cdec;
 	margin:0px;
 }
 
 /**/
-.topRepo{
+#topProj{
 	height:467px;
 	width:400px;
 	float: left;
@@ -18,7 +18,7 @@
 }
 
 /**/
-.repPesquisa{
+#projPesquisa{
 	height:467px;
 	width:200px;
 	float: left;
@@ -28,7 +28,7 @@
 /*
 	Div que contem a descricao dos varios repositorios, div geral
 */
-.divDescricao{
+.divDescricaoProj{
 	width:597px;
 	height:120px;
 	border:1px solid #92cdec;
@@ -39,7 +39,7 @@
 /*
 	Div que contem as imagens de cada descicao do repositorio
 */
-.divImagDescri{
+.divImagDescriProj{
 	border:1px solid #92cdec;
 	width:100px;
 	height:100px;
@@ -50,7 +50,7 @@
 /*
 	Div que contem todos os dados de cada repositorios
 */
-.descricao{
+.descricaoProj{
 	border:1px solid #92cdec;
 	width:450px;
 	height:100px;
@@ -61,7 +61,7 @@
 /*
 	Tamanho da imagem de cada repositorio
 */
-.imageDes{
+.imageDesProj{
 	width:100px;
 	height:100px;
 }
@@ -69,7 +69,7 @@
 /*
 	Div que contem o nome projecto
 */
-.nomeRepo{
+.nomeProj{
 	width: 156px;
 	height:20px;
 	border:1px solid #92cdec;
@@ -81,7 +81,7 @@
 /*
 	Div que contem as linguagens do Projecto
 */
-.linguagensRepo{
+.linguagenslinguagensProj{
 	width: 290px;
 	height:20px;
 	border:1px solid #92cdec;
@@ -93,71 +93,67 @@
 /*
 	Div que contem os detalhes do projecto
 */
-.descricaoDetalhes{
+.descricaoDetalhesProj{
 	width: 448px;
 	height: 42px;
 	border:1px solid #92cdec;
 	float:left;
 }
-.owners{
+.ownersownersProj{
 	width: 240px;
 	height: 32px;
 	border:1px solid #92cdec;
 	float:left;
 }
-.url{
+.urlurlProj{
 	width: 206px;
 	height: 32px;
 	border:1px solid #92cdec;
 	float:left;
 }
 
-#container{
-	width: 390px; 
-	height: 200px;
-}
 
-.divPesquisaExt{
+.divPesquisaExtProj{
 	width: 198px;
 	height: 150px;
 	float:left;
 	background-color: black;
 }
 
-.divPesquisaInt{
+.divPesquisaIntProj{
 	width: 160px;
 	height: 110px;
 	margin:20px;
 	float:left;
 	background-color: gray;
 }
-.nomePesquisas{
+.nomePesquisasProj{
 	margin:10px;
 	width: 135px;
 	height: 20px;
 	border:1px solid #92cdec;
 }
 
-.campoEscreverPesquisas{
+.campoEscreverPesquisasProj{
 	margin:10px;
 	width: 135px;
 	height: 20px;
 	border:1px solid #92cdec;
 }
 
-.pesquisaObjec{
+#pesquisaObjecProj{
 	width: 133px;
 	height: 16px;
 }
 
-.buttonPesquisas{
+.buttonPesquisasProj{
 	margin:10px;
 	width: 135px;
 	height: 20px;
 	border:1px solid #92cdec;
 }
 
-.buttonGo{
+#buttonGoProj{
 	width: 136px;
 	height: 20px;
 }

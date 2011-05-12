@@ -8,6 +8,7 @@
 		<link href="style/header.css" rel="stylesheet" type="text/css" media="screen" />
 		<link href="style/hometolmai.css" rel="stylesheet" type="text/css" media="screen" />
 		<link href="style/repoPage.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="style/lingPage.css" rel="stylesheet" type="text/css" media="screen" />
 		
 		
 		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.11.custom.css" rel="stylesheet" />	
@@ -89,25 +90,27 @@
 					<h3><a href="#">Home Page - Tolmai</a></h3>
 					<div>
 						<div class="demoHeaders"> <!--tamanho da pagina interior do accorion-->
-								<div id="descricaoProjecto"> <!--div do lado esquerdo do logotipo, das funcionalidades, dos objectivos do projecto-->
-									<div class="simbolotolmai">
-										<img  src="images/img.png" id="logotolmai">
-									</div>
-									<div class="funcioProjectoTol">
-										<h1>Funcionalidades do Projecto:</h1>
-										<p>Com a utilização do Tolmai os seus utilizadores podem ter acesso aos projectos alojados na Internet e visualizar informação sobre os mesmos. É possível visualizar os Repositórios existentes, os projectos que alojam e ainda as linguagens de programação utilizadas em cada projecto. Sobre cada repositório é criada um ranquing de linguagens mais utilizadas em todos os seus projectos. Sobre cada projecto para além da informação sobre quem foi o seu autor e a data de criação, é possível visualizar a data da última actualização que esse mesmo projecto sofreu. Será disponibilizado um URL para que o utilizador possa aceder directamente ao projecto desejado.</p>
-									</div>
-									<div class="objTol">
-										<h1>Objectivos do Projecto:</h1>
-										<p>Garantir que os seus utilizadores têm acesso a informações sobre os projectos alojados na Internet como por exemplo no GitHub. Deve-se garantir uma correcta informação sobre cada projecto pesquisado, nomeadamente o seu autor, onde se aloja e a principal linguagem de programação utilizada. Os projectos mais recentes estão colocados em destaque para se garantir a actualização constante da informação apresentada.</p>
-									</div>
+							<div id="descricaoProjecto"> <!--div do lado esquerdo do logotipo, das funcionalidades, dos objectivos do projecto-->
+								<div class="simbolotolmai">
+									<img  src="images/img.png" id="logotolmai">
 								</div>
-								<div id="linguagensGrafico">
-									<h1><center>Linguagens</center></h1>
-									<center>
-										<br /><img src="images/top.png" style="margin:10px;">
-									</center>
+								<div class="funcioProjectoTol">
+									<h1>Funcionalidades do Projecto:</h1>
+									<p>Com a utilização do Tolmai os seus utilizadores podem ter acesso aos projectos alojados na Internet e visualizar informação sobre os mesmos. É possível visualizar os Repositórios existentes, os projectos que alojam e ainda as linguagens de programação utilizadas em cada projecto. Sobre cada repositório é criada um ranquing de linguagens mais utilizadas em todos os seus projectos. Sobre cada projecto para além da informação sobre quem foi o seu autor e a data de criação, é possível visualizar a data da última actualização que esse mesmo projecto sofreu. Será disponibilizado um URL para que o utilizador possa aceder directamente ao projecto desejado.</p>
 								</div>
+								<div class="objTol">
+									<h1>Objectivos do Projecto:</h1>
+									<p>Garantir que os seus utilizadores têm acesso a informações sobre os projectos alojados na Internet como por exemplo no GitHub. Deve-se garantir uma correcta informação sobre cada projecto pesquisado, nomeadamente o seu autor, onde se aloja e a principal linguagem de programação utilizada. Os projectos mais recentes estão colocados em destaque para se garantir a actualização constante da informação apresentada.</p>
+								</div>
+							</div>
+							<div id="linguagensGrafico">
+								<h1><center>Linguagens</center></h1>
+								<center>
+									<br /><img src="images/top.png" style="margin:10px;">
+									<br /><br /><br /><img src="images/github.png" />
+									<img src="images/sourceforce.png" />
+								</center>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -115,8 +118,41 @@
 					<h3><a href="#">Linguagens</a></h3>
 					<div>
 						<div class="demoHeaders">
-						<!-- Tabs -->
-						
+							<div class="detalhesRepo">
+								<p>Linguagens</p>
+								<br /><br /><br /><br />
+								<center>
+									<img src="images/lingtop.png" />
+								</center>
+							</div>
+							
+							<div class="topRepo">
+								<!--container do grafico QUEIJO-->
+								<h1>Top de Linguagens: </h1>
+								<br /><br /><br /><br />
+								<center>
+									<img src="images/lingtopmais.png" />
+								</center>
+							</div>
+							
+							<div class="repPesquisa">
+								<br /><br /><br />
+								<div class="divPesquisaExt">
+									<div class="divPesquisaInt">
+										<div class="nomePesquisas">
+											Search
+										</div>
+										
+										<div class="campoEscreverPesquisas">
+											 <input type="text" name="Pesquisa" class="pesquisaObjec" />
+										</div>
+										
+										<div class="buttonPesquisas">
+											<button type="button" class="buttonGo">Go</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -124,8 +160,119 @@
 					<h3><a href="#">Projectos</a></h3>
 					<div>
 						<div class="demoHeaders">
-						<!-- Tabs -->
-						
+							<div class="detalhesRepo">
+								<p>Projectos:</p>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Projecto:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Projecto:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Projecto:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="topRepo">
+								<!--container do grafico QUEIJO-->
+								<h1>Top de Projectos:</h1>
+								<br /><br /><br /><br />
+								<center>
+									<div id="container2">
+									</div>
+								</center>
+							</div>
+							
+							<div class="repPesquisa">
+								<br /><br /><br />
+								<div class="divPesquisaExt">
+									<div class="divPesquisaInt">
+										<div class="nomePesquisas">
+											Search
+										</div>
+										
+										<div class="campoEscreverPesquisas">
+											 <input type="text" name="Pesquisa" class="pesquisaObjec" />
+										</div>
+										
+										<div class="buttonPesquisas">
+											<button type="button" class="buttonGo">Go</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -133,7 +280,7 @@
 					<h3><a>Repositórios</a></h3>
 					<div>
 						<div class="demoHeaders">
-							<div id="detalhesRepo">
+							<div class="detalhesRepo">
 								<p>Repositórios</p>
 								<div class="divDescricao">
 									<div class="divImagDescri">
@@ -151,7 +298,7 @@
 											<a href="">XML</a>
 										</div>
 										<div class="descricaoDetalhes">
-											Descrição do Projecto:
+											Descrição do Repositório:
 										</div>
 										<div class="owners">
 											Owners
@@ -178,7 +325,7 @@
 											<a href="">XML</a>
 										</div>
 										<div class="descricaoDetalhes">
-											Descrição do Projecto:
+											Descrição do Repositório:
 										</div>
 										<div class="owners">
 											Owners
@@ -205,7 +352,7 @@
 											<a href="">XML</a>
 										</div>
 										<div class="descricaoDetalhes">
-											Descrição do Projecto:
+											Descrição do Repositório:
 										</div>
 										<div class="owners">
 											Owners
@@ -218,30 +365,31 @@
 								</div>
 							</div>
 							
-							<div id="topRepo">
+							<div class="topRepo">
 								<!--container do grafico QUEIJO-->
 								<h1>Top de Repositórios: </h1>
 								<br /><br /><br /><br />
 								<center>
 									<div id="container">
+									
 									</div>
 								</center>
 							</div>
 							
-							<div id="repPesquisa">
+							<div class="repPesquisa">
 								<br /><br /><br />
 								<div class="divPesquisaExt">
 									<div class="divPesquisaInt">
 										<div class="nomePesquisas">
-											Shearch
+											Search
 										</div>
 										
 										<div class="campoEscreverPesquisas">
-											 <input type="text" name="Pesquisa" id="pesquisaObjec" />
+											 <input type="text" name="Pesquisa" class="pesquisaObjec" />
 										</div>
 										
 										<div class="buttonPesquisas">
-											<button type="button" id="buttonGo">Go</button>
+											<button type="button" class="buttonGo">Go</button>
 										</div>
 									</div>
 								</div>

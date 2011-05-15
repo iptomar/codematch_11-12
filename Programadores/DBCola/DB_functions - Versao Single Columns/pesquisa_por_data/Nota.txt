@@ -1,0 +1,5 @@
+Pesquisa de projectos por data. Não sei porquê mas para determinadas datas que existem na base de dados, as queries não retornam nenhum resultado.
+
+Ver resultados em:
+http://www.tolmai.com/~carma/site3/index/DB_functions/test_search_date.php
+

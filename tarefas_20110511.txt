@@ -20,10 +20,10 @@ Vista de repositório (Github, Launchpad,...)
 	 -linguagens
 
 -->Pesquisa de projectos por nome (para vários repositórios)
--->Pesquisa de projectos por linguagem (para vários repositórios)
--->Pesquisa de projectos por autor (para vários repositórios)
--->Pesquisa de projectos por data (para vários repositórios) (data de criação)
--->Pesquisa de projectos mais acedidos de um repositório
+-->Pesquisa de projectos por linguagem (para vários repositórios) --->impossivel neste momento
+-->Pesquisa de projectos por autor (para vários repositórios) --->impossivel neste momento
+-->Pesquisa de projectos por data (para vários repositórios) (data de criação) --->impossivel neste momento
+-->Pesquisa de projectos mais acedidos de um repositório --->impossivel neste momento
 
 
 

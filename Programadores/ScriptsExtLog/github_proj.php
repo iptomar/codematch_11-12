@@ -1,5 +1,6 @@
 <?php
 
+//script para ir buscar a tree sha
 $ch = @curl_init(); //inicia uma nova sessao
 curl_setopt($ch, CURLOPT_URL, "http://github.com/api/v2/json/commits/list/madrobby/zepto/master?page=1");  //faz a pesquisa contida no url
 curl_setopt($ch, CURLOPT_USERAGENT, 'Googlebot/2.1'); //utiliza Googlebot 2.1
@@ -9,11 +10,7 @@ curl_close($ch);	//encerra sessao
 $github_json = json_decode($page); //descodifica string JSON
 $github_tree_sha = $github_json->commits[0]->tree;
 
-echo "<pre>";
-print_r($github_tree_sha);
-echo "</pre>";
-
-
+//script para ir buscar os ficheiros
 $ch = @curl_init(); //inicia uma nova sessao
 curl_setopt($ch, CURLOPT_URL, "http://github.com/api/v2/json/blob/full/madrobby/zepto/$github_tree_sha");  //faz a pesquisa contida no url
 curl_setopt($ch, CURLOPT_USERAGENT, 'Googlebot/2.1'); //utiliza Googlebot 2.1
@@ -21,25 +18,34 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);	//define o retorno como string
 $page = curl_exec($ch);	//executa as opcoes definidas
 curl_close($ch);	//encerra sessao
 $github_json = json_decode($page); //descodifica string JSON
+$total_ficheiros = count($github_json->blobs);
+
+//echo "<pre>";
+//print_r($github_json);
+//echo "</pre>";
+
+$array_ling = array(".rdoc" => "Documento", ".js" => "JavaScript", ".jar" => "Java", ".html" => "Páginas HTML");
+$array_percentagem = array();
+$i=0;
+foreach($github_json->blobs as $ext){	
+	$extensao = substr($ext->name, strrpos($ext->name, '.'), strlen($ext->name));
+	if(isset($array_ling[$extensao])) {	
+		if(isset($array_percentagem[$extensao])){
+			$array_percentagem[$extensao]++;
+		} else {
+			$array_percentagem[$extensao] = 1;
+		}
+	}
+}
 
 echo "<pre>";
-print_r($github_json);
+print_r($array_percentagem);
 echo "</pre>";
 
 
-foreach($github_json->blobs as $ext){
-$extensao = substr($ext->name, strrpos($ext->name, '.'), strlen($ext->name));
-print_r($extensao);
-$os = array(".rdoc" => "Documento", ".js" => "JavaScript", ".jar" => "Java", ".html" => "Páginas HTML");
-//if (in_array($extensao, $os)) {
-    if(isset($os[$extensao])) {
-        echo '=> ';
-        echo $os[$extensao];
-        echo '<br />';
-    }  else {echo '=> outros';
-        echo '<br />';
-    }
-    }
-//}
+foreach($array_percentagem as $percent) {
+	echo round( ($percent/$total_ficheiros)*100, 1 ). "<br>";
+}
+
 
 ?>

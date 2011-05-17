@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Adding items &middot; Isotope Docs</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" />
+  
+  <!-- scripts at bottom of page -->
+
+</head>
+<body class="doc ">
+
+  
+  <nav id="docs-nav">
+    <h1><a href="../index.html">Isotope</a> Docs</h1>
+    
+    <ul>
+      
+        
+        <li><a href="../docs/introduction.html">Introduction</a>
+        
+      
+        
+        <li><a href="../docs/options.html">Options</a>
+        
+      
+        
+        <li><a href="../docs/methods.html">Methods</a>
+        
+      
+        
+        <li><a href="../docs/layout-modes.html">Layout modes</a>
+        
+      
+        
+        <li><a href="../docs/filtering.html">Filtering</a>
+        
+      
+        
+        <li><a href="../docs/sorting.html">Sorting</a>
+        
+      
+        
+        <li><a href="../docs/animating.html">Animating</a>
+        
+      
+        
+        <li class="current"><a href="#content">Adding items</a>
+          <ul class="toc">
+            
+            <li><a href="#additems_method">addItems method</a></li>
+            
+            <li><a href="#insert_method">insert method</a></li>
+            
+            <li><a href="#appended_method">appended method</a></li>
+            
+          </ul>
+        </li>
+        
+      
+        
+        <li><a href="../docs/troubleshooting.html">Troubleshooting</a>
+        
+      
+        
+        <li><a href="../docs/license.html">License</a>
+        
+      
+    </ul>
+    
+  </nav> <!-- #docs-nav -->
+  
+  <section id="content">
+    
+    <h1>Adding items</h1>
+
+    <p>If your application dynamically adds new content, Isotope provides several methods to add items.</p>
+
+<p><a href='../demos/adding-items.html'><strong>See Demo: Adding items</strong></a>.</p>
+
+<h2 id='additems_method'>addItems method</h2>
+
+<p>The <a href='methods.html#additems'><code>addItems</code> method</a> adds new content to an Isotope container. This applies the proper styles to the items so they can be positioned and any sorting data is retrieved. But that&#8217;s it. The new content will <em>not</em> be filtered, sorted, or positioned properly, nor will it be appended to the container element.</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>$newItems</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&#39;</span><span class='p'>);</span>
+<span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>append</span><span class='p'>(</span> <span class='nx'>$newItems</span> <span class='p'>).</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;addItems&#39;</span><span class='p'>,</span> <span class='nx'>$newItems</span> <span class='p'>);</span>
+</code></pre>
+</div>
+<h2 id='insert_method'>insert method</h2>
+
+<p>More likely, you want to use the <a href='methods.html#insert'><code>insert</code> method</a>, which does everything that <code>addItems</code> misses. <code>insert</code> will append the content to the container, filter the new content, sort all the content, then trigger a <code>reLayout</code> so all item elements are properly laid out.</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>$newItems</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&#39;</span><span class='p'>);</span>
+<span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;insert&#39;</span><span class='p'>,</span> <span class='nx'>$newItems</span> <span class='p'>);</span>
+</code></pre>
+</div>
+<h2 id='appended_method'>appended method</h2>
+
+<p>The <a href='methods.html#appended'><code>appended</code> method</a> is a convenience method triggers <code>addItems</code> on new content, then lays out <em>only the new content</em> at the end of the layout. This method is useful if you know you only want to add new content to the end, and <strong>not</strong> use filtering or sorting. <code>appended</code> is the best method to use with Infinite Scroll.</p>
+
+<p><a href='../demos/infinite-scroll.html'><strong>See Demo: Infinite Scroll</strong></a>.</p>
+
+<p>See also <a href='troubleshooting.html#infinite_scroll_with_filtering_or_sorting'>Infinite Scroll with filtering or sorting</a></p>
+    
+    
+  <footer>
+    Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+  </footer>
+
+    
+  </section> <!-- #content -->
+  
+
+</body>
+</html>

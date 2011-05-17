@@ -6,6 +6,7 @@
 use IPC::Open3;
 use threads;
 use threads::shared;
+use subs::parallel;
 
 #Variables
 
@@ -53,7 +54,7 @@ print "\n\nExiting...! \n\n Goodbye! \n\n";
 
 #Call - execute a command - returns error code (0 = Fine process execution)
 
-sub executa
+sub executa : parallel
 {	
 	#saves the command
 	my $comm = $_[0];
@@ -80,12 +81,12 @@ sub executa
 	#State returned
 	print "\n $ret returned - Good execution of process\n\n";
 
-	return $ret;
+	
 }
 
 #Menu Function - Draws initial menu
 
-sub menu{
+sub menu : parallel{
 
 	#Save username
 	open FH, "whoami|" or die "Failed";

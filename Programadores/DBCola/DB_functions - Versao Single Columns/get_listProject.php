@@ -13,7 +13,7 @@ require_once('phpcassa/columnfamily.php');
 
 	foreach($rows as $key => $columns) {
 	
-		print_r ($columns);
+		return ($columns);
 	
 	}
 	

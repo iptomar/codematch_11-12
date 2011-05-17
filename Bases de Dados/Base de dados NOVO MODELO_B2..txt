@@ -12,7 +12,7 @@ update column family projects with column_metadata=
 {column_name: logo, validation_class:UTF8Type}
 ];
 
-create column family language with column_type='Super' and comparator='TimeUUIDType' and SubComparator='BytesType';
+create column family language with comparator='TimeUUIDType' and SubComparator='BytesType';
 
 update column family language with column_metadata=
 [
@@ -20,7 +20,7 @@ update column family language with column_metadata=
 
 ];
 
-create column family author with comparator=’TimeUUIDType’ and subcomparator='BytesType' and Column_Type='Super';
+create column family author with comparator=’TimeUUIDType’ and subcomparator='BytesType' ;
 
 update column family author with column_metadata=
 [
@@ -28,7 +28,7 @@ update column family author with column_metadata=
 
 ];
 
-create column family repository with comparator='TimeUUIDType' and subcomparator='BytesType' and Column_Type='Super';
+create column family repository with comparator='TimeUUIDType' and subcomparator='BytesType';
 
 update column family repository with column_metadata=
 [

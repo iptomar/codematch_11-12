@@ -5,6 +5,7 @@ require_once('phpcassa/columnfamily.php');
 
 	
 	function get_listProject(){
+	
 	$conn = new Connection('tolmai');
 	$column_family= new ColumnFamily($conn,'tm');
 
@@ -13,7 +14,7 @@ require_once('phpcassa/columnfamily.php');
 
 	foreach($rows as $key => $columns) {
 	
-		print_r ($columns);
+		return ($columns);
 	
 	}
 	

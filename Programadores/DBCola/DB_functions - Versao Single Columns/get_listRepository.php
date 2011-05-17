@@ -13,16 +13,17 @@ $conn = new Connection('tolmai');
 	$rows = $column_family->get_indexed_slices($index_clause);
 	
 
-	
+	$arr_lang = array();
 
 	
 
 
 	foreach($rows as $key => $columns) {
 	
-		return ($columns);
+		$arr_lang[$key]=$columns;
 	
 	}
+	return ($arr_lang);
 	}
 	
 ?>

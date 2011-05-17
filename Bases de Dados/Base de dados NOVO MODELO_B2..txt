@@ -16,7 +16,7 @@ create column family language with comparator='TimeUUIDType' and SubComparator='
 
 update column family language with column_metadata=
 [
-{column_name: name, validation_class:UTF8Type} 
+{column_name: name, validation_class:UTF8Type, index_type: KEYS} 
 
 ];
 
@@ -24,7 +24,7 @@ create column family author with comparator=’TimeUUIDType’ and subcomparator='By
 
 update column family author with column_metadata=
 [
-{column_name: name, validation_class:UTF8Type, }
+{column_name: name, validation_class:UTF8Type, index_type: KEYS }
 
 ];
 
@@ -32,7 +32,7 @@ create column family repository with comparator='TimeUUIDType' and subcomparator
 
 update column family repository with column_metadata=
 [
-{column_name: name_repository, validation_class:UTF8Type} 
+{column_name: name_repository, validation_class:UTF8Type, index_type: KEYS} 
 ];
 
 // name = nome do projecto

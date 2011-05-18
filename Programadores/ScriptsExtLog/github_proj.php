@@ -1,5 +1,24 @@
 <?php
 
+require ("database_data.php");
+$tarray=get_details(10000);
+//$auths=array();
+//$i=0;
+//while($i <= 10000){
+//   $auths=key($tarray);
+//   next($tarray);
+//   $auths2=key($tarray);
+//   i++;
+//}
+// foreach($tarray->$auths as $test){
+      //print_r('<pre>');
+//      Print_r($tarray->$auths);
+//      print_r('</pre>');
+
+//}
+print_r('<pre>');
+Print_r($tarray);
+print_r('</pre>');
 //script para ir buscar a tree sha
 $ch = @curl_init(); //inicia uma nova sessao
 curl_setopt($ch, CURLOPT_URL, "http://github.com/api/v2/json/commits/list/madrobby/zepto/master?page=1");  //faz a pesquisa contida no url
@@ -38,14 +57,14 @@ foreach($github_json->blobs as $ext){
 	}
 }
 
-echo "<pre>";
-print_r($array_percentagem);
-echo "</pre>";
+//echo "<pre>";
+//print_r($array_percentagem);
+//echo "</pre>";
 
 
-foreach($array_percentagem as $percent) {
-	echo round( ($percent/$total_ficheiros)*100, 1 ). "<br>";
-}
+//foreach($array_percentagem as $percent) {
+//	echo round( ($percent/$total_ficheiros)*100, 1 ). "<br>";
+//}
 
 
 ?>

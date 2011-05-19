@@ -4,8 +4,8 @@ require_once('phpcassa/columnfamily.php');
 
 
 
-function insert_log($name,$nameproj, $language1, $plang1, $language2, $plang2, $language3, $plang3, $other,$pother){
-   
+function insert_log($name,$nameproj, $lang, $plang){
+   $lan_array = array_map("strtoupper", $lang);
 	try{
 		//make connection with database
 		$conn = new Connection('tolmai');
@@ -15,12 +15,49 @@ function insert_log($name,$nameproj, $language1, $plang1, $language2, $plang2, $
 
 		//single insert
 		$column_family-> insert($name,array("nameproj" => $nameproj));
-		$column_family-> insert($name,array("language1" => $language1));
-		$column_family-> insert($name,array("plang1" => $plang1));
-		$column_family-> insert($name,array("language2" => $language2));
-		$column_family-> insert($name,array("plang2" => $plang2));
-		$column_family-> insert($name,array("other" => $other));
-		$column_family-> insert($name,array("pother" => $pother));
+		
+			if(isset($lang[0])){ //1º lingua no array
+			$column_family-> insert($name,array("language1" =>$lan_array[0])); 
+		} else {
+			$column_family-> insert($name,array("language1" => "N/A"));
+		}	
+		if(isset($lang[1])){ //2º lingua no array
+			$column_family-> insert($name,array("language2" => $lan_array[1])); 
+		} else {
+			$column_family-> insert($name,array("language2" => "N/A"));
+		}			
+		if(isset($lang[2])){ //3º lingua no array
+			$column_family-> insert($name,array("language3" => $lan_array[2])); 
+		} else {
+			$column_family-> insert($name,array("language3" => "N/A"));
+		}
+		if(isset($lang[2])){ //4º lingua no array
+			$column_family-> insert($name,array("other" => $lan_array[3])); 
+		} else {
+			$column_family-> insert($name,array("other" => "N/A"));
+		}
+		
+		
+		if(isset($plang[0])){ // % da 1º lingua no array
+			$column_family-> insert($name,array("plang1" =>$plang[0])); 
+		} else {
+			$column_family-> insert($name,array("plang1" => "N/A"));
+		}	
+		if(isset($plang[1])){ //% da2º lingua no array
+			$column_family-> insert($name,array("plang2" => $plang[1])); 
+		} else {
+			$column_family-> insert($name,array("plang2" => "N/A"));
+		}			
+		if(isset($plang[2])){ //% da3º lingua no array
+			$column_family-> insert($name,array("plang3" => $plang[2])); 
+		} else {
+			$column_family-> insert($name,array("plang4" => "N/A"));
+		}
+		if(isset($plang[3])){ //% da4º lingua no array
+			$column_family-> insert($name,array("pother" => $plang[3])); 
+		} else {
+			$column_family-> insert($name,array("pother" => "N/A"));
+		}
 	}
 	catch(Exception $x){
 		error_log($x);

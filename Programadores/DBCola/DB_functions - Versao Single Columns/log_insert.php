@@ -41,22 +41,22 @@ function insert_log($name,$nameproj, $lang, $plang){
 		if(isset($plang[0])){ // % da 1º lingua no array
 			$column_family-> insert($name,array("plang1" =>$plang[0])); 
 		} else {
-			$column_family-> insert($name,array("plang1" => "N/A"));
+			$column_family-> insert($name,array("plang1" => "0"));
 		}	
 		if(isset($plang[1])){ //% da2º lingua no array
 			$column_family-> insert($name,array("plang2" => $plang[1])); 
 		} else {
-			$column_family-> insert($name,array("plang2" => "N/A"));
+			$column_family-> insert($name,array("plang2" => "0"));
 		}			
 		if(isset($plang[2])){ //% da3º lingua no array
 			$column_family-> insert($name,array("plang3" => $plang[2])); 
 		} else {
-			$column_family-> insert($name,array("plang4" => "N/A"));
+			$column_family-> insert($name,array("plang4" => "0"));
 		}
 		if(isset($plang[3])){ //% da4º lingua no array
 			$column_family-> insert($name,array("pother" => $plang[3])); 
 		} else {
-			$column_family-> insert($name,array("pother" => "N/A"));
+			$column_family-> insert($name,array("pother" => "0"));
 		}
 	}
 	catch(Exception $x){

@@ -3,13 +3,13 @@
 	width:2160px;
 	float: lefth;
 	margin:10px;
-	/**border:1px solid #92cdec;**/
+	border:1px solid #92cdec;
 }
 
 .tolmaillinguagens{	
 	height:690px;
 	width:640px;
-	/**border:1px solid #92cdec;**/
+	border:1px solid #92cdec;
 	float: left;
 }
 
@@ -19,7 +19,7 @@
 .simbolotolmai{
 	height:300px;
 	width:200px;
-	/**border:1px solid #92cdec;**/
+	border:1px solid #92cdec;
 	float: left;
 	
 }
@@ -37,14 +37,14 @@
 .funcioProjectoTol{
 	height:300px;
 	width:500px;
-	/**border:1px solid #92cdec;**/
+	border:1px solid #92cdec;
 	float: left;
 	
 }
 .objTol{
 	height:165px;
 	width:702px;
-	/**border:1px solid #92cdec;**/
+	border:1px solid #92cdec;
 	float: left;
 	vertical-align:center;
 }
@@ -55,7 +55,7 @@
 #descricaoProjecto{
 	height:468px;
 	width:704px;
-	/**border:1px solid #92cdec;**/
+	border:1px solid #92cdec;
 	float: left;
 }
 
@@ -65,6 +65,6 @@
 #linguagensGrafico{
 	height:468px;
 	width:533px;
-	/**border:1px solid #92cdec;**/
+	border:1px solid #92cdec;
 	float: left;
 }

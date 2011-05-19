@@ -26,7 +26,8 @@ foreach($rows as $key => $columns) {
 }
 
 //return hit count
-return $count;
+echo $count;
+
 
 }
 

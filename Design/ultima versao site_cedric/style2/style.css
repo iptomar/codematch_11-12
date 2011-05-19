@@ -43,7 +43,7 @@ p{
 	margin: 9px;
 }
 .logo_text{
-	/**border:1px solid #92cdec;**/
+	border: .2em dotted #400;
 	height:50px;
 	width:1206px;
 	float:left;
@@ -51,12 +51,12 @@ p{
 	padding:0px;
 }
 .logo{
-	/**border:1px solid #92cdec;**/
+	border: .2em dotted #900;
 	width:150px;
 	float:left;
 }
 .texto{
-	/**border:1px solid #92cdec;**/
+	border: .2em dotted #900;
 	vertical-align:middle;
 	width:1048px;
 	line-height:48px;
@@ -66,7 +66,7 @@ p{
 .repoInfor{
 	width:1210px;
 	height:295px;
-	/**border:1px solid #92cdec;**/
+	border: .2em dotted #900;
 }
 .img_logo{
 	align:left;

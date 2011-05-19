@@ -5,7 +5,7 @@
 	height:467px;
 	width:620px;
 	float: left;
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 	margin:0px;
 }
 
@@ -14,7 +14,7 @@
 	height:467px;
 	width:400px;
 	float: left;
-	border:1px solid #92cdec;
+/**border:1px solid #92cdec;**/
 }
 
 /**/
@@ -22,7 +22,7 @@
 	height:467px;
 	width:200px;
 	float: left;
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 }
 
 /*
@@ -31,7 +31,7 @@
 .divDescricao{
 	width:597px;
 	height:120px;
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 	background-color: #DCDCDC;
 	margin:10px;
 }
@@ -40,7 +40,7 @@
 	Div que contem as imagens de cada descicao do repositorio
 */
 .divImagDescri{
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 	width:100px;
 	height:100px;
 	float:left;
@@ -51,7 +51,7 @@
 	Div que contem todos os dados de cada repositorios
 */
 .descricao{
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 	width:450px;
 	height:100px;
 	float:left;
@@ -72,7 +72,7 @@
 .nomeRepo{
 	width: 156px;
 	height:20px;
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 	font-size:14px;
 	float:left;
 	text-align:center;
@@ -84,7 +84,7 @@
 .linguagensRepo{
 	width: 290px;
 	height:20px;
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 	font-size:14px;
 	float:left;
 	text-align: right;
@@ -96,19 +96,19 @@
 .descricaoDetalhes{
 	width: 448px;
 	height: 42px;
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 	float:left;
 }
 .owners{
 	width: 240px;
 	height: 32px;
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 	float:left;
 }
 .url{
 	width: 206px;
 	height: 32px;
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 	float:left;
 }
 
@@ -135,14 +135,14 @@
 	margin:10px;
 	width: 135px;
 	height: 20px;
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 }
 
 .campoEscreverPesquisas{
 	margin:10px;
 	width: 135px;
 	height: 20px;
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 }
 
 .pesquisaObjec{
@@ -154,7 +154,7 @@
 	margin:10px;
 	width: 135px;
 	height: 20px;
-	border:1px solid #92cdec;
+	/**border:1px solid #92cdec;**/
 }
 
 .buttonGo{

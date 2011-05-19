@@ -25,9 +25,9 @@ function get_date($repo){
 	}
 	//Sort an array in reverse order and maintain index association
 	arsort($date);
+	
 	return ($date);
 	}
-
 
 
 ?>

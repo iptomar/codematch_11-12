@@ -1,0 +1,9 @@
+Top das linguagens por repositorio. Para mudar de repositorio basta mudar o parâmetro da função.
+
+Comparar resultados em:
+
+top Github:
+http://www.tolmai.com/~carma/site3/index/top_L_Github.php
+
+top linguagens:
+http://www.tolmai.com/~carma/site3/index/index.php

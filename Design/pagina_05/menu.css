@@ -1,0 +1,111 @@
+/ * Contenedor * /
+menwrap div # {
+width: 220px;
+height: 220px;
+margin: auto 5em;
+padding: 0;
+background: # fff url ('background.jpg') no-repeat center 0;
+}
+# div {ie_height_fix
+width: 1px;
+height: 220px;
+margin: 0;
+padding: 0;
+}
+/ * Estilo * Dando cabeçalho al /
+div # menwrap h2 {
+position: absolute;
+width: 150px;
+height: 35px;
+margin: 60px 0 0 45px;
+padding: 10px 0 0 0;
+text-align: left;
+font-size: 1.5em;
+z-index: 0;
+text-indent: 45px;
+}
+menwrap div # span h2 {
+display: block;
+text-indent: 0;
+font-size: 0,8 em;
+width: 90px;
+border-top: 2px solid # abe9ab;
+margin: 5px 0 0 25px;
+padding: 5px 0 0 0;
+color: # 666;
+text-align: center;
+}
+/ * Cabeçalhos /
+div h2.home menwrap # {
+url ('home.gif') no-repeat left-45px;: fundo
+}
+menwrap h2.tutos # div {
+url ('tutos.gif') no-repeat left-45px;: fundo
+}
+menwrap h2.files div # {
+url ('files.gif') no-repeat left-45px;: fundo
+}
+div h2.search menwrap # {
+url ('search.gif') no-repeat left-45px;: fundo
+}
+div h2.mail menwrap # {
+url ('mail.gif') no-repeat left-45px;: fundo
+}
+menwrap # div {h2.id
+url ('id.gif') no-repeat left-45px;: fundo
+}
+menwrap # div {h2.write
+url ('write.gif') no-repeat left-45px;: fundo
+}
+div h2.logout menwrap # {
+url ('logout.gif') no-repeat left-45px;: fundo
+}
+/ * Dando estilosantes a la * Lista /
+ul # menu {
+margin: 50px auto;
+height: 220px;
+padding: 0;
+width: 220px;
+height: 220px;
+list-style: none;
+list-style-type: none;
+position: relative;
+}
+ul # menu li {
+width: 45px;
+height: 45px;
+margin: 0;
+padding: 0;
+display: block;
+list-style: none;
+list-style-type: none;
+position: absolute;
+z-index: 2;
+font-size: 8pt;
+font-family: Verdana, Tahoma, Arial, serif;
+}
+/ * Fondo en: ativo y: hover * /
+/ * Itens do menu del Activos não * /
+
+a.menitem ul # menu: link, a.menitem menu ul #: visited {
+background-position: canto inferior esquerdo;
+opacidade: 0,7;
+}
+
+a.menitem ul # menu: hover, a.menitem menu ul #: active {
+background-position: canto superior esquerdo;
+background-color: transparent;
+opacidade: 0,9;
+}
+
+/ * Itens do menu del Activos * /
+
+ul # menu li {a.menactive
+background-position: canto superior esquerdo;
+background-color: transparent;
+opacity: 1;
+}
+ul # menu li a.menactive: hover {
+opacity: 1;
+}
+/ * Esconder informaci

@@ -3,14 +3,15 @@ include ("database_data.php");
 include ("ext_languages.php");
 include ("log_insert.php");
 
-$get_details = get_details('5');
+$get_details = get_details('190000');
 
 foreach($get_details as $project => $owner) {
 	$owner = substr($owner, 0, stripos($owner, ';'));
 	//echo $project." | ".$owner."<br>";
 	list($array_percentagem, $total_ficheiros) = get_pling($project, $owner, $array_languages);
-	arsort($array_percentagem);
-
+	if (isset($array_percentagem)) {	
+		arsort($array_percentagem);
+	}
 	$insert_array_lang = array();
 	$insert_array_plang = array();
 	$i = 1;
@@ -23,16 +24,17 @@ foreach($get_details as $project => $owner) {
 			$i++;
 		}
 		insert_log($project, $project, $insert_array_lang, $insert_array_plang);
-		echo $project." | ".$owner."<br>";	
-		echo "<pre>";
-		print_r($insert_array_lang);
-		echo "</pre>";
-		echo "<pre>";
-		print_r($insert_array_plang);
-		echo "</pre>";
-		echo "<hr>";	
+//		echo $project." | ".$owner."<br>";	
+//		echo "<pre>";
+//		print_r($insert_array_lang);
+//		echo "</pre>";
+//		echo "<pre>";
+//		print_r($insert_array_plang);
+//		echo "</pre>";
+//		echo "<hr>";	
 	}	
 }
+print_r("Done Github Ext ".date("Y-m-d")."\n");
 
 function get_pling($project, $owner, $array_languages) {
 	//script para ir buscar a tree sha

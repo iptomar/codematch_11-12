@@ -36,7 +36,7 @@ function insert_log($name,$nameproj,$lang, $plang){
 		} else {
 			$column_family-> insert($name,array("language3" => "N/A"));
 		}
-		if(isset($lang[2])){ //4º lingua no array
+		if(isset($lang[3])){ //4º lingua no array
 			$column_family-> insert($name,array("other" => $lan_array[3])); 
 		} else {
 			$column_family-> insert($name,array("other" => "N/A"));

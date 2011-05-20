@@ -1,21 +1,38 @@
 <?php
 include ("database_data.php");
 include ("ext_languages.php");
+include ("log_insert.php");
 
-$get_details = get_details('15');
+$get_details = get_details('5');
 
 foreach($get_details as $project => $owner) {
 	$owner = substr($owner, 0, stripos($owner, ';'));
-	echo $project." | ".$owner."<br>";
+	//echo $project." | ".$owner."<br>";
 	list($array_percentagem, $total_ficheiros) = get_pling($project, $owner, $array_languages);
-	if (isset($array_percentagem)) {
+	arsort($array_percentagem);
+
+	$insert_array_lang = array();
+	$insert_array_plang = array();
+	$i = 1;
+	if (isset($array_percentagem)) {	
 		foreach($array_percentagem as $lang => $percent) {
-			echo "Linguagem: ".$lang." - ".$percent." %<br>";
+			if ($i <= 4) {
+				array_push($insert_array_lang, $lang);
+				array_push($insert_array_plang, $percent);
+			}
+			$i++;
 		}
-		echo "<br><br>";
+		insert_log($project, $project, $insert_array_lang, $insert_array_plang);
+		echo $project." | ".$owner."<br>";	
+		echo "<pre>";
+		print_r($insert_array_lang);
+		echo "</pre>";
+		echo "<pre>";
+		print_r($insert_array_plang);
+		echo "</pre>";
+		echo "<hr>";	
 	}	
 }
-
 
 function get_pling($project, $owner, $array_languages) {
 	//script para ir buscar a tree sha
@@ -54,6 +71,14 @@ function get_pling($project, $owner, $array_languages) {
 					$array_percentagem[$extensao] = 1;
 				}
 			}
+			else {
+				if(isset($array_percentagem['Others'])){
+					$array_percentagem['Others']++;
+				} else {
+					$array_percentagem['Others'] = 1;
+				}
+			}
+
 		}	
 		$array_final = array();
 		foreach($array_percentagem as $lang => $percent) {

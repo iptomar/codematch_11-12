@@ -1,5 +1,6 @@
 <?php
- $array_languages = array(".as"=>"ActionScript",
+ $array_languages = array("Others"=>"Others",
+ ".as"=>"ActionScript",
  ".mx"=>"ActionScript",
  ".ada"=>"ADA",
  ".ads"=>"ADA",

@@ -1,0 +1,23 @@
+create keyspace DBCOla;
+use DBCOla;
+
+create column family projects with comparator='UTF8Type';
+
+update column family projects with column_metadata=
+[
+{column_name: source, validation_class: UTF8Type},
+{column_name: date_c, validation_class:LongType}, 
+{column_name: date_l, validation_class:LongType},                             
+{column_name: logo, validation_class:UTF8Type}
+];
+
+create column family language with comparator='TimeUUIDType';
+update column family language with column_metadata=
+[
+{column_name: proj, validation_class:TimeUUIDType, index_type: KEYS} ,
+];
+
+create column family author with column_type='Super' and comparator='TimeUUIDType' and subcomparator='BytesType';
+
+create column family repos with column_type='Super' and comparator='TimeUUIDType' and subcomparator='BytesType';
+

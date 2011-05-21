@@ -9,7 +9,7 @@ $conn = new Connection('tolmai');
 	$column_family= new ColumnFamily($conn,'tm');
 	
 		$index_exp = CassandraUtil::create_index_expression('tm_repository',$repo);
-	$index_clause = CassandraUtil::create_index_clause(array($index_exp));
+	$index_clause = CassandraUtil::create_index_clause(array($index_exp),'', $column_count=100000);
 	$rows = $column_family->get_indexed_slices($index_clause);
 	
 

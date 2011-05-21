@@ -1,5 +1,5 @@
-create keyspace DBCOla;
-use DBCOla;
+create keyspace DBCola;
+use DBCola;
 
 create column family projects with comparator='UTF8Type';
 
@@ -12,12 +12,9 @@ update column family projects with column_metadata=
 ];
 
 create column family language with comparator='TimeUUIDType';
-update column family language with column_metadata=
-[
-{column_name: proj, validation_class:TimeUUIDType, index_type: KEYS} ,
-];
 
-create column family author with column_type='Super' and comparator='TimeUUIDType' and subcomparator='BytesType';
 
-create column family repos with column_type='Super' and comparator='TimeUUIDType' and subcomparator='BytesType';
+create column family author with comparator='TimeUUIDType';
 
+
+create column family repos with comparator='TimeUUIDType' ;

@@ -13,9 +13,8 @@ $arr_lang = array();
 
 foreach($rows as $key => $columns) {
     
-   $arr_lang[$key] = $columns;
+   $arr_lang[$key] = $columns['tm_author'];
 }
 return($arr_lang);
 }
-
 ?>

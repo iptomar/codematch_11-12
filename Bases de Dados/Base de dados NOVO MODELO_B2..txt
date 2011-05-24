@@ -1,3 +1,5 @@
+// ESTE MODELO FOI AGORA IMPLEMENTADO NO CASSANDRA!!!
+
 create keyspace modelo;
 use modelo;
 

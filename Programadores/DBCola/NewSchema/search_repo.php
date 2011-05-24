@@ -6,7 +6,7 @@ include_once('../phpcassa/uuid.php');
 
 function search_repo($repo){
 
-$conn = new Connection('DBCOla');
+$conn = new Connection('DBCola');
 
 $column_repo = new ColumnFamily($conn,'repos');
 

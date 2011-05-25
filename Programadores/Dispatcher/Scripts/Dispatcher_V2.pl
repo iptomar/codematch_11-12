@@ -9,7 +9,7 @@ use threads::shared;
 
 #Variables
 
-my $logn = 0;
+my $logn=0;
 
 #commands to use
 my $cmd1 = "php bing_github.php";
@@ -71,11 +71,11 @@ sub executa
 	#time stamp number 1 - start process
 	($seconds,$minutes,$hours,$mday,$month,$year,$wday,$yday,$isdist)=gmtime(time);
 	
-	#prints the process id and start time
-	print "\n Process number $pid start time: $hours : $minutes : $seconds \n";
-	
 	#starts the process	
 	my $pid = open3($wrt, $read, $err, $comm);
+	
+	#prints the process id and start time
+	print "\n Process number $pid start time: $hours : $minutes : $seconds \n";
 	
 	#Wait for process to finish
 	waitpid( $pid, 0 ) or die "$!\n";
@@ -89,7 +89,7 @@ sub executa
 	
 	#prints the process id and end time
 	
-	print "\n Process number $pid start time: $hours2 : $minutes2 : $seconds2 \n";	
+	print "\n Process number $pid end time: $hours2 : $minutes2 : $seconds2 \n";	
 	
 	#duration time calculation
 	
@@ -102,37 +102,37 @@ sub executa
 	
 	if($logn==0){
 	
-	open(LOGS,"log1.dat") || die "Log file yahoo.dat could not be open!";
-	$logn = $logn +1;
+	open(LOGS,"log1.dat") || die "Log file 1 could not be open!";
+	$logn=$logn +1;
 	}
 	if($logn==1){
 	
-	open(LOGS,"log2.dat") || die "Log file yahoo.dat could not be open!";
-	$logn = $logn +1;
+	open(LOGS,"log2.dat") || die "Log file 2 could not be open!";
+	$logn=$logn +1;
 	}
 
 	if($logn==2){
 	
-	open(LOGS,"log3.dat") || die "Log file yahoo.dat could not be open!";
-	$logn = $logn +1;
+	open(LOGS,"log3.dat") || die "Log file 3 could not be open!";
+	$logn=$logn +1;
 	}
 
 	if($logn==3){
 	
-	open(LOGS,"log4.dat") || die "Log file yahoo.dat could not be open!";
-	$logn = $logn +1;
+	open(LOGS,"log4.dat") || die "Log file 4 could not be open!";
+	$logn=$logn +1;
 	}
 
 	if($logn==4){
 	
-	open(LOGS,"log5.dat") || die "Log file yahoo.dat could not be open!";
-	$logn = $logn +1;
+	open(LOGS,"log5.dat") || die "Log file 5 could not be open!";
+	$logn=$logn +1;
 	}
 	
 	if($logn==5){
 	
-	open(LOGS,"log6.dat") || die "Log file yahoo.dat could not be open!";
-	$logn = $logn +1;
+	open(LOGS,"log6.dat") || die "Log file 6 could not be open!";
+	$logn=$logn +1;
 	}
 	
 	

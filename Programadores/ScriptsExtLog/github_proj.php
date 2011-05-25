@@ -3,7 +3,7 @@ include ("database_data.php");
 include ("ext_languages.php");
 include ("log_insert.php");
 
-$get_details = get_details('10');
+$get_details = get_details('190000');
 
 foreach($get_details as $project => $owner) {
 	$owner = substr($owner, 0, stripos($owner, ';'));

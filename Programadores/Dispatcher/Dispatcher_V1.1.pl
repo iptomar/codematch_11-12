@@ -17,7 +17,7 @@ menu();
 print "\n\n";
 
 #open directory
-opendir(DIR, 'd:\Escola\PSI\codematch\Programadores\Dispatcher') or die ("Unable to open directory");
+opendir(DIR, '>Launch/') or die ("Unable to open directory");
 #this line gets rid of . and ..<br>
 @files = grep !/^\./, readdir(DIR);
 #close directory

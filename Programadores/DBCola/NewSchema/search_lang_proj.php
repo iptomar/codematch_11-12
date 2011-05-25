@@ -6,7 +6,7 @@ include_once('../phpcassa/uuid.php');
 
 function search_lang_proj($lang){
 
-$conn = new Connection('DBCOla');
+$conn = new Connection('DBCola');
 
 $column_lang= new ColumnFamily($conn,'language');
 

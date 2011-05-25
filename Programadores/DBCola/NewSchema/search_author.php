@@ -6,7 +6,7 @@ include_once('../phpcassa/uuid.php');
 
 function search_author($authr){
 
-$conn = new Connection('DBCOla');
+$conn = new Connection('DBCola');
 
 $column_authr = new ColumnFamily($conn,'author');
 

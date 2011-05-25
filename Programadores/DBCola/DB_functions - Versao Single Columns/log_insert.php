@@ -37,9 +37,9 @@ function insert_log($name,$nameproj,$lang, $plang){
 			$column_family-> insert($name,array("language3" => "N/A"));
 		}
 		if(isset($lang[3])){ //4º lingua no array
-			$column_family-> insert($name,array("other" => $lan_array[3])); 
+			$column_family-> insert($name,array("language4" => $lan_array[3])); 
 		} else {
-			$column_family-> insert($name,array("other" => "N/A"));
+			$column_family-> insert($name,array("language4" => "N/A"));
 		}
 		
 
@@ -60,9 +60,9 @@ function insert_log($name,$nameproj,$lang, $plang){
 			$column_family-> insert($name,array("plang3" => "0"));
 		}
 		if(isset($plang[3])){ //% da4º lingua no array
-			$column_family-> insert($name,array("pother" => $plang[3])); 
+			$column_family-> insert($name,array("plang4" => $plang[3])); 
 		} else {
-			$column_family-> insert($name,array("pother" => "0"));
+			$column_family-> insert($name,array("plang4" => "0"));
 		}
 	}
 	catch(Exception $x){

@@ -3,11 +3,10 @@ include ("database_data.php");
 include ("ext_languages.php");
 include ("log_insert.php");
 
-$get_details = get_details('190000');
+$get_details = get_details('10');
 
 foreach($get_details as $project => $owner) {
 	$owner = substr($owner, 0, stripos($owner, ';'));
-	//echo $project." | ".$owner."<br>";
 	list($array_percentagem, $total_ficheiros) = get_pling($project, $owner, $array_languages);
 	if (isset($array_percentagem)) {	
 		arsort($array_percentagem);
@@ -23,8 +22,8 @@ foreach($get_details as $project => $owner) {
 			}
 			$i++;
 		}
-		insert_log($project, $project, $insert_array_lang, $insert_array_plang);
-//		echo $project." | ".$owner."<br>";	
+		insert_log($project, $project, $insert_array_lang, $insert_array_plang, $total_ficheiros);
+//		echo $project." | ".$owner." | " .$total_ficheiros."<br>";	
 //		echo "<pre>";
 //		print_r($insert_array_lang);
 //		echo "</pre>";

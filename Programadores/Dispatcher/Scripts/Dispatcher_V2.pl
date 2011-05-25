@@ -9,6 +9,15 @@ use threads::shared;
 
 #Variables
 
+<<<<<<< HEAD
+=======
+open(LOG1,">/home/semiao/public_html/");
+
+#Main Code
+menu();
+print "\n\n";
+
+>>>>>>> origin/master
 #commands to use
 my $cmd1 = "php bing_github.php";
 my $cmd2 = "php bing_launchpad.php";
@@ -17,9 +26,12 @@ my $cmd4 = "php yahoo_github.php";
 my $cmd5 = "php yahoo_launchpad.php";
 my $cmd6 = "php yahoo_sourceforge.php";
 
+<<<<<<< HEAD
 #Main Code
 menu();
 print "\n\n";
+=======
+>>>>>>> origin/master
 
 #Start all threads
 
@@ -72,8 +84,13 @@ sub executa
 	#starts the process	
 	my $pid = open3($wrt, $read, $err, $comm);
 	
+<<<<<<< HEAD
 	#prints the process id and start time
 	print "\n Process number $pid start time: $hours : $minutes : $seconds \n";
+=======
+	#prints the process id
+	print "$comm PID: $pid\n";
+>>>>>>> origin/master
 	
 	#Wait for process to finish
 	waitpid( $pid, 0 ) or die "$!\n";
@@ -81,14 +98,23 @@ sub executa
 	#saves return value
 	my $ret = $?;
 	
+<<<<<<< HEAD
 	#time stamp number 2 - end process
 	
 	($seconds2,$minutes2,$hours2,$mday2,$month2,$year2,$wday2,$yday2,$isdist2)=gmtime(time);
 	
 	#prints the process id and end time
+=======
+	#save termination time in log file
+		
+	#saves and shows script output
+	my $output = $wrt;
+	print "$comm WRT: $wrt\n";
+>>>>>>> origin/master
 	
 	print "\n Process number $pid start time: $hours2 : $minutes2 : $seconds2 \n";	
 	
+<<<<<<< HEAD
 	#duration time calculation
 	
 	my $timedur = ($seconds2-$seconds)+60*($minutes2-$minutes)+3600*($hours2-$hours);
@@ -118,6 +144,10 @@ sub executa
 	}
 	else {
 	print "\n $ret returned - Error ocurred!\n";
+=======
+	if($ret == 0){
+		print "$ret returned - Good execution of process $comm\n";
+>>>>>>> origin/master
 	}
 }
 

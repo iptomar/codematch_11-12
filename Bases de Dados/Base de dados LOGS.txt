@@ -1,4 +1,4 @@
-// actualização da base de dados LOGS
+// terceira actualizacao da base de dados LOGS
 
 use tolmai;                                          
 
@@ -15,5 +15,5 @@ update column family tm_logs with column_metadata=
 {column_name: plang3, validation_class:UTF8Type}, 
 {column_name: language4, validation_class:UTF8Type},                                                                    
 {column_name: plang4, validation_class:UTF8Type}, 
-{column_name: tfiles, validation_class:LongType}, 
+{column_name: tfiles, validation_class:UTF8Type}, 
 ];         

@@ -9,6 +9,8 @@ use threads::shared;
 
 #Variables
 
+my $logn = 0;
+
 #commands to use
 my $cmd1 = "php bing_github.php";
 my $cmd2 = "php bing_launchpad.php";
@@ -69,11 +71,11 @@ sub executa
 	#time stamp number 1 - start process
 	($seconds,$minutes,$hours,$mday,$month,$year,$wday,$yday,$isdist)=gmtime(time);
 	
-	#starts the process	
-	my $pid = open3($wrt, $read, $err, $comm);
-	
 	#prints the process id and start time
 	print "\n Process number $pid start time: $hours : $minutes : $seconds \n";
+	
+	#starts the process	
+	my $pid = open3($wrt, $read, $err, $comm);
 	
 	#Wait for process to finish
 	waitpid( $pid, 0 ) or die "$!\n";
@@ -94,11 +96,45 @@ sub executa
 	my $timedur = ($seconds2-$seconds)+60*($minutes2-$minutes)+3600*($hours2-$hours);
 	
 	#print in screen process duration time
-	print "Process $pid time duration: $timedur";
-
-	#open log file
+	print "Process $pid time duration: $timedur\n";
 	
-	open(LOGS,">Logs/logs.dat") || die "Log file yahoo.dat could not be open!";
+		#open log file
+	
+	if($logn==0){
+	
+	open(LOGS,"log1.dat") || die "Log file yahoo.dat could not be open!";
+	$logn = $logn +1;
+	}
+	if($logn==1){
+	
+	open(LOGS,"log2.dat") || die "Log file yahoo.dat could not be open!";
+	$logn = $logn +1;
+	}
+
+	if($logn==2){
+	
+	open(LOGS,"log3.dat") || die "Log file yahoo.dat could not be open!";
+	$logn = $logn +1;
+	}
+
+	if($logn==3){
+	
+	open(LOGS,"log4.dat") || die "Log file yahoo.dat could not be open!";
+	$logn = $logn +1;
+	}
+
+	if($logn==4){
+	
+	open(LOGS,"log5.dat") || die "Log file yahoo.dat could not be open!";
+	$logn = $logn +1;
+	}
+	
+	if($logn==5){
+	
+	open(LOGS,"log6.dat") || die "Log file yahoo.dat could not be open!";
+	$logn = $logn +1;
+	}
+	
 	
 	#write in log file
 	
@@ -107,7 +143,9 @@ sub executa
 	#close log file
 	
 	close(LOGS);
-
+	
+	
+	
 	
 	#my $output = $wrt;
 	print "$wrt";

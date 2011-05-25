@@ -7,23 +7,33 @@ use IPC::Open3;
 use threads;
 use threads::shared;
 
+
 #Variables
+
 
 #commands to use
 my $cmd1 = "php bing_github.php";
+
 my $cmd2 = "php bing_launchpad.php";
+
 my $cmd3 = "php bing_sourceforge.php";
+
 my $cmd4 = "php yahoo_github.php";
+
 my $cmd5 = "php yahoo_launchpad.php";
+
 my $cmd6 = "php yahoo_sourceforge.php";
 
 
 #Main Code
 menu();
-print "\n\n";
+print "\n\n\n\n";
 
 #Start all threads
-$thr1 = threads->new(sub{executa($cmd1)}); 
+
+
+$thr1 = threads->new(sub{executa($cmd1)});
+
 #Starts $thread 1
 print "Thread 1 Started!\n Command: $cmd1 \n";
 
@@ -54,11 +64,12 @@ print "Thread 6 Started!\n Command: $cmd6 \n";
 @ReturnData = $thr5->join;
 @ReturnData = $thr6->join;
 
+
 #Functions
 
 #Call - execute a command - returns error code (0 = Fine process execution)
 
-sub executa
+sub executa 
 {	
 	#saves the command
 	my $comm = $_[0];
@@ -70,7 +81,7 @@ sub executa
 	my $pid = open3($wrt, $read, $err, $comm);
 	
 	#prints the process id
-	print "PID: $pid\n";
+	print "$pid\n\n";
 	
 	#Wait for process to finish
 	waitpid( $pid, 0 ) or die "$!\n";
@@ -78,32 +89,24 @@ sub executa
 	#saves return value
 	my $ret = $?;
 	
-	#saves and shows script output bing
+	#save termination time in log file
 	
-	if(){
-		open(BING,">home/semiao/Scripts/Logs/bing.dat") || die "Log file bing.dat could not be open!";
-	
-	}
-		
-	
-	#saves and shows script output yahoo
-	
-	if(){
-		open(YAHOO,">home/semiao/Scripts/Logs/yahoo.dat") || die "Log file yahoo.dat could not be open!";
-	}
-	
-	
-	#my $output = $wrt;
+
+	#saves and shows script output
+	my $output = $wrt;
 	print "$wrt";
 	
 	#State returned
-	print "\n $ret returned - Good execution of process\n";
+	
+	if($ret == 0){
+	print "$ret returned - Good execution of process\n";
+	}
+	
 }
 
-#Menu Function - Draws initial menu
+#Menu Function - Print initial menu
 
-sub menu 
-{
+sub menu {
 
 	#Save username
 	open FH, "whoami|" or die "Failed";
@@ -116,9 +119,7 @@ sub menu
 	print "*               Version 1.0                  *\n";
 	print "**********************************************\n";
 	print "                                              \n";
-	print "             Welcome, $who[0]\n               ";
+	print " 	          Welcome, $who[0]\n             \n";
 	print "                                              \n";
 	print "**********************************************\n";
-	print "";
-
 }

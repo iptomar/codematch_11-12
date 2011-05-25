@@ -6,7 +6,7 @@ include_once('../phpcassa/uuid.php');
 
 function search_project_detail($proj){
 
-$conn = new Connection('DBCOla');
+$conn = new Connection('DBCola');
 
 $column_detail= new ColumnFamily($conn,'projects');
 

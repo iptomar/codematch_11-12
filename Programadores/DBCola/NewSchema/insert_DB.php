@@ -8,7 +8,7 @@ include_once('../phpcassa/uuid.php');
 
 
 function insert($proj_name,$source,$repos,$data_c,$data_lst,$logo,$lang,$author){
-$conn = new Connection('DBCOla');
+$conn = new Connection('DBCola');
 
 $column_detail= new ColumnFamily($conn,'projects');
 $column_lang= new ColumnFamily($conn,'language');

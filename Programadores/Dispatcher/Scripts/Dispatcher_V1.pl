@@ -7,34 +7,23 @@ use IPC::Open3;
 use threads;
 use threads::shared;
 
-
 #Variables
-
-open(LOG1,">/home/semiao/public_html/");
 
 #commands to use
 my $cmd1 = "php bing_github.php";
-
 my $cmd2 = "php bing_launchpad.php";
-
 my $cmd3 = "php bing_sourceforge.php";
-
 my $cmd4 = "php yahoo_github.php";
-
 my $cmd5 = "php yahoo_launchpad.php";
-
 my $cmd6 = "php yahoo_sourceforge.php";
 
 
 #Main Code
 menu();
-print "\n\n\n\n";
+print "\n\n";
 
 #Start all threads
-
-
-$thr1 = threads->new(sub{executa($cmd1)});
-
+$thr1 = threads->new(sub{executa($cmd1)}); 
 #Starts $thread 1
 print "Thread 1 Started!\n Command: $cmd1 \n";
 
@@ -58,11 +47,18 @@ $thr6 = threads->new(sub{executa($cmd6)});
 #Starts $thread 6
 print "Thread 6 Started!\n Command: $cmd6 \n";
 
+@ReturnData = $thr1->join; 
+@ReturnData = $thr2->join;
+@ReturnData = $thr3->join;
+@ReturnData = $thr4->join;
+@ReturnData = $thr5->join;
+@ReturnData = $thr6->join;
+
 #Functions
 
 #Call - execute a command - returns error code (0 = Fine process execution)
 
-sub executa 
+sub executa
 {	
 	#saves the command
 	my $comm = $_[0];
@@ -74,7 +70,7 @@ sub executa
 	my $pid = open3($wrt, $read, $err, $comm);
 	
 	#prints the process id
-	print "$pid\n\n";
+	print "PID: $pid\n";
 	
 	#Wait for process to finish
 	waitpid( $pid, 0 ) or die "$!\n";
@@ -82,25 +78,32 @@ sub executa
 	#saves return value
 	my $ret = $?;
 	
-	#save termination time in log file
+	#saves and shows script output bing
 	
+	if(){
+		open(BING,">home/semiao/Scripts/Logs/bing.dat") || die "Log file bing.dat could not be open!";
+	
+	}
 		
 	
-	#saves and shows script output
-	my $output = $wrt;
+	#saves and shows script output yahoo
+	
+	if(){
+		open(YAHOO,">home/semiao/Scripts/Logs/yahoo.dat") || die "Log file yahoo.dat could not be open!";
+	}
+	
+	
+	#my $output = $wrt;
 	print "$wrt";
 	
 	#State returned
-	
-	if($ret == 0){
-	print "$ret returned - Good execution of process\n";
-	}
-	
+	print "\n $ret returned - Good execution of process\n";
 }
 
-#Menu Function - Print initial menu
+#Menu Function - Draws initial menu
 
-sub menu {
+sub menu 
+{
 
 	#Save username
 	open FH, "whoami|" or die "Failed";
@@ -113,7 +116,9 @@ sub menu {
 	print "*               Version 1.0                  *\n";
 	print "**********************************************\n";
 	print "                                              \n";
-	print " 	          Welcome, $who[0]\n             \n";
+	print "             Welcome, $who[0]\n               ";
 	print "                                              \n";
 	print "**********************************************\n";
+	print "";
+
 }

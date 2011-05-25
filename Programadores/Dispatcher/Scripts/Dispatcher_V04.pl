@@ -10,12 +10,12 @@ use threads::shared;
 
 #Variables
 
-my $cmd1 = "system('php bing_github.php')";
-my $cmd2 = "system('php bing_launchpad.php')";
-my $cmd3 = "system('php bing_sourceforge.php')";
-my $cmd4 = "system('php yahoo_github.php')";
-my $cmd5 = "system('php yahoo_launchpad.php')";
-my $cmd6 = "system('php yahoo_sourceforge.php')";
+my $cmd1 = "php bing_github.php";
+my $cmd2 = "php bing_launchpad.php";
+my $cmd3 = "php bing_sourceforge.php";
+my $cmd4 = "php yahoo_github.php";
+my $cmd5 = "php yahoo_launchpad.php";
+my $cmd6 = "php yahoo_sourceforge.php";
 
 
 
@@ -73,16 +73,17 @@ sub executa
 
 	my $ret = $?;
 	
+	my $output = $read;
+	
+	print "\n\n$wrt\n\n";
 	#State return
 	
-	if($ret == 0){
+
 		print "\n $ret returned - Good execution of process\n\n";
-	}
+
 	
-	if($ret == 1){
-		print "\n $ret returned - Bad execution of process\n\n";	
-	}
-	return;
+	
+	return $ret;
 }
 
 #Menu Function

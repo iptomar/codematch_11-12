@@ -1,0 +1,76 @@
+Revision history for subs-parallel
+
+0.08    Sat Jan  6 02:01:34 2007
+        * bugfix: overriden CORE::GLOBAL::ref came without a prototype and thus
+          resulted in breakage
+        * added caveat regarding the interaction between this module and 
+          Catalyst (and possibly other modules)
+        * fixed some typos, reformatted this Changes file
+
+0.07    Sun Jun 19 12:30:10 2005
+        * s/parallelyze/parallelize/g
+          Thanks to Christian Renz (crenz AT web42.com) for promptly reporting
+          me the right way to spell the word. As a non-native English speaker
+          I'm prone to this kind of errors, since it was a word I've never
+          heard before. Fortunately, the module is very new and it wasn't too 
+          late for a big interface change like this one. I confess I'm really 
+          glad to have this kind of feedback.
+
+0.06    Sun Jun 19 01:33:00 2005
+        * Fixed the Makefile.pl. It seems that Module::Starter generated a 
+          wrong output file which only works on Windows (paths with '\' instead
+          of '/'). This has been fixed. Thanks to Sébastien Aperghis-Tramoni 
+          (SAPER at cpan.org) for pointing it out.
+
+0.05    Sat Jun 18 09:45:59 2005
+        * Fix problems with Pod::Coverage failing on some subs which were the 
+          last ones added and should be private. Now it should be successfully
+          installed without "force".
+
+0.04    Tue Jun 17 23:26:44 2005
+        This is more of a fine-tuning version, just to guarantee that some 
+        specific situations will work as expected.
+        * First CPAN upload after giving up waiting an answer from the folks at
+          the official module-list.
+        * Some simple test cases added.
+        * Now, parallelyzed subs keep their prototypes. This didn't  happen 
+          before, so you couldn't parallelyze LWP::Simple's get() without a 
+          warning. It would DWYM, though, but it seemed wrong. So this is fixed
+          but introduced the dependency of Scalar::Util (which would end up 
+          being included anyway, as there's a lot of magic going on here).
+        * CORE::GLOBAL::ref() is now overriden in order to make it DWIM with 
+          returned objects (previously, it would returns 'subs::parallel').
+
+0.03    Mon Jun 13 20:50:25 2005
+        * Refactored the functional interface, so it makes more sense.
+        * Now there's documentation! Including a big "CAVEATS" section.
+        * Previously if you never used the return value of a parallelyzed sub
+          (i.e. it was called in void context) some memory would be leaked due 
+          to non-detached threads waiting to be joined. Now, when the return 
+          value goes out of scope (or never even enters, as in void context) 
+          the threads are detached.
+        * The previous fix resulted in another bug which caused threads to be
+          incorrectly detached. This has been worked around.
+        * parallelyze() was causing "Scalars leaked: 1" warnings. Although
+          I don't really, understand why, it has been fixed. All I needed to
+          do was to change its definition from
+            sub parallelyze (&) { parallelyze_coderef(@_)->() }
+          to
+            sub parallelyze (&) { parallelyze_coderef(shift)->() }
+          As I read somewhere, I suspect there's just too much magic associated
+          with @_.
+        * The "parallel" attribute is now known as "Parallel" due to perl 
+          interpreter whining.
+        * 0.03 is a much more respectable version number (hence the number of 
+          issues fixed / worked-around).
+
+0.02    June 10, 2005
+        This was supposed to be the first public version. But I decided to bump
+        up the version number because it seemed like the way to go. Besides, 
+        who would use a module that is only version 0.02 and doesn't have that
+        many features? ;)
+        * "parallel" attribute handling implemented
+
+0.01    June, 2005
+        * Gathering ideas. 
+        * Making it just work.

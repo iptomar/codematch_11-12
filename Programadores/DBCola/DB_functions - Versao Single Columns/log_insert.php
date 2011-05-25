@@ -7,7 +7,7 @@ require_once('phpcassa/columnfamily.php');
 // db_insert(<arguments>); 9 arguments accepted - if some are inexistent use Zero value to maintain DB structure
 
 
-function insert_log($name,$nameproj,$lang, $plang){
+function insert_log($name,$nameproj,$lang, $plang, $total){
    $lan_array = array_map("strtoupper", $lang);
 	try{
 		//make connection with database
@@ -63,6 +63,12 @@ function insert_log($name,$nameproj,$lang, $plang){
 			$column_family-> insert($name,array("plang4" => $plang[3])); 
 		} else {
 			$column_family-> insert($name,array("plang4" => "0"));
+		}
+
+		if(isset($total)){ //total de ficheiros de cada projecto
+			$column_family-> insert($name,array("tfiles" => $total)); 
+		} else {
+			$column_family-> insert($name,array("tfiles" => "0"));
 		}
 	}
 	catch(Exception $x){

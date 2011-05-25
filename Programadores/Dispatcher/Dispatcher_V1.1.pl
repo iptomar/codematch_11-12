@@ -22,17 +22,24 @@ print "\n\n";
 #opendir(DIR, 'd:\Escola\PSI\codematch\Programadores\Dispatcher') or die ("Unable to open directory");
 ##this line gets rid of . and ..<br>
 #@files = grep !/^\./, readdir(DIR);
+##close directory
 #closedir(DIR);
-#my $i=0;
+##create array of threads
+#my @threads = ();
+##extract all filenames
 #foreach $file (sort @files) {
+#	#extract file extension
 #	my $ext = ($file =~ m/([^.]+)$/)[0];
+#	#if file extension equals php
 #	if ($ext eq "php" or $ext eq "PHP"){
+#		#create php command
 #		my $cmd = "php $file"
-#		#não sei se é necessário distinguir as threads...
-#		$thr[++$i] = threads->new(sub{executa($cmd)});
+#		#push new thread into threads array and execute comand
+#		push (@threads, threads->new(sub{executa($cmd)}));
 #		print "Thread $i Started!\n Command: $cmd \n";
 #	}
 #}
+
 
 my $cmd1 = "php bing_github.php";
 

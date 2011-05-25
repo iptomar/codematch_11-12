@@ -16,69 +16,29 @@ open(LOG1,">/home/semiao/public_html/");
 menu();
 print "\n\n";
 
-#commands to use
-
-##open directory
-#opendir(DIR, 'd:\Escola\PSI\codematch\Programadores\Dispatcher') or die ("Unable to open directory");
-##this line gets rid of . and ..<br>
-#@files = grep !/^\./, readdir(DIR);
-##close directory
-#closedir(DIR);
-##create array of threads
-#my @threads = ();
-##extract all filenames
-#foreach $file (sort @files) {
-#	#extract file extension
-#	my $ext = ($file =~ m/([^.]+)$/)[0];
-#	#if file extension equals php
-#	if ($ext eq "php" or $ext eq "PHP"){
-#		#create php command
-#		my $cmd = "php $file"
-#		#push new thread into threads array and execute comand
-#		push (@threads, threads->new(sub{executa($cmd)}));
-#		print "Thread $i Started!\n Command: $cmd \n";
-#	}
-#}
-
-
-my $cmd1 = "php bing_github.php";
-
-my $cmd2 = "php bing_launchpad.php";
-
-my $cmd3 = "php bing_sourceforge.php";
-
-my $cmd4 = "php yahoo_github.php";
-
-my $cmd5 = "php yahoo_launchpad.php";
-
-my $cmd6 = "php yahoo_sourceforge.php";
-
-
-#Start all threads
-
-$thr1 = threads->new(sub{executa($cmd1)});
-#Starts $thread 1
-print "Thread 1 Started!\n Command: $cmd1 \n";
-
-$thr2 = threads->new(sub{executa($cmd2)}); 
-#Starts $thread 2
-print "Thread 2 Started!\n Command: $cmd2 \n";
-
-$thr3 = threads->new(sub{executa($cmd3)}); 
-#Starts $thread 3
-print "Thread 3 Started!\n Command: $cmd3 \n";
-
-$thr4 = threads->new(sub{executa($cmd4)});
-#Starts $thread 4
-print "Thread 4 Started!\n Command: $cmd4 \n";
-
-$thr5 = threads->new(sub{executa($cmd5)});
-#Starts $thread 5
-print "Thread 5 Started!\n Command: $cmd5 \n";
-
-$thr6 = threads->new(sub{executa($cmd6)});
-#Starts $thread 6
-print "Thread 6 Started!\n Command: $cmd6 \n";
+#open directory
+opendir(DIR, 'd:\Escola\PSI\codematch\Programadores\Dispatcher') or die ("Unable to open directory");
+#this line gets rid of . and ..<br>
+@files = grep !/^\./, readdir(DIR);
+#close directory
+closedir(DIR);
+#create array of threads
+my @threads = ();
+#extract all filenames
+foreach $file (sort @files) {
+	#extract file extension
+	my $ext = ($file =~ m/([^.]+)$/)[0];
+	#if file extension equals php
+	if ($ext eq "php" or $ext eq "PHP"){
+		#create php command
+		my $cmd = "php $file"
+		#push new thread into threads array and execute comand
+		push (@threads, threads->new(sub{executa($cmd)}));
+		#extract number of threads
+		my $thr = @threads;
+		print "Thread $thr Started!\n Command: $cmd \n";
+	}
+}
 
 #Functions
 

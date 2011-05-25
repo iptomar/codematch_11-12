@@ -17,6 +17,23 @@ menu();
 print "\n\n";
 
 #commands to use
+
+##open directory
+#opendir(DIR, 'd:\Escola\PSI\codematch\Programadores\Dispatcher') or die ("Unable to open directory");
+##this line gets rid of . and ..<br>
+#@files = grep !/^\./, readdir(DIR);
+#closedir(DIR);
+#my $i=0;
+#foreach $file (sort @files) {
+#	my $ext = ($file =~ m/([^.]+)$/)[0];
+#	if ($ext eq "php" or $ext eq "PHP"){
+#		my $cmd = "php $file"
+#		#não sei se é necessário distinguir as threads...
+#		$thr[++$i] = threads->new(sub{executa($cmd)});
+#		print "Thread $i Started!\n Command: $cmd \n";
+#	}
+#}
+
 my $cmd1 = "php bing_github.php";
 
 my $cmd2 = "php bing_launchpad.php";
@@ -91,6 +108,8 @@ sub executa
 	if($ret == 0){
 		print "$ret returned - Good execution of process $comm\n";
 	}
+	
+	return $ret;
 }
 
 #Menu Function - Print initial menu

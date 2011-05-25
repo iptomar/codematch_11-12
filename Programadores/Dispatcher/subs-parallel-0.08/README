@@ -1,0 +1,68 @@
+NAME
+    subs::parallel - enables subroutines to seamlessly run in parallel
+
+VERSION
+    Version 0.08
+
+DESCRIPTION
+    This module gives Perl programmers the ability to easily and
+    conveniently create multi-threaded applications through parallel
+    subroutines.
+
+    Parallel subroutines are just plain old subroutines which happen to run
+    in another thread. When called, they return immediately to the calling
+    thread but keep running in another. When its return value is needed
+    somewhere, the returned value is transparently fetched. If the thread is
+    still running, the code blocks waiting for it to finish (since the
+    program can't go on without a value and keep being transparent).
+
+    So, as it's possible to notice, the module interface aims to be as
+    simple as possible. In fact, it works in such a way that, aside from the
+    *parallelyzing* directives, you wouldn't be able to tell it's a
+    multi-threaded application. All the thread handling (which isn't *that*
+    complicated, really) is done automagically.
+
+    It should work for anything that's thread safe - even for subroutines
+    whose return values are not usually available across thread boundaries
+    (for example, usually, you can't "share" an object, but this module
+    makes it possible to return them without any problems, provided they're
+    thread safe).
+
+MOTIVATION
+    The main reason behind this module was the fact that Perl threads are
+    not widely used. Some could argue that this might happen because Perl
+    threads are not very practical to use. Others could say that the
+    restrictions imposed by the use of threads (you can't pass arbitrary
+    data structures between threads).
+
+    The latter issue is out of my reach. But, through the use of already
+    existing features, it was possible to mask it a little bit. So you can
+    return anything from your parallelyzed subroutines, but this is just
+    some maybe unknown feature of "threads-"join>.
+
+    The first issue is the main aim of this module: provide an extremely
+    simple way to make multi-threaded applications. Along this near-future
+    reality of a majority of dual-core computers, multi-threading might
+    become the factor that distiguishes good from bad software.
+
+    But I would be dishonest if I didn't note that some part of the effort
+    was driven by the will to prove it could be done in Perl.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+
+COPYRIGHT AND LICENCE
+
+Put the correct copyright and licence information here.
+
+Copyright (C) 2005-2007 Nilson Santos Figueiredo Júnior
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.

@@ -1,0 +1,94 @@
+/*
+	Este Css contem o style da informacao do repositorio na vista de repositorio e a do projecto na vista de projecto. 
+
+*/
+
+
+.divImagDescriRepo{
+	/*border:1px solid #92cdec;*/
+	width:100px;
+	height:100px;
+	float:left;
+	margin:10px;
+}
+.imageRepoDes{
+	width:100px;
+	height:100px;
+}
+/*
+	Div que contem todos os dados de cada repositorios
+*/
+.descricaoRepo{
+	border:1px solid #C0C0C0;
+	width:304px;
+	height:100px;
+	float:left;
+	margin:10px;
+}
+/*
+	Div que contem o nome projecto
+*/
+.nomeRepo{
+	width: 100px;
+	height:20px;
+	border:1px solid #C0C0C0;
+	font-size:14px;
+	float:left;
+	text-align:center;
+}
+
+/*
+	Div que contem as linguagens do Projecto
+*/
+.linguagensRepo{
+	width: 200px;
+	height:20px;
+	border:1px solid #C0C0C0;
+	font-size:14px;
+	float:left;
+	text-align: right;
+}
+/*
+	Div que contem os detalhes do projecto
+*/
+.descricaoallProj{
+	width: 302px;
+	height: 42px;
+	border:1px solid #C0C0C0;
+	float:left;
+}
+.ownersRepo{
+	width: 100px;
+	height: 32px;
+	border:1px solid #C0C0C0;
+	float:left;
+}
+.urlRepo{
+	width: 200px;
+	height: 32px;
+	border:1px solid #C0C0C0;
+	float:left;
+}
+/*
+	1 Div, que contem os dados dos repositorios
+*/
+.divreporepo_um{
+	height:467px; 
+	width:420px; 
+	float: left; 
+	margin:0px;
+}
+
+.divreporepo_dois{
+	height:467px; 
+	width:470px;	
+	float: left; 
+}
+
+.divreporepo_tres{
+	height:467px; 
+	width:350px; 
+	float: left; 
+}
+
+

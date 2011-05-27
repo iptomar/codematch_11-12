@@ -12,7 +12,7 @@ $column_lang= new ColumnFamily($conn,'language');
 $arr_lang = array();
 $count =0;
 
-$rows = $column_lang->get_range($key_start='', $key_finish='');
+$rows = $column_lang->get_range($key_start='', $key_finish='',1000000);
 	
 	foreach ($rows as $key=>$value) 
 	{

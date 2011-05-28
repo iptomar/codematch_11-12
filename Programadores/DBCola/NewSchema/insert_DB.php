@@ -45,7 +45,7 @@ so the project doesnt exist on DB
 //get the repo source
 $test_string= $test_cond['source'];
 //compare to natch repos reference
-if (strstr($test_cond,$repos_control[0]) || strstr($test_cond,$repos_control[1]) || strstr($test_cond,$repos_control[2])){
+if (strstr($test_string,$repos_control[0]) || strstr($test_string,$repos_control[1]) || strstr($test_string,$repos_control[2])){
 	
 }else {
 //*****Insert data

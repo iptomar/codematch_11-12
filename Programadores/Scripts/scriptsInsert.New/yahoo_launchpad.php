@@ -9,7 +9,7 @@ while ($i <= 1000) {
 	foreach($yahoo_array as $exe) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $exe;
 		if (isset($name_project)) {
-			insert_db($name_project, $title, $source, "Launchpad", $owner, $language, $created_date, $logo);
+			insert($name_project, $source, "Launchpad", $created_date[0], $created_date[1], $logo ,$language, $owner);
 //			print_r("<b>Project:</b> ".$name_project."<br>");
 //			print_r("<b>Title:</b> ".$title."<br>");
 //			print_r("<b>Source:</b> ".$source."<br>");

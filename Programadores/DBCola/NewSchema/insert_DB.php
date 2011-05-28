@@ -27,7 +27,7 @@ for ($l = 0; $l < $cp; $l++){
 
 //authors DB
 $comp = count($author);
-for ($j = 0; $j < $cp; $j++){
+for ($j = 0; $j < $comp; $j++){
 	$column_author -> insert($author[$j],array(CassandraUtil::uuid1() => $proj_name));
 }
 

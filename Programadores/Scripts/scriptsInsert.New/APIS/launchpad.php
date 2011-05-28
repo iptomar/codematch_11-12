@@ -35,11 +35,11 @@ function get_project_launchpad($project) {
 	}
 	if(isset($launchpad_json->owner_link)){
 		//retira o nome do owner do url
-		preg_match("/https:\/\/api.launchpad.net\/(.*)/", $launchpad_json->owner_link, $match);
-		$match[1] = str_replace('1.0/~', '', $match[1], $count);
-		$match[1] = str_replace('~', '', $match[1], $count);
+//		preg_match("/https:\/\/api.launchpad.net\/(.*)/", $launchpad_json->owner_link, $match);
+//		$match[1] = str_replace('1.0/~', '', $match[1], $count);
+//		$match[1] = str_replace('~', '', $match[1], $count);
 		$string_owner = array();
-		array_push($string_owner, $match[1]);
+		array_push($string_owner, substr($launchpad_json->owner_link, (stripos($launchpad_json->owner_link, '~')+1)) );
 	} else {
 		$string_owner = array("n/a");
 	}

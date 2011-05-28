@@ -4,14 +4,13 @@ include "insert_DB.php";
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
-while (($i+10) <= 100) {
+while (($i+10) <= 1000) {
 	//$argv[1] - argumento na linha de comandos
 	$bing_array = get_bing_launchpad(10, $i);
 	foreach($bing_array as $arg) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
-			insert($name_project,$source,"Launchpad",$created_date,date("Y-m-d"),$logo,$language,$owner)
-			//insert_db($name_project, $title, $source, "Launchpad", $owner, $language, $created_date, $logo);
+			insert($name_project, $source, "Launchpad", $created_date[0], $created_date[1], $logo ,$language, $owner);
 //			print_r("<b>Project:</b> ".$name_project."<br>");
 //			print_r("<b>Title:</b> ".$title."<br>");
 //			print_r("<b>Source:</b> ".$source."<br>");
@@ -21,7 +20,7 @@ while (($i+10) <= 100) {
 //				print_r("<b>Languages:</b> ".$arg_lang."<br>");
 //			}
 //			print_r("<b>Date Created:</b> ".$created_date[0]."<br>");
-//			print_r("<b>Date Updated:</b> ".$created_date[1]."<br>");
+//			print_r("<b>Date Updated:</b> ".date("Ymd", strtotime(date("Y-m-d")))."<br>");
 //			print_r("<b>Logo:</b> <img src='".$logo."'><br><hr><br>");
 		}
 	}

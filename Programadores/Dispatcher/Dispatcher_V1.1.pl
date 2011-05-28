@@ -10,14 +10,14 @@ use threads::shared;
 
 #Variables
 
-open(LOG1,">/home/semiao/public_html/");
+#open(LOG1,">/home/semiao/public_html/");
 
 #Main Code
 menu();
 print "\n\n";
 
 #open directory
-opendir(DIR, '>Launch/') or die ("Unable to open directory");
+opendir(DIR, 'd:\Escola\PSI\codematch\Programadores\Dispatcher') or die ("Unable to open directory");
 #this line gets rid of . and ..<br>
 @files = grep !/^\./, readdir(DIR);
 #close directory
@@ -31,11 +31,11 @@ foreach $file (sort @files) {
 	#if file extension equals php
 	if ($ext eq "php" or $ext eq "PHP"){
 		#create php command
-		my $cmd = "php $file"
+		my $cmd = "php $file";
 		#push new thread into threads array and execute comand
 		push (@threads, threads->new(sub{executa($cmd)}));
 		#extract number of threads
-		my $thr = @threads;
+    my $thr = @threads;
 		print "Thread $thr Started!\n Command: $cmd \n";
 	}
 }

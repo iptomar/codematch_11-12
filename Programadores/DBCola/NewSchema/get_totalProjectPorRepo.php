@@ -7,10 +7,17 @@ require_once('../phpcassa/columnfamily.php');
 include_once('../phpcassa/uuid.php');
 
 function total($repo){
+try{
 $conn = new Connection('DBCola');
 $column_repo = new ColumnFamily($conn,'repos');
-
-$pesquisa = $column_repo ->get_count($repo);
+//converte a primeira letra para maiscula
+$aux= ucfirst($repo);
+//vai buscar o numero de projectos do repositorios
+$pesquisa = $column_repo ->get_count($aux);
 return ($pesquisa);
+}	
+	catch(Exception $x){
+		error_log($x);
+	}
 }
 ?>

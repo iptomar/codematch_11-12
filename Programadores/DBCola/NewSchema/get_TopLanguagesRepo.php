@@ -5,8 +5,11 @@ require_once('../phpcassa/columnfamily.php');
 include_once('../phpcassa/uuid.php');
 
 function top($repo){
-$conn = new Connection('DBCola');
 
+try{
+$conn = new Connection('DBCola');
+//converte a primeira letra para maiscula
+$aux= ucfirst($repo);
 //selects language database
 $column_lang= new ColumnFamily($conn,'language');
 $column_repo = new ColumnFamily($conn,'repos');
@@ -21,7 +24,7 @@ $count =0;
 	//linguagem	
 	foreach ($value as $key1=>$value1){
 			
-			$pesquisa = $column_repo ->get($repo,null,"","",false,100000,null,null);
+			$pesquisa = $column_repo ->get($aux,null,"","",false,100000,null,null);
 			//projectos
 			foreach ($pesquisa as $key4=>$value4) {
 					//compara se projectos iguais
@@ -38,4 +41,8 @@ $count =0;
 arsort($arr_lang);
 return($arr_lang);
 }
+	
+	catch(Exception $x){
+		error_log($x);
+	}}
 ?>

@@ -36,16 +36,18 @@ $test_cond = $column_detail -> get($proj_name);
 //*****Fail to find project, forward to db insertion *****//
 
 /*************************************
-The following test is not necessary
-I encoded just for precaution.
-The get function above return fail,
-so the project doesnt exist on DB
-*************************************/
+The following test will test the repo
+where the project lies.
+This test provides multiple references
+to the same project on different
+repos.
+***********************************/
 
 //get the repo source
 $test_string= $test_cond['source'];
+$test_repo= strtolower($repos);
 //compare to natch repos reference
-if (strstr($test_string,$repos_control[0]) || strstr($test_string,$repos_control[1]) || strstr($test_string,$repos_control[2])){
+if (strstr($test_string == $test_repo){
 	
 }else {
 //*****Insert data

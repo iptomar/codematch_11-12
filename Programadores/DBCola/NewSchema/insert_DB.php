@@ -43,7 +43,7 @@ repos.
 $test_string= $test_cond['source'];
 $test_repo= strtolower($repos);
 //compare to natch repos reference
-if (strstr($test_string == $test_repo){
+if (strstr($test_string == $test_repo)){
 	
 }else {
 
@@ -96,6 +96,6 @@ $column_repos ->insert($repos,array(CassandraUtil::uuid1() => $proj_name));
 }
 
 }
-}
+
 
 ?>

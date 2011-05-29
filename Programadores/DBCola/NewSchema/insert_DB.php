@@ -27,29 +27,51 @@ $column_repos= new ColumnFamily($conn,'repos');
 
 /************************/
 //control test to avoid multiple references of the same project due to dabase schema in use
-$repos_control = array("sourceforge","launchpad","github");
+
 try{
 /**try to get/find project**/
 $test_cond = $column_detail -> get($proj_name);
 
-}catch(Exception $x){
-//*****Fail to find project, forward to db insertion *****//
-
 /*************************************
 The following test will test the repo
 where the project lies.
-This test provides multiple references
+This test will set multiple references
 to the same project on different
 repos.
 ***********************************/
 
-//get the repo source
 $test_string= $test_cond['source'];
 $test_repo= strtolower($repos);
 //compare to natch repos reference
 if (strstr($test_string == $test_repo){
 	
 }else {
+
+//*****Insert data
+//project details DB
+$column_detail -> insert($proj_name, array('source' => $source, 'date_c' => $data_c, 'date_l' => $data_lst, 'logo' => $logo));
+
+
+//languages DB
+$cp = count($lang);
+for ($l = 0; $l < $cp; $l++){
+	$column_lang -> insert($lang[$l],array(CassandraUtil::uuid1() => $proj_name));
+}
+
+//authors DB
+$comp = count($author);
+for ($j = 0; $j < $comp; $j++){
+	$column_author -> insert($author[$j],array(CassandraUtil::uuid1() => $proj_name));
+}
+
+//repository DB
+$column_repos ->insert($repos,array(CassandraUtil::uuid1() => $proj_name));
+
+
+}
+}catch(Exception $x){
+//*****Fail to find project, forward to db insertion *****//
+
 //*****Insert data
 //project details DB
 $column_detail -> insert($proj_name, array('source' => $source, 'date_c' => $data_c, 'date_l' => $data_lst, 'logo' => $logo));

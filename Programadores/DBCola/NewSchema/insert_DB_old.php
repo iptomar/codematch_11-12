@@ -1,5 +1,5 @@
 <?php
-
+/*v1.0*/
 require_once('../phpcassa/connection.php');
 require_once('../phpcassa/columnfamily.php');
 

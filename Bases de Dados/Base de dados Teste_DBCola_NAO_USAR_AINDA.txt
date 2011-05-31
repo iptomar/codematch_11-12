@@ -1,15 +1,8 @@
 create keyspace testes_DBCola;
 use testes_DBCola;
 
-create column family projects with comparator='UTF8Type';
+create column family projects with comparator='TimeUUIDType' and Column_type='Super';
 
-update column family projects with column_metadata=
-[
-{column_name: source, validation_class: UTF8Type},
-{column_name: date_c, validation_class:LongType}, 
-{column_name: date_l, validation_class:LongType},                             
-{column_name: logo, validation_class:UTF8Type}
-];
 
 create column family language with comparator='TimeUUIDType';
 

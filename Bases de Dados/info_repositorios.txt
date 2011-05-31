@@ -1,0 +1,6 @@
+
+GitHub é um Serviço de Web Hosting Compartilhado para projetos que usam o controle de versionamento Git.
+
+SourceForge.net é um localizador centralizado de desenvolvedores de software para controlar e manter o desenvolvimento de open sources actuando como um repositório de código fonte.
+
+Launchpad é uma aplicação web e sítio web para o auxílio no desenvolvimento de software, particularmente software livre.

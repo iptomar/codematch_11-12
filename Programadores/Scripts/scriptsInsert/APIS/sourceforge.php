@@ -69,12 +69,25 @@ function get_logo_sourceforge($project) {
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);	//define o retorno como string
     $page = curl_exec($ch);	//executa as opcoes definidas
     curl_close($ch);	//encerra sessao
-	preg_match('/alt="(.*)" src="(.*)" height="48" width="48"\/>/', $page, $match); 
-	if (empty($match[2])) {
+	$start = strpos($page, '<div id="project-icon" class="noneditable">');
+	$end = strpos($page, 'height="48" width="48"/>');
+	$resultado = substr($page, $start, ($end-$start));
+	$resultado2 = substr($resultado, (strpos($resultado, 'src="'))+5 );
+	$resultado = str_replace('"', '', $resultado2, $count);
+	if (empty($resultado)) {
 		return "n/a";
 	}
 	else {
-		return $match[2]; 
+		return $resultado; 
 	}
+
+//	preg_match('/alt="(.*)" src="(.*)" height="48" width="48"\/>/', $page, $match); 
+//	if (empty($match[2])) {
+//		return "n/a";
+//	}
+//	else {
+//		return $match[2]; 
+//	}
+	
 }
 ?>

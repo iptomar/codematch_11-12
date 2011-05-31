@@ -1,0 +1,13 @@
+create keyspace testes_DBCola;
+use testes_DBCola;
+
+create column family projects with comparator='TimeUUIDType' and Column_type='Super';
+
+
+create column family language with comparator='TimeUUIDType';
+
+
+create column family author with comparator='TimeUUIDType';
+
+
+create column family repos with comparator='TimeUUIDType' ;

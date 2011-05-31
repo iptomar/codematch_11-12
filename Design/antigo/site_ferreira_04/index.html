@@ -5,7 +5,6 @@
 		<title>Tolmai</title>
 		
 		<link href="style/style.css" rel="stylesheet" type="text/css" media="screen" />
-	<!--	<link href="style/header.css" rel="stylesheet" type="text/css" media="screen" />-->
 		<link href="style/hometolmai.css" rel="stylesheet" type="text/css" media="screen" />
 		<link href="style/repoPage.css" rel="stylesheet" type="text/css" media="screen" />
 		<link href="style/lingPage.css" rel="stylesheet" type="text/css" media="screen" />
@@ -416,16 +415,12 @@ function MM_nbGroup(event, grpName) { //v6.0
 	</head>
 	<body>
 		<div class="tolmaipage">
-		
-			<DIV style='position:relative;'>
-				<img src='images/backondas.png' style="width:100%;	height:100px;" />
-				<DIV style='position:absolute; top:0px; left:6px; color:red;'>
-					<img src="images/tolmaitrans.png" style="position:absolute; top:3px; left:1px; width:300px;	height:90px;" />
-				</DIV>
-			</DIV> 
-		<!-- 	<div style="background-image: url('images/backondas.png') ; height: 100px; width: 900px;">
-				<img src="images/tolmaitrans.png" alt="Tolmai" style="width:300px;	height:90px;"/>
-			</div> -->
+			<div class="header" >
+				<img src='images/back.png' style="width:100%;	height:100px;" />
+				<div>
+					<img src="images/tolmaitrans.png" id="imagetolmai"/>
+				</div>
+			</div> 
 			<!-- Accordion -->
 			<!--margin-top:100px; margin-bottom:100px; margin-right:50px; margin-left:50px;-->
 			<div id="accordion">
@@ -440,6 +435,7 @@ function MM_nbGroup(event, grpName) { //v6.0
 								<div class="funcioProjectoTol">
 									<h1>Funcionalidades do Projecto:</h1>
 									<p>Com a utilização do Tolmai os seus utilizadores podem ter acesso aos projectos alojados na Internet e visualizar informação sobre os mesmos. É possível visualizar os Repositórios existentes, os projectos que alojam e ainda as linguagens de programação utilizadas em cada projecto. Sobre cada repositório é criada um ranquing de linguagens mais utilizadas em todos os seus projectos. Sobre cada projecto para além da informação sobre quem foi o seu autor e a data de criação, é possível visualizar a data da última actualização que esse mesmo projecto sofreu. Será disponibilizado um URL para que o utilizador possa aceder directamente ao projecto desejado.</p>
+									
 								</div>
 								<div id="linguagensGrafico">
 									<h1><center>Linguagens</center></h1>

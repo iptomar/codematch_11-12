@@ -1,10 +1,4 @@
 /*
-PRINCIPAL
-        --> DIV principal - tolmaipage			
-        --> DIV cabeçalho - header		
-
-/*
-/*
 	Div principal 
 */
 				
@@ -25,8 +19,11 @@ PRINCIPAL
 }
 
 #imagetolmai{
-	width:100%;
-	height:100px;
+	width:250px;
+	height:50px;
+	position:absolute;
+	top:32px;
+	left:50px
 }
 
 /*
@@ -55,7 +52,7 @@ PRINCIPAL
 	/*width:200px;*/
 	float: left;
 	width: 20%;
-	height:250px;
+	height:230px;
 	/**border:1px solid #92cdec;**/
 
 	
@@ -79,21 +76,18 @@ float: left;
 	/*width:500px;*/
 	float: left;
 	width: 40%; 
-	/*height:0%;*/
+	height:40%
 	/**border:1px solid #92cdec;**/
 	
 }
 .objTol{
 	clear: both;  /* O clear "limpa" os floats e volta a posicionar normal*/
 	position:static; 
-	background-color:#F8F2F2;
 	vertical-align:center;
-	/* height:165px;
+/*	height:165px;
+	width:750px;
 	float: left;
-	/*width:702px;
 	width:50%;
-
-	
 	/**border:1px solid #92cdec;*/
 }
 
@@ -115,7 +109,7 @@ float: left;
 	/*width:533px;*/
 	width:40%;
 	float: left;	
-	height:250px;
+	height:230px;
 	/**border:1px solid #92cdec;**/
 	
 }

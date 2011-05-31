@@ -1,0 +1,68 @@
+/*
+	Este Css contem o style da informacao do repositorio na vista de repositorio e a do projecto na vista de projecto. 
+
+*/
+.divRepoProjDescricao{
+	width:400px;
+	height:70px;
+	/*border:1px solid #92cdec;*/
+	background-color: #F8F8FF;
+	margin:10px;
+}
+
+.divImagDescriRepoProj{
+	/*border:1px solid #92cdec;*/
+	width:50px;
+	height:50px;
+	float:left;
+	margin:10px;
+}
+.imageRepoDesProj{
+	width:50px;
+	height:50px;
+}
+/*
+	Div que contem todos os dados de cada repositorios
+*/
+.descricaoRepoProj{
+	width:300px;
+	height:50px;
+	float:left;
+	margin:10px;
+	border:1px solid #C0C0C0;
+}
+/*
+	Div que contem o nome projecto
+*/
+.nomeRepoProj{
+	width: 100px;
+	height:20px;
+	border:1px solid #C0C0C0;
+	font-size:14px;
+	float:left;
+	text-align:center;
+}
+
+/*
+	Div que contem as linguagens do Projecto
+*/
+.linguagensRepoProj{
+	width: 196px;
+	height:20px;
+	border:1px solid #C0C0C0;
+	font-size:14px;
+	float:left;
+	text-align: right;
+}
+/*
+	Div que contem os detalhes do projecto
+*/
+.descricaoallProjProj{
+	width: 298px;
+	height: 26px;
+	border:1px solid #C0C0C0;
+	float:left;
+}
+
+
+

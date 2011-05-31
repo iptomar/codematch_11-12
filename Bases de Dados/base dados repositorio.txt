@@ -1,0 +1,15 @@
+use tolmai;                                          
+
+create column family tm_repo with comparator='UTF8Type';                                                                                                                             
+                                                                                                                                
+update column family tm_repo with column_metadata=
+[
+{column_name: name, validation_class:UTF8Type},                                                                    
+{column_name: language_P, validation_class:UTF8Type},  
+{column_name: language_S, validation_class:UTF8Type}, 
+{column_name: language_T, validation_class:UTF8Type}, 
+{column_name: description, validation_class:UTF8Type},
+{column_name: logo, validation_class:UTF8Type},
+{column_name: url, validation_class:UTF8Type},
+];         
+

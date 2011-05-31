@@ -1,0 +1,40 @@
+// ESTE MODELO FOI AGORA IMPLEMENTADO NO CASSANDRA!!!
+
+create keyspace modelo;
+use modelo;
+
+create column family projects with comparator='UTF8Type';
+
+update column family projects with column_metadata=
+[
+{column_name: fullname, validation_class:UTF8Type} ,
+{column_name: source, validation_class: UTF8Type},
+{column_name: date_c, validation_class:LongType}, 
+{column_name: date_l, validation_class:LongType},                             
+{column_name: logo, validation_class:UTF8Type}
+];
+
+create column family language with comparator='UTF8Type';
+
+update column family language with column_metadata=
+[
+{column_name: name_project, validation_class:UTF8Type, index_type: KEYS} 
+
+];
+
+create column family name_project_author with comparator='UTF8Type';
+
+update column family name_project_author with column_metadata=
+[
+{column_name: author, validation_class:UTF8Type, index_type: KEYS }
+
+];
+
+create column family repository with comparator='UTF8Type' ;
+
+update column family repository with column_metadata=
+[
+{column_name: name_project, validation_class:UTF8Type, index_type: KEYS} 
+];
+
+// name = nome do projecto

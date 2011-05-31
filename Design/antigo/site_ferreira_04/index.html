@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Tolmai</title>
+		
+		<link href="style/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<!--	<link href="style/header.css" rel="stylesheet" type="text/css" media="screen" />-->
+		<link href="style/hometolmai.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="style/repoPage.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="style/lingPage.css" rel="stylesheet" type="text/css" media="screen" />
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.11.custom.css" rel="stylesheet" />	
+		<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.11.custom.min.js"></script>
+		<script type="text/javascript" src="js/highcharts/highcharts.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// Accordion
+				$("#accordion").accordion({ header: "h3"});
+			});
+		</script>	
+		<script type="text/javascript">
+			<!-- INICIO DO CODIGO PARA O GRAFICO QUEIJO repositorio--> 		
+			var chart;
+			$(document).ready(function() {
+				chart = new Highcharts.Chart({
+					chart: {
+						renderTo: 'container',
+						plotBackgroundColor: null,
+						plotBorderWidth: null,
+						plotShadow: false
+					},
+					title: {
+						text: ' '
+					},
+					tooltip: {
+						formatter: function() {
+							return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+						}
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+							dataLabels: {
+								enabled: true,
+								color: '#000000',
+								connectorColor: '#000000',
+								formatter: function() {
+									return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+								}
+							}
+						}
+					},
+				    series: [{
+						type: 'pie',
+						name: 'Browser share',
+						data: [
+							['Firefox',   45.0],
+							['IE',       26.8],
+							{
+								name: 'Chrome',    
+								y: 12.8,
+								sliced: true,
+								selected: true
+							},
+							['Safari',    8.5],
+							['Opera',     6.2],
+							['Others',   0.7]
+						]
+					}]
+				});
+			});
+		<!--
+
+function MM_preloadImages() { //v3.0
+
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+
+}
+
+
+
+function MM_findObj(n, d) { //v4.01
+
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+
+}
+
+
+
+function MM_nbGroup(event, grpName) { //v6.0
+
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+
+  if (event == "init" && args.length > 2) {
+
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+
+      nbArr[nbArr.length] = img;
+
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+
+        if (!img.MM_up) img.MM_up = img.src;
+
+        img.src = img.MM_dn = args[i+1];
+
+        nbArr[nbArr.length] = img;
+
+    } }
+
+  } else if (event == "over") {
+
+    document.MM_nbOver = nbArr = new Array();
+
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+
+      if (!img.MM_up) img.MM_up = img.src;
+
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+
+      nbArr[nbArr.length] = img;
+
+    }
+
+  } else if (event == "out" ) {
+
+    for (i=0; i < document.MM_nbOver.length; i++) {
+
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+
+  } else if (event == "down") {
+
+    nbArr = document[grpName];
+
+    if (nbArr)
+
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+
+    document[grpName] = nbArr = new Array();
+
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+
+      if (!img.MM_up) img.MM_up = img.src;
+
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+
+      nbArr[nbArr.length] = img;
+
+  } }
+
+}
+
+//-->
+
+		</script>
+ <!-- FIM DO CODIGO PARA O GRAFICO QUEIJO repositorio--> 
+ 
+<!--INICIO DO CODIGO QUE CONTA O NUMERO DE PROJECTOS NO GITHUB GRAFICO BARRA HORIZONTAL-->
+  <script type="text/javascript">
+		
+			var chart;
+			$(document).ready(function() {
+				chart = new Highcharts.Chart({
+					chart: {
+						renderTo: 'container3',
+						defaultSeriesType: 'bar'
+					},
+					title: {
+						text: ' '
+					},
+					
+					xAxis: {
+						categories: ['Github'],
+						title: {
+							text: null
+						}
+					},
+					yAxis: {
+						min: 0,
+						title: {
+							text: ' ',
+							align: 'high'
+						}
+					},
+					tooltip: {
+						formatter: function() {
+							return ''+
+								 this.series.name +': '+ this.y +'projectos';
+						}
+					},
+					plotOptions: {
+						bar: {
+							dataLabels: {
+								enabled: true
+							}
+						}
+					},
+					legend: {
+						layout: 'vertical',
+						align: 'right',
+						verticalAlign: 'top',
+						x: -100,
+						y: 100,
+						floating: true,
+						borderWidth: 1,
+						backgroundColor: '#FFFFFF',
+						shadow: true
+					},
+					credits: {
+						enabled: false
+					},
+				        series: [{
+						name: 'Projectos',
+						data: [107]
+					}]
+				});
+				
+				
+			});
+ </script>
+ <!--fim codigo-->
+ <script type="text/javascript">
+			<!-- INICIO DO CODIGO PARA O GRAFICO QUEIJO1 vista Linguagens--> 		
+			var chart;
+			$(document).ready(function() {
+				chart = new Highcharts.Chart({
+					chart: {
+						renderTo: 'container4',
+						plotBackgroundColor: null,
+						plotBorderWidth: null,
+						plotShadow: false
+					},
+					title: {
+						text: ' '
+					},
+					tooltip: {
+						formatter: function() {
+							return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+						}
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+							dataLabels: {
+								enabled: true,
+								color: '#000000',
+								connectorColor: '#000000',
+								formatter: function() {
+									return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+								}
+							}
+						}
+					},
+				    series: [{
+						type: 'pie',
+						name: 'Browser share',
+						data: [
+							['Linguagem1',   45.0],
+							['Linguagem2',       26.8],
+							['Linguagem3',    8.5],
+							['Linguagem4',     6.2],
+							['Linguagem5',   0.7]
+						]
+					}]
+				});
+			});
+				
+		</script>
+ <!-- FIM DO CODIGO PARA O GRAFICO QUEIJO1 vista linguagens--> 
+ 
+ 
+  <script type="text/javascript">
+			<!-- INICIO DO CODIGO PARA O GRAFICO QUEIJO2 vista Linguagens--> 		
+			var chart;
+			$(document).ready(function() {
+				chart = new Highcharts.Chart({
+					chart: {
+						renderTo: 'container5',
+						plotBackgroundColor: null,
+						plotBorderWidth: null,
+						plotShadow: false
+					},
+					title: {
+						text: ' '
+					},
+					tooltip: {
+						formatter: function() {
+							return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+						}
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+							dataLabels: {
+								enabled: true,
+								color: '#000000',
+								connectorColor: '#000000',
+								formatter: function() {
+									return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+								}
+							}
+						}
+					},
+				    series: [{
+						type: 'pie',
+						name: 'Browser share',
+						data: [
+							['Linguagem1',   45.0],
+							['Linguagem2',       26.8],
+							['Linguagem3',    8.5],
+							['Linguagem4',     6.2],
+							['Linguagem5',   0.7]
+						]
+					}]
+				});
+			});
+				
+		</script>
+ <!-- FIM DO CODIGO PARA O GRAFICO QUEIJO2 vista linguagens--> 
+
+ 
+  
+ 
+ 
+ <!-- grafico conta o top linguagens em todos os repositorios(vista de linguagens)-->
+ <script type="text/javascript">
+		
+			var chart;
+			$(document).ready(function() {
+				chart = new Highcharts.Chart({
+					chart: {
+						renderTo: 'container9',
+						defaultSeriesType: 'column',
+						margin: [ 50, 50, 100, 80]
+					},
+					title: {
+						text: 'Linguagens mais utlizadas'
+					},
+					xAxis: {
+						categories: [
+							'C++', 
+							'Java', 
+							'.Net', 
+							'Cobol', 
+							'HTML'
+						],
+						labels: {
+							rotation: -45,
+							align: 'right',
+							style: {
+								 font: 'normal 13px Verdana, sans-serif'
+							}
+						}
+					},
+					yAxis: {
+						min: 0,
+						title: {
+							text: 'Medida do eixo do Y'
+						}
+					},
+					legend: {
+						enabled: false
+					},
+					tooltip: {
+						formatter: function() {
+							return '<b>'+ this.x +'</b><br/>'+
+								 'Medida de cada linguagem: '+ Highcharts.numberFormat(this.y, 1) +
+								 ' unidades';
+						}
+					},
+				        series: [{
+						name: 'Population',
+						data: [34.4, 21.8, 20.1, 20, 19.6],
+						dataLabels: {
+							enabled: true,
+							rotation: -90,
+							color: '#FFFFFF',
+							align: 'right',
+							x: -3,
+							y: 10,
+							formatter: function() {
+								return this.y;
+							},
+							style: {
+								font: 'normal 13px Verdana, sans-serif'
+							}
+						}			
+					}]
+				});
+				
+				
+			});
+				
+		</script>
+	</head>
+	<body>
+		<div class="tolmaipage">
+		
+			<DIV style='position:relative;'>
+				<img src='images/backondas.png' style="width:100%;	height:100px;" />
+				<DIV style='position:absolute; top:0px; left:6px; color:red;'>
+					<img src="images/tolmaitrans.png" style="position:absolute; top:3px; left:1px; width:300px;	height:90px;" />
+				</DIV>
+			</DIV> 
+		<!-- 	<div style="background-image: url('images/backondas.png') ; height: 100px; width: 900px;">
+				<img src="images/tolmaitrans.png" alt="Tolmai" style="width:300px;	height:90px;"/>
+			</div> -->
+			<!-- Accordion -->
+			<!--margin-top:100px; margin-bottom:100px; margin-right:50px; margin-left:50px;-->
+			<div id="accordion">
+				<div>
+					<h3><a href="#">Home Page - Tolmai</a></h3>
+					<div>
+						<div class="demoHeaders"> <!--tamanho da pagina interior do accorion-->
+							<div id="descricaoProjecto"> <!--div do lado esquerdo do logotipo, das funcionalidades, dos objectivos do projecto-->
+								<div class="simbolotolmai">
+									<img  src="images/img.png" id="logotolmai">
+								</div>
+								<div class="funcioProjectoTol">
+									<h1>Funcionalidades do Projecto:</h1>
+									<p>Com a utilização do Tolmai os seus utilizadores podem ter acesso aos projectos alojados na Internet e visualizar informação sobre os mesmos. É possível visualizar os Repositórios existentes, os projectos que alojam e ainda as linguagens de programação utilizadas em cada projecto. Sobre cada repositório é criada um ranquing de linguagens mais utilizadas em todos os seus projectos. Sobre cada projecto para além da informação sobre quem foi o seu autor e a data de criação, é possível visualizar a data da última actualização que esse mesmo projecto sofreu. Será disponibilizado um URL para que o utilizador possa aceder directamente ao projecto desejado.</p>
+								</div>
+								<div id="linguagensGrafico">
+									<h1><center>Linguagens</center></h1>
+									<center>
+										<table>
+											<td >
+												<br /><img src="images/top.png" style="margin:10px;" id="top">
+												<br />
+												<img src="images/github.png" /id="imgRep">
+												<img src="images/sourceforce.png" /id="imgRep">
+											</td>
+										</table>
+									</center>
+								</div>
+								<div class="objTol">
+									<h1>Objectivos do Projecto:</h1>
+									<p>Garantir que os seus utilizadores têm acesso a informações sobre os projectos alojados na Internet como por exemplo no GitHub. Deve-se garantir uma correcta informação sobre cada projecto pesquisado, nomeadamente o seu autor, onde se aloja e a principal linguagem de programação utilizada. Os projectos mais recentes estão colocados em destaque para se garantir a actualização constante da informação apresentada.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<h3><a href="#">Linguagens</a></h3>
+					<div>
+						<div class="demoHeaders">
+							<div class="detalhesRepo">
+								<p>Linguagens</p>
+								<h1>Github</h1> 
+							<div id="container4"  style="width: 350px; height:150px;margin:0 auto align="center" ></div>
+								<br /><br /><br />
+								<h1>Sourceforge</h1>
+								<div id="container5"  style="width: 350px; height:150px;margin:0 auto align="right" ></div>
+								<center>
+									
+								</center>
+							</div>
+							
+							<div class="topRepo">
+								<!--container do grafico QUEIJO-->
+								<h1>Top de Linguagens: </h1>
+								<br /><br /><br /><br />
+								<center>
+								<div id="container9" style="width: 350px; height:350px;></div>
+								</center>
+							</div>
+							
+							<div class="repPesquisa">
+								<br /><br /><br />
+								<div class="divPesquisaExt">
+									<div class="divPesquisaInt">
+										<div class="nomePesquisas">
+											Search
+										</div>
+										
+										<div class="campoEscreverPesquisas">
+											 <input type="text" name="Pesquisa" class="pesquisaObjec" />
+										</div>
+										
+										<div class="buttonPesquisas">
+											<button type="button" class="buttonGo">Go</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<h3><a href="#">Projectos</a></h3>
+					<div>
+						<div class="demoHeaders">
+							<div class="detalhesRepo">
+								<p>Projectos:</p>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Projecto:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Projecto:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Projecto:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="topRepo">
+								<!--container do grafico QUEIJO-->
+								<h1>Top de Projectos:</h1>
+								<br /><br /><br /><br />
+								<center>
+									
+								</center>
+							</div>
+							
+							<div class="repPesquisa">
+								<br /><br /><br />
+								<div class="divPesquisaExt">
+									<div class="divPesquisaInt">
+										<div class="nomePesquisas">
+											Search
+										</div>
+										
+										<div class="campoEscreverPesquisas">
+											 <input type="text" name="Pesquisa" class="pesquisaObjec" />
+										</div>
+										
+										<div class="buttonPesquisas">
+											<button type="button" class="buttonGo">Go</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<h3><a>Repositórios</a></h3>
+					<div>
+						<div class="demoHeaders">
+							<div class="detalhesRepo">
+								<p>Github</p>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Repositório:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Repositório:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+								<div class="divDescricao">
+									<div class="divImagDescri">
+										<img src="images/erro.png" class="imageDes"/>
+									</div>
+									<div class="descricao">
+										<div class="nomeRepo">
+											Nome
+										</div>
+										<div class="linguagensRepo">
+											<a href="">C++</a>
+											<a href="">C</a>
+											<a href="">Java</a>
+											<a href="">HTML</a>
+											<a href="">XML</a>
+										</div>
+										<div class="descricaoDetalhes">
+											Descrição do Repositório:
+										</div>
+										<div class="owners">
+											Owners
+											<br />
+										</div>
+										<div class="url">
+											URL
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="topRepo">
+								<!--container do grafico QUEIJO-->
+								<h1>Top de Repositórios: </h1>
+								<br /><br /><br /><br />
+								<center>
+									<div id="container">
+									</div>
+									<div id="container3" style="width: 200px; height: 100px; margin: 0 auto"></div>
+								</center>
+							</div>
+							
+							<div class="repPesquisa">
+								<br /><br /><br />
+								<div class="divPesquisaExt">
+									<div class="divPesquisaInt">
+										<div class="nomePesquisas">
+											Search
+										</div>
+										
+										<div class="campoEscreverPesquisas">
+											 <input type="text" name="Pesquisa" class="pesquisaObjec" />
+										</div>
+										
+										<div class="buttonPesquisas">
+											<button type="button" class="buttonGo">Go</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</body>
+</html>
+ 
+ 
+

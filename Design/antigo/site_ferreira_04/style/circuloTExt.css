@@ -1,0 +1,15 @@
+/* Circle Text Styles */
+#outerCircleText {
+/* Optional - DO NOT SET FONT-SIZE HERE, SET IT IN THE SCRIPT */
+font-style: italic;
+font-weight: bold;
+font-family: 'comic sans ms', verdana, arial;
+color: #000;
+/* End Optional */
+
+/* Start Required - Do Not Edit */
+position: absolute;top: 0;left: 0;z-index: 3000;cursor: default;}
+#outerCircleText div {position: relative;}
+#outerCircleText div div {position: absolute;top: 0;left: 0;text-align: center;}
+/* End Required */
+/* End Circle Text Styles */

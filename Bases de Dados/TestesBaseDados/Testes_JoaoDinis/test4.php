@@ -1,15 +1,12 @@
 <?php
-	
-	//João Dinis nº11472
-	//função que insere na base de dados um determinado projecto 
-	
-	require_once('phpcassa/connection.php');
-	require_once('phpcassa/columnfamily.php');
-	$conn = new Connection('Keyspace1');
-	$column_family = new ColumnFamily($conn, 'starndard2');
-	
+	//joão dinis nº11472
+	//Obtem todos os detalhes do projecto
 	
 	function obter_github($projecto){
+		require_once('phpcassa/connection.php');
+		require_once('phpcassa/columnfamily.php');
+		$conn = new Connection('Keyspace1');
+		$column_family = new ColumnFamily($conn, 'starndard2');
 		$request = 'http://github.com/api/v2/json/repos/search/'.$projecto;
 		//le o ficheiro para uma string
 		$response = file_get_contents($request);		

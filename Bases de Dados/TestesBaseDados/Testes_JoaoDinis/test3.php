@@ -1,8 +1,6 @@
 <?php
-	
-	//João Dinis nº11472
-	//vai buscar todos os projectos á API do Github que tenham a letra A e insere na base de dados 
-	//a seguir faço os gets dos projectos e mostro a percentagem de linguagens existentes.
+	//Joao dinis nº11472
+	//insere todos os projectos com A , faz a percentagem das linguagens e faz gets aleatorios.
 	
 	require_once('phpcassa/connection.php');
 	require_once('phpcassa/columnfamily.php');

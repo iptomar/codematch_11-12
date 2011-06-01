@@ -1,0 +1,129 @@
+/*
+	Div principal 
+*/
+				
+#tolmaipage{
+	width:100%;
+	height:700px;
+	float: lefth;
+	margin:10px;
+	/**border:1px solid #92cdec;**/
+}
+/*
+	Cabeçalho e respectiva imagem 
+	Div cabeçalho 
+*/
+.header{
+	width:100%;
+	height:100px;
+}
+
+#imagetolmai{
+	width:250px;
+	height:50px;
+	position:absolute;
+	top:32px;
+	left:50px
+}
+
+/*
+	Tamanho do accordion onde se coloca a informacao
+*/
+.demoHeaders{
+	width: 100%;
+	height: 470px;
+	background-color: white;
+}
+
+/** -----Não esta a ser utilizado
+.tolmaillinguagens{	
+	height:690px;
+	width:640px;
+	/**border:1px solid #92cdec;
+	float: left;
+}
+*/
+
+
+/*
+	Div que contem o simbolo do projecto Tolmai
+*/
+.simbolotolmai{
+	/*width:200px;*/
+	float: left;
+	width: 20%;
+	height:230px;
+	/**border:1px solid #92cdec;**/
+
+	
+}
+
+/*
+	Tamanho do Logotipo Tolmai
+*/
+#logotolmai{
+/*		width:200px;
+float: left;
+    width: 20%; */
+	height: 180px;
+ 
+    
+}
+/*
+	Div que comtem a descricao das funcionalidades do projecto Tolmai
+*/
+.funcioProjectoTol{
+	/*width:500px;*/
+	float: left;
+	width: 40%; 
+	height:40%
+	/**border:1px solid #92cdec;**/
+	
+}
+.objTol{
+	clear: both;  /* O clear "limpa" os floats e volta a posicionar normal*/
+	position:static; 
+	vertical-align:center;
+/*	height:165px;
+	width:750px;
+	float: left;
+	width:50%;
+	/**border:1px solid #92cdec;*/
+}
+
+/*
+	Div que geral que contem o icon do projecto, as descricoes inerentes
+*/
+#descricaoProjecto{
+	float: left;
+	width:100%;
+	height:468px;
+	/**border:1px solid #92cdec;**/
+
+}
+
+/*
+	grafico das linguagens que o projecto contempla
+*/
+.linguagensGrafico{
+	/*width:533px;*/
+	width:40%;
+	float: left;	
+	height:230px;
+	/**border:1px solid #92cdec;**/
+	
+}
+#top{
+/*		width:200px;
+float: left;
+    width: 20%; */
+	height: 180px;   
+}
+#imgRep{
+/*		width:200px;
+	float: left; */
+    width: 100px;
+	height: 70px;
+ 
+    
+}

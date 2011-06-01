@@ -1,0 +1,11 @@
+Para evitar ocorrencia de retorno nulo
+ex: erro no nome do repositorio (Souceforge e nao Sourceforge)
+
+Sugiro o uso de um pre sleector de pesquisa de repositorio
+Combo box
+Radio box 
+
+ou uma outra qualquer proposta inovadora
+
+Cump
+bmacao

@@ -1,5 +1,10 @@
 <?php
 
+//JOAO dinis
+//calcula o tempo que demora a inserir um milhao de dados aleatorios
+//e a fazer os gets dos mesmos.
+
+
 require_once('phpcassa/connection.php');
 require_once('phpcassa/columnfamily.php');
 

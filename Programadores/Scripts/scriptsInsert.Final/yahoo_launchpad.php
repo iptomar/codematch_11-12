@@ -10,7 +10,7 @@ while ($i <= 1000) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $exe;
 		if (isset($name_project)) {
 			$languageUp = array_map("strtoupper", $language);
-			insert($name_project, $source, "Launchpad", $created_date[0], $created_date[1], $logo ,$languageUp, $owner);
+			insert($name_project,$title,$source,"Launchpad",$created_date[0],$created_date[1],$logo,$languageUp,$owner);
 //			print_r("<b>Project:</b> ".$name_project."<br>");
 //			print_r("<b>Title:</b> ".$title."<br>");
 //			print_r("<b>Source:</b> ".$source."<br>");

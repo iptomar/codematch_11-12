@@ -1,0 +1,75 @@
+As bases dados foram todas mudadas para o KEYSPACE DBCola
+
+create keyspace DBCola;
+use DBCola;
+
+create column family projects with comparator='UTF8Type';
+
+update column family projects with column_metadata=
+[
+{column_name: source, validation_class: UTF8Type},
+{column_name: date_c, validation_class:LongType}, 
+{column_name: date_l, validation_class:LongType},                             
+{column_name: logo, validation_class:UTF8Type}
+];
+
+create column family language with comparator='TimeUUIDType';
+
+
+create column family author with comparator='TimeUUIDType';
+
+
+create column family repos with comparator='TimeUUIDType' ;
+
+--------------------------------------------------------------
+
+use DBCola;
+
+create column family helloworld with comparator='UTF8Type';
+
+update column family helloworld with column_metadata=
+[
+{column_name: code, validation_class: UTF8Type}
+];
+
+--------------------------------------------------------------
+use DBCola;                                          
+
+create column family logs with comparator='UTF8Type';                                                                                                                             
+                                                                                                                                
+update column family logs with column_metadata=
+[
+{column_name: nameproj, validation_class:UTF8Type},  
+{column_name: language1, validation_class:UTF8Type},                                                                    
+{column_name: plang1, validation_class:UTF8Type}, 
+{column_name: language2, validation_class:UTF8Type},                                                                    
+{column_name: plang2, validation_class:UTF8Type}, 
+{column_name: language3, validation_class:UTF8Type},                                                                    
+{column_name: plang3, validation_class:UTF8Type}, 
+{column_name: language4, validation_class:UTF8Type},                                                                    
+{column_name: plang4, validation_class:UTF8Type}, 
+{column_name: tfiles, validation_class:UTF8Type}, 
+];         
+
+----------------------------------------------------------------
+use DBCola;
+
+create column family toplang with comparator='UTF8Type';                                                                                                                             
+                                                                                                                                
+update column family toplang with column_metadata=
+[
+{column_name: data, validation_class:UTF8Type},      
+];         
+
+------------------------------------------------------------------
+use DBCola;
+
+create column family repo with comparator='UTF8Type';                                                                                                                             
+                                                                                                                                
+update column family repo with column_metadata=
+[
+{column_name: name, validation_class:UTF8Type},      
+{column_name: description, validation_class:UTF8Type},
+{column_name: logo, validation_class:UTF8Type},
+{column_name: url, validation_class:UTF8Type},
+];         

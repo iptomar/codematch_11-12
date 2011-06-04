@@ -22,29 +22,34 @@ $count =0;
 $rows = $column_lang->get_range($key_start='', $key_finish='',100000);
 foreach ($rows as $key=>$value) 
 	{
+
 	
+		
 	foreach ($value as $key1=>$value1) {$count=0;
-	//Selects projects per repository
+			//Selects projects per repository
 	$pesquisa = $column_repo ->get($aux,null,"","",false,100000,null,null);
 	
 	foreach ($pesquisa as $key2=>$value2)
 			{
-						if($value1==$value2)
+									if($value1==$value2)
 								{
+									
 							$count++;
+							$lang = $key;
+				if($lang!='N/A')
+			$arr_lang[$lang] = $count;
 								}
 			}		
 			
-			$lang = $key;
-			if($lang!='N/A')
-			$arr_lang[$lang] = $count;
-			
+	}			
 			}
 		//orders the array								
 		arsort($arr_lang);
-		return($arr_lang);
-	}}
+		return($arr_lang);	
+		
+		}
 	
+			
 	catch(Exception $x){
 		return($no);
 	}}

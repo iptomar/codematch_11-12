@@ -61,3 +61,49 @@ Function:
 
 search_part_author("aa")
 return: array with author started with "aa"
+
+//**********//
+
+Top Languages
+
+Function:
+
+get_TopLanguages()
+return: array with Top Languages
+
+//*********//
+
+Input: String repository
+
+Function:
+
+get_TopLanguagesRepo("Github")
+return: array with Top Languages by repository
+
+//**********//
+
+
+Input: String repository
+
+Function:
+
+get_totalProjectPorRepo("Github")
+return: number of projects by repository
+
+//***********//
+
+
+Input: String language
+
+Function:
+
+get_helloworld("C")
+return: code of helloworld
+//***********//
+
+Input: String repository
+
+Function:
+
+get_repo("Github")
+return: description,name, logo,url

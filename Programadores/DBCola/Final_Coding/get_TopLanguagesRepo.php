@@ -23,9 +23,9 @@ $rows = $column_lang->get_range($key_start='', $key_finish='',100000);
 foreach ($rows as $key=>$value) 
 	{
 
-	
+	$count=0;
 		
-	foreach ($value as $key1=>$value1) {$count=0;
+	foreach ($value as $key1=>$value1) {
 			//Selects projects per repository
 	$pesquisa = $column_repo ->get($aux,null,"","",false,100000,null,null);
 	

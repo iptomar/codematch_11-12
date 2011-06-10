@@ -21,7 +21,7 @@ author - autor/es do projecto <array -string> LOWERCASE
 function insert($proj_name,$desc,$source,$repos,$data_c,$data_lst,$logo,$lang,$author){
 $proj_name = strtolower($proj_name);
 
-$conn = new Connection('testes_DBCola');
+$conn = new Connection('DBCola');
 //select databases
 $column_detail= new ColumnFamily($conn,'projects');
 $column_presence = new ColumnFamily($conn,'presence');

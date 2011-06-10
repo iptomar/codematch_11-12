@@ -1,6 +1,6 @@
 <?php
 include "APIS/github.php"; //include da api github
-include "db_insert.php";
+include "insert_DB.php";
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
@@ -9,7 +9,8 @@ while ($i <= 1000) {
     foreach($yahoo_array as $arg) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
-			insert_db($name_project, $title, $source, "Github", $owner, $language, $created_date, $logo);
+			$languageUp = array_map("strtoupper", $language);
+			insert($name_project,$title,$source,"Github",$created_date[0],$created_date[1],$logo,$languageUp,$owner);
 //			print_r("<b>Project:</b> ".$name_project."<br>");
 //			print_r("<b>Title:</b> ".$title."<br>");
 //			print_r("<b>Source:</b> ".$source."<br>");

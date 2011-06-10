@@ -1,6 +1,6 @@
 <?php
 include "APIS/sourceforge.php"; //include da api sourceforge
-include "db_insert.php";
+include "insert_DB.php";
 
 //o ciclo while e para ir mudando de pagina
 $i=0;
@@ -9,7 +9,8 @@ while (($i+10) <= 1000) {
 	foreach($bing_array as $arg) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
-			insert_db($name_project, $title, $source, "Sourceforge", $owner, $language, $created_date, $logo);
+			$languageUp = array_map("strtoupper", $language);
+			insert($name_project,$title,$source,"Sourceforge",$created_date[0],$created_date[1],$logo,$languageUp,$owner);
 //			print_r("<b>Project:</b> ".$name_project."<br>");
 //			print_r("<b>Title:</b> ".$title."<br>");
 //			print_r("<b>Source:</b> ".$source."<br>");

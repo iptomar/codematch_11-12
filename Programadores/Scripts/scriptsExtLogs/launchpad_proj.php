@@ -1,12 +1,12 @@
 <?php
 include ("database_data.php");
 include ("ext_languages.php");
-include ("log_insert.php");
+include ("log_insertV2.php");
 
-$get_details = get_details('1');
+$get_details = get_details('190000');
 
 foreach($get_details as $project => $owner) {
-	$page = curl("http://bazaar.launchpad.net/~$owner/$project/trunk/files");
+	$page = curl("http://bazaar.launchpad.net/~$owner/$project/trunk/files"); 
 	preg_match_all('/<a href="(.*)" class="link">(.*)<\/a>/', $page, $matches);
 	$total_ficheiros = 0;
 	$i=0;
@@ -14,12 +14,12 @@ foreach($get_details as $project => $owner) {
 	$array_dirs = array();
 	$array_final = array();
 	foreach($matches[2] as $files) {
+		//Dir
 		if (stristr($matches[1][$i],'/files/')) {
-			echo "Dir: $files<br>";
 			array_push($array_dirs, $matches[1][$i]);
 		}
+		//File
 		else if (stristr($matches[1][$i],'/view/')) {
-			echo "Files: $files<br>";
 			$extensao = substr($files, strrpos($files, '.'), strlen($files));
 			if(isset($array_languages[$extensao])) {	
 				if(isset($array_percentagem[$extensao])){
@@ -48,12 +48,12 @@ foreach($get_details as $project => $owner) {
 			$i=0;
 			unset($array_dirs[$y]);
 			foreach($matches[2] as $files) {
+				//Dir
 				if (stristr($matches[1][$i],'/files/')) {
-					echo "Dir: $files<br>";
 					array_push($array_dirs, $matches[1][$i]);
 				}
-				else if (stristr($matches[1][$i],'/view/')) {
-					echo "Files: $files<br>";		
+				//File
+				else if (stristr($matches[1][$i],'/view/')) {	
 					$extensao = substr($files, strrpos($files, '.'), strlen($files));
 					if(isset($array_languages[$extensao])) {	
 						if(isset($array_percentagem[$extensao])){
@@ -75,32 +75,22 @@ foreach($get_details as $project => $owner) {
 			}
 		}
 	}
-	
-}
-foreach($array_percentagem as $lang => $percent) {
-	//verificar se C++ ja existe na key do array, se existe soma o valor da percentagem
-	if(isset($array_final[$array_languages[$lang]])){
-		$array_final[$array_languages[$lang]] += round(($percent/$total_ficheiros)*100,1);
-	} else {
-		$array_final[$array_languages[$lang]] = round(($percent/$total_ficheiros)*100,1);
+	foreach($array_percentagem as $lang => $percent) {
+		//verificar se C++ ja existe na key do array, se existe soma o valor da percentagem
+		if(isset($array_final[$array_languages[$lang]])){
+			$array_final[$array_languages[$lang]] += round(($percent/$total_ficheiros)*100,1);
+		} else {
+			$array_final[$array_languages[$lang]] = round(($percent/$total_ficheiros)*100,1);
+		}
 	}
-}	
-//foreach($get_details as $project => $owner) {
-//	insert_log($project, $project, $array_final, $total_ficheiros);
-//}
-
-
-
+	if (!empty($array_final)) {	
+		arsort($array_final);
+		insert_log($project, json_encode($array_final), $total_ficheiros);
+	}
+}
 print_r("Done Launchpad Ext ".date("Y-m-d")."\n");
 
 
-echo "<pre>";
-print_r($array_dirs);
-echo "</pre>";
-
-echo "<pre>";
-print_r($array_final);
-echo "</pre>";
 
 function curl($url) {
 	$ch = @curl_init();

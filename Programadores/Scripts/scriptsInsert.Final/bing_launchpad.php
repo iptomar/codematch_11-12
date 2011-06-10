@@ -11,13 +11,14 @@ while (($i+10) <= 1000) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
 			$languageUp = array_map("strtoupper", $language);
+			$languageUp = array_map('trim', $languageUp);
 			insert($name_project,$title,$source,"Launchpad",$created_date[0],$created_date[1],$logo,$languageUp,$owner);
 //			print_r("<b>Project:</b> ".$name_project."<br>");
 //			print_r("<b>Title:</b> ".$title."<br>");
 //			print_r("<b>Source:</b> ".$source."<br>");
 //			print_r("<b>Repository:</b> Launchpad<br>");
 //			print_r("<b>Owner:</b> ".$owner[0]."<br>");
-//			foreach($language as $arg_lang) {
+//			foreach($languageUp as $arg_lang) {
 //				print_r("<b>Languages:</b> ".$arg_lang."<br>");
 //			}
 //			print_r("<b>Date Created:</b> ".$created_date[0]."<br>");

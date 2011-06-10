@@ -1,0 +1,7 @@
+create column family logs_lang with comparator='UTF8Type';
+
+update column family logs_lang with column_metadata=
+[
+{column_name: lang, validation_class:UTF8Type},
+{column_name: total,validation_class:UTF8Type}
+]; 

@@ -1,7 +1,7 @@
 <?php
 //Author=>project
-require_once('../phpcassa/connection.php');
-require_once('../phpcassa/columnfamily.php');
+require_once('phpcassa/connection.php');
+require_once('phpcassa/columnfamily.php');
 
 function get_details($hits){
 $no = "null";

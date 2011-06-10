@@ -1,0 +1,9 @@
+A todos os programadores das APIS revejam as linguagens no ficheiro get_TopLanguages.php.
+
+Alterem o nome da mesma se nao for como encontram nas pesquisas.
+
+Exemplo:
+array linguagens Visual Basic esta como VB/VBS
+se na pesquisa tirarem Visual Basica alterem no array.
+
+Obrigado

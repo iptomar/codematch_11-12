@@ -1,0 +1,8 @@
+use tolmai;                                          
+
+create column family toplang with comparator='UTF8Type';                                                                                                                             
+                                                                                                                                
+update column family toplang with column_metadata=
+[
+{column_name: data, validation_class:UTF8Type},      
+];         

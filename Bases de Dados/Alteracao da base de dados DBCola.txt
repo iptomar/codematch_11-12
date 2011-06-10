@@ -1,5 +1,13 @@
-create keyspace testes_DBCola;
-use testes_DBCola;
+use DBCola;
+
+drop column family projects;
+drop column family presence;
+drop column family repos;
+drop column family language;
+drop column family author;
+drop column family projects;
+
+// limpar os dados das respectivas column family;
 
 create column family projects with comparator='TimeUUIDType' and Column_type='Super' and subcomparator='BytesType';
 
@@ -12,11 +20,10 @@ update column family presence with column_metadata=
 {column_name: repo_G, validation_class:UTF8Type} 
 ];
 
-
 create column family language with comparator='TimeUUIDType';
-
 
 create column family author with comparator='TimeUUIDType';
 
-
 create column family repos with comparator='TimeUUIDType' ;
+
+

@@ -1,0 +1,37 @@
+----------Vista Inicial----------
+
+Na Home Page temos disponível a seguinte informação:
+As funcionalidades e aos objectivos gerais do projecto. 
+Uma nuvem de linguagens dos projectos disponíveis.
+Uma pesquisa geral em todo o site, desde repositórios, projectos, autor ou linguagens. Esta pesquisa pode ser visualizada na tab Pesquisa.
+Quando o utilizador pretender ter acesso à informação sobre os repositórios (github, sourceforge e launchpad) deve clicar no respectivo ícone para ser redireccionado para a tab Repositório.
+
+----------Vista de Repositório----------
+
+Após ter sido escolhido o repositório na Home Page, é mostrada a seguinte informação:
+Uma lista com todos os projectos pertencentes a esse mesmo repositório.
+Os detalhes gerais do repositório.
+O número de projectos existentes em cada repositório.
+Uma pesquisa por projectos (o resultado desta pesquisa pode ser visualizado do lado esquerdo onde anteriormente se encontrava a lista de todos os projectos existentes no repositório).
+Quando o utilizador pretender ter acesso à informação específica sobre um projecto clica sobre a imagem desse mesmo projecto para ser redireccionado para a tab Projecto.
+
+----------Vista de Projecto----------
+
+Após ter escolhido o projecto na tab Repositório, é mostrada a seguinte informação:
+Uma lista com os colaboradores do projecto seleccionado.
+Os detalhes do projecto.
+Um gráfico referente ao número de ficheiros contidos nesse projecto.
+Quando o utilizador pretender ter acesso à informação específica sobre uma linguagem deve clicar na linguangem em causa que se encontra nos detalhes do projecto.
+
+----------Vista de Linguagem----------
+
+Após ter escolhido a linguagem na tab Projecto, é mostrada a seguinte informação:
+Um gráfico com as linguagens existentes no repositório.
+Um gráfico com o top de linguagens (este top é referente aos repositórios github, sourceforge e launchpad).
+Código com o "Hello World" na linguagem seleccionada.
+
+----------Vista de Pesquisa----------
+
+Após ter realizado uma pesquisa na Home Page, é mostrada toda a informação encontrada.
+A informação apresentada fica visivel na tab até que se realize uma nova pesquisa para que a qualquer momento o utilizador possa visualizar o que pesquisou. Para isso basta clicar na tab Pesquisa.
+Para sair desta tab basta clicar na tab Home Page.

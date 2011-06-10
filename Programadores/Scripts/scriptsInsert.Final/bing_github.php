@@ -11,6 +11,7 @@ while (($i+10) <= 1000) {
 		list ($name_project, $title, $source, $owner, $language, $created_date, $logo) = $arg;
 		if (isset($name_project)) {
 			$languageUp = array_map("strtoupper", $language);
+			$languageUp = array_map('trim', $languageUp);
 			insert($name_project,$title,$source,"Github",$created_date[0],$created_date[1],$logo,$languageUp,$owner);
 //			print_r("<b>Project:</b> ".$name_project."<br>");
 //			print_r("<b>Title:</b> ".$title."<br>");

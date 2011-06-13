@@ -1,7 +1,7 @@
 <?php
 
 
-//percentagem de linguagem por projecto
+//top de linguagens por repositorio
 require_once('../phpcassa/connection.php');
 require_once('../phpcassa/columnfamily.php');
 

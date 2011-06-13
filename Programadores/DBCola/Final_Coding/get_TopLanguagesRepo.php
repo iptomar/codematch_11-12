@@ -45,8 +45,21 @@ foreach ($rows as $key=>$value)
 			}
 		//orders the array								
 		arsort($arr_lang);
-		return($arr_lang);	
+		//mete da log
 		
+		$json=json_encode($arr_lang);
+		
+		//return($arr_lang);
+
+		//make connection with database
+		$conn = new Connection('DBCola');
+
+		//select column family
+		$column_family= new ColumnFamily($conn , 'toplang');
+		
+		//single insert
+		$column_family-> insert($aux,array("data" => $json));	
+
 		}
 	
 			

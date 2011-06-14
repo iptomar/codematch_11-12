@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<title>Tolmai - Web Code Statistics</title>
+	<link rel="stylesheet" type="text/css" href="style/default.css" />
+	<link href="style/peelpage.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="style/styleDescricaoInt.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="style/projPage.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="images/favicon.ico" />
+	
+	<!--Links of JavaScript-->
+	<script type="text/javascript" src="javascript/accordion.js"></script>
+	<!--Link of tremelikes-->
+	<script type="text/javascript" src="js/tremeImage.js"></script>
+	
+</head>
+<body>
+
+<div id="outer">
+	<div id="code">
+		<img src="images/about1.png"  class="imagepeel"/>
+		<img id="curl" src="images/fold.png">
+	</div>  
+
+	<div id="upbg"></div>
+
+	<div id="inner">
+
+		<div class="header">
+				<img src='images/back.png' style="width:687px; height:100px; position:absolute;" />
+				<div>
+					<img src="images/tolmai_400px.png" id="imagetolmai" style="height:80px;  position:absolute; z-index:5; padding-left: 50px; padding-top:10px;" onClick="returnHome();" onMouseover="init(this);rattleimage()" onMouseout="stoprattle(this);top.focus()"/>
+				</div>
+		</div>
+			
+	
+		<div id="menu">
+			<ul>
+				<li class="first"><a href="#">Home</a></li>
+				<li><a href="#">Repositórios</a></li>
+				<li><a href="#">Projectos</a></li>
+				<li><a href="#">Linguagens</a></li>
+				<li><a href="#">Pesquisa</a></li>
+				<input type="text" id="textoPesquisa" name="pesquisa" onkeyup="capitalize(this.value)"/>
+				<select id="escolha" onChange="muda()">
+					<option>Repositorios</option>
+					<option>Projectos</option>
+					<option>Autor</option>									  
+					<option>Linguagens</option>
+				</select>
+				<INPUT type="button" id="bott" value="Pesquisa"  onclick = "funcPesquisa()"/>
+			</ul>
+		<img src="images/helpUser.png" class="helpImage" align="right" onClick="homehelp();" style="position:relative; margin-top:15px; width:25px; height:25px;" onMouseover="init(this);rattleimage()" onMouseout="stoprattle(this);top.focus()"/>
+		</div>
+	
+
+		<div id="primarycontent">
+		
+			<!-- primary content start -->
+		
+			<div class="post">
+				<div class="header">
+					<h3>Linguagens do GitHub</h3>
+				</div>
+				<div id="container4"  style="width: 350px; height:150px;" ></div>
+				<h3>Código Informativo da Linguagem</h3>
+				<div class="content">
+					<div style="width:450px; height:150px; background-color:#DCDCDC;">
+					</div>
+				</div>
+			</div>
+	
+		</div>
+		
+		<div id="secondarycontent">
+
+			<!-- secondary content start -->
+			<h3>Linguagens</h3>
+			<div class="content">
+				<img src="images/top.png" class="picB" alt="" />
+				<br /><br /><br />
+			</div>
+			
+			
+			<h3>Percentagem da Linguagem no Repositório</h3>
+			<div class="content">
+				<!--grafico das percentagem da linguagem-->
+			</div>
+
+			<!-- secondary content end -->
+
+		</div>
+		<div id="footer">
+			Tolmai &copy; Design by <a href="http://www.ipt.pt/" target="blank">Instituto Politécnico de Tomar</a>.
+		</div>
+
+	</div>
+
+</div>
+
+</body>
+</html>

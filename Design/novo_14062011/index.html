@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<title>Tolmai - Web Code Statistics</title>
+	<link href="style/peelpage.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="images/favicon.ico" />
+	
+	<!--Links of Style-->
+		<link href="style/header.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="style/peelpage.css" rel="stylesheet" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/custom-theme/apprise.css" type="text/css" />
+		<link href="css/capit.css" rel="stylesheet" type="text/css" media="screen" />
+			
+		<!--Links of jQuery-->
+		<link type="text/css" href="css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" />	
+		<!--Slider dos repositorios-->
+		<script type="text/javascript" src="jquery-1.6.js"></script>
+		
+		<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.11.custom.min.js"></script>
+		<script type="text/javascript" src="js/simpleSky.js"></script>
+		<script type="text/javascript" src="js/highcharts/highcharts.js"></script>
+		<script type="text/javascript" src="js/apprise-1.5.full.js"></script>
+		<!--Links of JavaScript-->
+		<script type="text/javascript" src="javascript/accordion.js"></script>
+		
+		<script type="text/javascript" src="javascript/aaaa.js"></script>
+		<!--Links of Simple Sky-->
+		<link href="simpleSky.css" rel="stylesheet" type="text/css" media="screen" />
+		<script type="text/javascript" src="simpleSky.js"></script>
+		
+		<!--Link of tremelikes-->
+		<script type="text/javascript" src="js/tremeImage.js"></script>
+		
+		
+		<!--Link of desability accodion-->
+		<link rel="stylesheet" type="text/css" href="style/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/slider_css.css" />
+	<script>
+		$(document).ready(function() {
+			//Show the paging and activate its first link
+			$(".paging").show();
+			$(".paging a:first").addClass("active");
+
+			//Get size of the image, how many images there are, then determin the size of the image reel.
+			var imageWidth = $(".window").width();
+			var imageSum = $(".image_reel img").size();
+			var imageReelWidth = imageWidth * imageSum;
+
+			//Adjust the image reel to its new size
+			$(".image_reel").css({'width' : imageReelWidth});
+			
+			//Paging  and Slider Function
+			rotate = function(){
+				var triggerID = $active.attr("rel") - 1; //Get number of times to slide
+				var image_reelPosition = triggerID * imageWidth; //Determines the distance the image reel needs to slide
+
+				$(".paging a").removeClass('active'); //Remove all active class
+				$active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
+
+				//Slider Animation
+				$(".image_reel").animate({
+					left: -image_reelPosition
+				}, 500 );
+
+			}; 
+
+			//Rotation  and Timing Event
+			rotateSwitch = function(){
+				play = setInterval(function(){ //Set timer - this will repeat itself every 7 seconds
+					$active = $('.paging a.active').next(); //Move to the next paging
+					if ( $active.length === 0) { //If paging reaches the end...
+						$active = $('.paging a:first'); //go back to first
+					}
+					rotate(); //Trigger the paging and slider function
+				}, 2000); //Timer speed in milliseconds (7 seconds)
+			};
+
+			rotateSwitch(); //Run function on launch
+			
+			//On Hover
+			$(".image_reel a").hover(function() {
+				clearInterval(play); //Stop the rotation
+			}, function() {
+				rotateSwitch(); //Resume rotation timer
+			});	
+
+			//On Click
+			$(".paging a").click(function() {
+				$active = $(this); //Activate the clicked paging
+				//Reset Timer
+				clearInterval(play); //Stop the rotation
+				rotate(); //Trigger rotation immediately
+				rotateSwitch(); // Resume rotation timer
+				return false; //Prevent browser jump to link anchor
+			});
+			$("#topnav li").prepend("<span></span>"); //Throws an empty span tag right before the a tag
+
+			$("#topnav li").each(function() { //For each list item...
+				var linkText = $(this).find("a").html(); //Find the text inside of the <a> tag
+				$(this).find("span").show().html(linkText); //Add the text in the <span> tag
+			}); 
+
+			$("#topnav li").hover(function() {	//On hover...
+				$(this).find("span").stop().animate({
+					marginTop: "-40" //Find the <span> tag and move it up 40 pixels
+				}, 250);
+			} , function() { //On hover out...
+				$(this).find("span").stop().animate({
+					marginTop: "0"  //Move the <span> back to its original state (0px)
+				}, 250);
+			});
+			
+		});
+	</script>
+</head>
+<body>
+
+<div id="outer">
+	<div id="code">
+		<img src="images/about1.png"  class="imagepeel"/>
+		<img id="curl" src="images/fold.png">
+	</div>  
+
+	<div id="upbg"></div>
+
+	<div id="inner">
+
+		<div class="header">
+				<img src='images/back.png' style="width:687px; height:100px; position:absolute;" />
+				<div>
+					<img src="images/tolmai_400px.png" id="imagetolmai" style="height:80px;  position:absolute; z-index:5; padding-left: 50px; padding-top:10px;" onClick="returnHome();" onMouseover="init(this);rattleimage()" onMouseout="stoprattle(this);top.focus()"/>
+				</div>
+		</div>
+		<div class="CoisasPesquisa">
+			<input type="text" id="textoPesquisa" name="pesquisa" onkeyup="capitalize(this.value)"/>
+					<select id="escolha" onChange="muda()">
+						<option>Repositorios</option>
+						<option>Projectos</option>
+						<option>Autor</option>									  
+						<option>Linguagens</option>
+					</select>
+			<INPUT type="button" id="bott" value="Pesquisa"  onclick = "funcPesquisa()"/>
+		</div>
+		<div id="accordion" style="padding-top:1px;">
+			<div>
+				<h3><a href="#" onClick="returnHome();">Home Page</a></h3>
+				<div>
+					<div class="demoHeaders"> <!--tamanho da pagina interior do accorion-->
+						<div id="primarycontent">
+							<!-- primary content start -->
+							
+							<div class="post">
+								<div class="header">
+									<h4>Funcionalidades:</h3>
+								</div>
+								<div class="content">
+									<img src="images/img.png" class="picA floatleft" alt="" />
+									<p>Com a utilização do Tolmai os seus utilizadores podem ter acesso aos projectos alojados na Internet e visualizar informação sobre os mesmos. É possível visualizar os Repositórios existentes, os projectos que alojam e ainda as linguagens de programação utilizadas em cada projecto. Sobre cada repositório é criada um ranking de linguagens mais utilizadas em todos os seus projectos. Sobre cada projecto para além da informação sobre quem foi o seu autor e a data de criação, é possível visualizar a data da última actualização que esse mesmo projecto sofreu. Será disponibilizado um URL para que o utilizador possa aceder directamente ao projecto desejado.</p>
+								</div>	
+								<div class="header">
+									<h4>Objectivos:</h3>
+								</div>
+								<div class="content">
+									<p>Garantir que os seus utilizadores têm acesso a informações sobre os projectos alojados na Internet como por exemplo no GitHub. Deve-se garantir uma correcta informação sobre cada projecto pesquisado, nomeadamente o seu autor, onde se aloja e a principal linguagem de programação utilizada. Os projectos mais recentes estão colocados em destaque para se garantir a actualização constante da informação apresentada.</p>
+									
+								</div>
+							</div>
+						</div>
+						<div id="secondarycontent">
+							<img src="images/helpUser.png" class="helpImage" align="right" onClick="homehelp();" style="position:relative; margin-top:5px; width:25px; height:25px;" onMouseover="init(this);rattleimage()" onMouseout="stoprattle(this);top.focus()"/>
+														
+							<!-- secondary content start -->
+						
+							<h4>Linguagens</h4>
+							<div class="content">
+								<img src="images/top.png" class="picB" alt="" />
+								<br /><br /><br />
+							</div>
+							
+							<h4 class="text">Repositórios</h4>
+							<div class="main_view"><!--slider dos repositórios-->
+								<div class="window">
+									<div class="image_reel">
+										<a href="#"><img src="images/img_github.png" alt="" /></a>
+										<a href="#"><img src="images/img_launchpad.png" alt="" /></a>
+										<a href="#"><img src="images/img_sourceforge.png" alt="" /></a>
+									</div>
+								</div>
+								<div class="paging">
+									<a href="#" rel="1">1</a>
+									<a href="#" rel="2">2</a>
+									<a href="#" rel="3">3</a>
+								</div>
+							</div>
+							<!-- secondary content end -->
+					
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="repoDIV">
+				<h3><a href="#" onClick=";">Repositório</a></h3>
+				<div>
+					<div class="demoHeaders"> <!--tamanho da pagina interior do accorion-->
+					</div>
+				</div>	
+			</div>
+			<div class="projDIV">
+				<h3><a href="#" onClick=";">Projecto</a></h3>
+				<div>
+					<div class="demoHeaders"> <!--tamanho da pagina interior do accorion-->
+					</div>
+				</div>	
+			</div>
+			<div class="lingDIV">
+				<h3><a href="#" onClick=";">Linguagem</a></h3>
+				<div>
+					<div class="demoHeaders"> <!--tamanho da pagina interior do accorion-->
+					</div>
+				</div>	
+			</div>
+			<!--<div>
+				<h3><a href="#" onClick="funcPesquisa();">Pesquisa</a></h3>
+				<div>
+					<div class="demoHeaders">
+					</div>
+				</div>	
+			</div>-->
+		</div>
+		
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

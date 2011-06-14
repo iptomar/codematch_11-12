@@ -1,0 +1,99 @@
+#tolmaipage{
+	height:700px;
+	width:2160px;
+	float: lefth;
+	margin:10px;
+	/*border:1px solid #92cdec;*/
+}
+
+.tolmaillinguagens{	
+	height:690px;
+	width:640px;
+	/*border:1px solid #92cdec;*/
+	float: left;
+}
+
+/*
+	Div que contem o simbolo do projecto Tolmai
+*/
+.simbolotolmai{
+	height:180px;
+	width:200px;
+	/*border:1px solid #92cdec;*/
+	float: left;
+	
+}
+
+/*
+	Tamanho do Logotipo Tolmai
+*/
+#logotolmai{
+	width:200px;
+	height: 180px;
+}
+/*
+	Div que comtem a descricao das funcionalidades do projecto Tolmai
+*/
+.funcioProjectoTol{
+	height:180px;
+	width:500px;
+	/*border:1px solid #92cdec;*/
+	float: left;
+	
+}
+.objTol{
+	height:100px;
+	width:702px;
+	/*border:1px solid #92cdec;*/
+	float: left;
+	vertical-align:center;
+}
+
+.linkofRepos{
+	/*border:1px solid #92cdec;*/
+	float: left;
+	height:180px;
+	width:702px;
+}
+
+.logosRepo{
+	/*border:1px solid #92cdec;*/
+	float: left;
+	height:100px;
+	width:702px;
+}
+
+.imaRepoTolmai{
+	/*border:1px solid #92cdec;*/
+	height:70px;
+	width:70px;
+	margin:10px;
+}
+
+/*
+	Div que geral que contem o icon do projecto, as descricoes inerentes
+*/
+#descricaoProjecto{
+	height:468px;
+	width:704px;
+	/*border:1px solid #92cdec;*/
+	float: left;
+}
+
+/*
+	grafico das linguagens que o projecto contempla
+*/
+#linguagensGrafico{
+	height:468px;
+	width:535px;
+	/*border:1px solid #92cdec;*/
+	float: left;
+}
+
+#graficLinguags{
+	/*border:1px solid #92cdec;*/
+	float: left;
+	height:468px;
+	width:520px;
+}
+

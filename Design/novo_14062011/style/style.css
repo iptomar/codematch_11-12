@@ -1,0 +1,115 @@
+/*
+	Aplicacoes à pagina toda
+*/
+body{ 
+	font: 62.5% "Trebuchet MS", sans-serif;  
+	background: url(../images/background.png);
+	background-image: no-repeat;
+	margin: 0px;
+}
+
+h1{
+	margin:10px;
+	font-size: 15px;
+	font-family: Verdana;
+	text-align: justify;
+}
+
+p{
+	margin:10px;
+	font-size: 10px;
+	font-family: Verdana;
+	text-align: justify;
+}
+
+/*
+	Tamanho do accordion onde se coloca a informacao
+*/
+.demoHeaders{
+	height: 470px;
+	background-color: white;
+}
+
+/*
+	Código afecto as tabs
+*/
+.tabs{
+	 
+}
+.tabText{
+	height:313px;
+}
+.text{
+	margin: 9px;
+}
+.logo_text{
+	/*border:1px solid #92cdec;*/
+	height:50px;
+	width:1206px;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+.logo{
+	/*border:1px solid #92cdec;*/
+	width:150px;
+	float:left;
+}
+.texto{
+	/*border:1px solid #92cdec;*/
+	vertical-align:middle;
+	width:1048px;
+	line-height:48px;
+	float:left;
+	height:48px;
+}
+.repoInfor{
+	width:1210px;
+	height:295px;
+	/*border:1px solid #92cdec;*/
+}
+.img_logo{
+	align:left;
+	width:150px;
+	height:44px;
+}
+/*
+	1 Div, que contem os dados dos repositorios
+*/
+.allProj{
+	height:467px;
+	width:480px;
+	float: left;
+	/*border:1px solid #92cdec;*/
+	margin:0px;
+}
+/*
+	Div que contem a descricao dos varios repositorios, div geral
+*/
+.topRepo{
+	height:467px;
+	width:480px;
+	float: left;
+	/*border:1px solid #92cdec;*/
+}
+
+/**/
+.repPesquisa{
+	height:467px;
+	width:290px;
+	float: left;
+	border:1px solid #92cdec;
+}
+.divDescricao{
+	width:450px;
+	height:120px;
+	/*border:1px solid #92cdec;*/
+	background-color: #F8F8FF;
+	margin:10px;
+}
+.hrLinguagens{
+	height:468px;
+	width:1px;
+	/*border:1px solid #92cdec;*/
+	float: left;
+}

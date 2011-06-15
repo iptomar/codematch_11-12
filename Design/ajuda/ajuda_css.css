@@ -1,0 +1,16 @@
+.tip{
+    color: #fff;
+    background:#1d1d1d;
+    display:none; /*--Hides by default--*/
+    padding:10px;
+    position:absolute;    z-index:1000;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+	text-decoration: none;
+}
+
+.tip_trigger{
+    color: #f00;
+	text-decoration: none;
+}

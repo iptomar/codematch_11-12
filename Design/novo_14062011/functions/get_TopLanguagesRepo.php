@@ -1,7 +1,7 @@
 <?php
-require_once('../phpcassa/connection.php');
-require_once('../phpcassa/columnfamily.php');
-include_once('../phpcassa/uuid.php');
+require_once('phpcassa/connection.php');
+require_once('phpcassa/columnfamily.php');
+include_once('phpcassa/uuid.php');
 //Top language by repository
 //output: null (string) if dont find project
 //		  Array array of languages
@@ -23,9 +23,9 @@ $rows = $column_lang->get_range($key_start='', $key_finish='',100000);
 foreach ($rows as $key=>$value) 
 	{
 
-	$count=0;
+	
 		
-	foreach ($value as $key1=>$value1) {
+	foreach ($value as $key1=>$value1) {$count=0;
 			//Selects projects per repository
 	$pesquisa = $column_repo ->get($aux,null,"","",false,100000,null,null);
 	
@@ -36,7 +36,7 @@ foreach ($rows as $key=>$value)
 									
 							$count++;
 							$lang = $key;
-				if($lang!='N/A')
+				if($lang!='N/A' )
 			$arr_lang[$lang] = $count;
 								}
 			}		
@@ -45,21 +45,8 @@ foreach ($rows as $key=>$value)
 			}
 		//orders the array								
 		arsort($arr_lang);
-		//mete da log
+		return($arr_lang);	
 		
-		$json=json_encode($arr_lang);
-		
-		//return($arr_lang);
-
-		//make connection with database
-		$conn = new Connection('DBCola');
-
-		//select column family
-		$column_family= new ColumnFamily($conn , 'toplang');
-		
-		//single insert
-		$column_family-> insert($aux,array("data" => $json));	
-
 		}
 	
 			

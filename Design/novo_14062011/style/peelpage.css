@@ -1,0 +1,32 @@
+.imagepeel{
+
+}
+#curl{
+    width:40px;
+    height:40px;
+    position:fixed;
+    top:0;
+    left:0;
+}
+#curl:hover{
+    width:512px;
+    height:479px;
+     -webkit-transition: ease 1s;
+     -moz-transition: ease 1s;
+}
+#code{
+    background:#fffff;
+    overflow:hidden;
+    width:35px;
+    height:35px;
+    position:fixed;
+    top:0;
+    left:0;
+	z-index:500;
+}
+#code:hover{
+    width:440px;
+    height:440px;
+    -webkit-transition: ease 1s;
+    -moz-transition: ease 1s;
+} 

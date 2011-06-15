@@ -20,7 +20,7 @@ print "\n\n";
 
 
 #open directory
-opendir(DIR, 'd:\Escola\PSI\codematch\Programadores\Dispatcher') or die ("Unable to open directory");
+opendir(DIR, '/home/semiao/Scripts/') or die ("Unable to open directory");
 #this line gets rid of . and ..<br>
 @files = grep !/^\./, readdir(DIR);
 #close directory

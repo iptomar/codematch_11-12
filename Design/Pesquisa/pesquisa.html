@@ -1,0 +1,36 @@
+<html>
+<head>
+	<link rel="stylesheet" href="pesquisa_css.css" type="text/css" />
+	<script type="text/javascript" src="jquery-1.6.js"></script>
+	<script type="text/javascript">
+		function exibe(id) {
+			if(document.getElementById(id).style.display=="none") 
+			{
+				document.getElementById(id).style.display = "inline";
+			}
+			else {
+				document.getElementById(id).style.display = "none";
+			}
+		}
+	</script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div class="pesquisa"> 
+		<input id="caixatxt" type="text"/>
+		<a href="#" onClick="javascript: exibe('search');">
+			<img src="seta.png" id="seta" />
+		</a>
+		<img src="botao_pesquisa.png" id="img_pesq" alt="Search" onclick="alert('clicas-te no botão')" />
+	<ul id="search"> 
+		<br/><br/>
+		<input id="cbxAll" type="checkbox">All</input><br/>
+		<input id="repo" type="checkbox">Repositórios</input><br/>
+		<input id="projectos" type="checkbox">Projectos</input><br/>
+		<input id="ling" type="checkbox">Linguagens</input>
+	</ul>
+	</div>
+</body>
+</html>

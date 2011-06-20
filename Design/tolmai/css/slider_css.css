@@ -1,0 +1,44 @@
+/*--Main Container--*/
+.main_view {
+	float: left;
+	position: relative;
+}
+/*--Window/Masking Styles--*/
+.window {
+	height:186px; width:125px;
+	overflow: hidden; /*--Hides anything outside of the set width/height--*/
+	position: relative;
+	
+}
+.image_reel {
+	position: absolute;
+	top: 12px; left:15px;
+	
+}
+.image_reel img {float: left;}
+
+/*--Paging Styles--*/
+.paging {
+	position: absolute;
+	bottom: 100px; right: -85px;
+	width: 120px; height:100px;
+	z-index: 100; /*--Assures the paging stays on the top layer--*/
+	text-align: center;
+	line-height: 40px;
+	background: url(../images/paging_bg2.png) no-repeat;
+	display: none; /*--Hidden by default, will be later shown with jQuery--*/
+}
+.paging a {
+	padding: 5px;
+	text-decoration: none;
+	color: #fff; /*--cor dos numeros--*/
+}
+.paging a.active {
+	font-weight: bold;
+	background: #aaaaaa;
+	border: 1px solid #000000;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.paging a:hover {font-weight: bold;}

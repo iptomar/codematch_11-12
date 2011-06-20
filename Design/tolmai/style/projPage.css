@@ -1,0 +1,50 @@
+.descricaoProjectNew{
+	
+	width:304px;
+	height:130px;
+	float:left;
+	margin:10px;
+}
+.divDescricaoProjj{
+	width:450px;
+	height:150px;
+	/*border:1px solid #92cdec;*/
+	background-color: #F8F8FF;
+	margin:10px;
+}
+.dataIni{
+	width: 100px;
+	height: 32px;
+	border-width:1px;	
+	border-color: #C0C0C0;
+	border-left-style:solid;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	float:left;
+}
+.dataAc{
+	width: 201px;
+	height: 32px;
+	border-width:1px;	
+	border-color: #C0C0C0;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	float:left;
+}
+.UrlPr{
+	width: 302px;
+	height: 36px;
+	border-width:1px;	
+	border-color: #C0C0C0;
+	border-left-style:solid;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	float:left;
+}
+.helloWorldDiv{
+	
+	width:340px;
+	height:380px;
+	margin:10px;
+	background-color:#C0C0C0;;
+}

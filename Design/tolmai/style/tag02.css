@@ -1,0 +1,44 @@
+body{
+				font-family: Arial, "MS Trebuchet", sans-serif;
+				background-color: #111;
+			}
+			.list,
+			.listR,
+			.listL,
+			.listP
+			{
+				margin:0 auto;
+				height:120px;
+				width:180px;
+				overflow:hidden;
+				position:relative;
+				background-color: #fff;
+				
+			}
+			.list ul,
+			.list li,
+			.listR li,
+			.listL li,
+			.listP li
+			{
+				list-style:none;
+				margin:0;
+				padding:0;
+				
+			}
+			.list a, 
+			.listR a,
+			.listL a,
+			.listP a
+			{
+				position:absolute;
+				text-decoration: none;
+				color:#666;
+			}
+			.list a:hover, 
+			.listR a:hover,
+			.listL a:hover,
+			.listP a:hover
+			{
+				color:#ccc;
+			}

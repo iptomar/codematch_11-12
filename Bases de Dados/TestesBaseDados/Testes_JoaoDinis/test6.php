@@ -14,7 +14,9 @@ $column_family= new ColumnFamily($conn , 'tm');
 
 //
 $proj=0;
-
+echo "Comecou as: ";
+echo date('h:i:s');
+print_r("<br>");
 $rows = $column_family->get_range($key_start='mod_psgi', $key_finish='Epixa',100000000);
 
 	foreach($rows as $key => $columns) {
@@ -26,5 +28,9 @@ $rows = $column_family->get_range($key_start='mod_psgi', $key_finish='Epixa',100
 	}
 print_r("<br>");
 echo 'Nº de projectos '.$proj;
+print_r("<br>");
+echo "Acabou as: ";
+echo date('h:i:s');
+print_r("<br>");
 
 ?>

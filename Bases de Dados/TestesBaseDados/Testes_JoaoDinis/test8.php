@@ -1,6 +1,6 @@
 <?php
 //Joao Dinis nº11472
-//Funçao pa inserir 
+//testar os scripts de inserçao 
 
 require_once('phpcassa/connection.php');
 require_once('phpcassa/columnfamily.php');

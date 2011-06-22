@@ -14,7 +14,9 @@ $conn = new Connection('DBCola');
 
 //selects language database
 $column_lang= new ColumnFamily($conn,'projects');
-
+echo "Comecou as: ";
+echo date('h:i:s');
+print_r("<br>");
 //Selecciona  todas as linguagens 
 $rows = $column_lang->get_range($key_start='', $key_finish='',1000000);
 
@@ -40,6 +42,8 @@ $rows = $column_lang->get_range($key_start='', $key_finish='',1000000);
 	catch(Exception $x){
 		error_log($x);
 	}
-
+echo "acabou as: ";
+echo date('h:i:s');
+print_r("<br>");
 
 ?>

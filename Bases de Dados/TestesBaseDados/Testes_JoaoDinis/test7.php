@@ -18,7 +18,9 @@
 		//descodifica uma string json
 		$jsonobj = json_decode($response);
 		//Imprime os resultados
-	
+	    echo "Comecou a inserir as: ";
+		echo date('h:i:s');
+		print_r("<br>");
 		foreach($jsonobj->repositories as $arg) { 
 			$column_family->insert($num, array('NomeProj' => $arg->name));
 			$column_family->insert($num, array('AutorProj' => $arg->username));
@@ -39,6 +41,9 @@
 			 $num++;
 	// }	
 	}
+	echo "acabou de inserir as: ";
+	echo date('h:i:s');
+	print_r("<br>");
 	for($i=0;$i<$num;$i++)
 	{
 		$re = $column_family->get($i);
@@ -74,5 +79,8 @@
 	echo "Percentagem de Perl: ".$per."%";
 	print_r("<br>");
 	echo "Outros: ".$others."%";
+	print_r("<br>");
+	echo "Acabou as: ";
+	echo date('h:i:s');
 	print_r("<br>");
 ?>

@@ -1,0 +1,141 @@
+/*
+	Este Css contem o style da informacao do repositorio na vista de repositorio e a do projecto na vista de projecto. 
+
+*/
+.divDescricao2{
+	width:278px;
+	height:100px;
+	float:left;
+	margin:10px;
+	border:1px solid #92cdec;
+}
+
+.divImagDescriRepo{
+	/*border:1px solid #92cdec;*/
+	width:100px;
+	height:100px;
+	float:left;
+	margin:10px;
+}
+
+.imageRepoDes{
+	width:100px;
+	height:100px;
+}
+/*
+	Div que contem todos os dados de cada repositorios
+*/
+.descricaoRepo{
+	width:278px;
+	height:100px;
+	float:left;
+	margin:10px;
+	/*border:1px solid #92cdec;*/
+}
+
+.descricaoProjectNew{
+width:278px;
+	height:100px;
+	float:left;
+	margin:10px;
+	/*border:1px solid #92cdec;*/
+}
+	
+/*
+	Div que contem o nome projecto
+*/
+.nomeRepo{
+	width: 100px;
+	height:20px;
+	border-width:1px;	
+	border-color: #C0C0C0;
+	border-top-style:solid;
+	border-left-style:solid;
+	font-size:14px;
+	float:left;
+	text-align:center;
+}
+
+/*
+	Div que contem as linguagens do Projecto
+*/
+.linguagensRepo{
+	width: 175px;
+	height:20px;
+	border-width:1px;	
+	border-color: #C0C0C0;
+	border-top-style:solid;
+	border-left-style:solid;
+	border-right-style:solid;
+	font-size:14px;
+	float:left;
+	text-align: right;
+}
+/*
+	Div que contem os detalhes do projecto
+*/
+.descricaoallProj{
+	padding:0px;
+	margin:0xp;
+	width: 276px;
+	height: 38px;
+	border-width:1px;	
+	border-color: #C0C0C0;
+	border-top-style:solid;
+	border-bottom-style:solid;
+	border-left-style:solid;
+	border-right-style:solid;
+	float:left;
+
+}
+.ownersRepo{
+	width: 100px;
+	height: 38px;
+	border-width:1px;	
+	border-color: #C0C0C0;
+	border-bottom-style:solid;
+	border-left-style:solid;
+	border-right-style:solid;
+	float:left;
+}
+.urlRepo{
+	width: 175px;
+	height: 38px;
+	border-width:1px;	
+	border-color: #C0C0C0;
+	border-bottom-style:solid;
+	border-right-style:solid;
+	float:left;
+}
+/*
+	1 Div, que contem os dados dos repositorios
+*/
+.dataIni{
+	width: 137px;
+	height: 32px;
+	border-width:1px;	
+	border-color: #C0C0C0;
+	border-left-style:solid;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	float:left;
+}
+.dataAc{
+	width: 138px;
+	height: 32px;
+	border-width:1px;	
+	border-color: #C0C0C0;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	float:left;
+}
+.UrlPr{
+	width: 276px;
+	height: 36px;
+	border-width:1px;	
+	border-color: #C0C0C0;
+	border-left-style:solid;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	float:left;
+}

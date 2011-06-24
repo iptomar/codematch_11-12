@@ -18,10 +18,11 @@ $column_family = new ColumnFamily($conn, 'tm');
 	$num=0;
 	$num_rand=0;
 	foreach($jsonobj->repositories as $arg) { //para cada repositório encontrado na pesquisa:
-		
+		//gera um numero aleatorio para a posição em que se vai inserir
 		if($num	> 0){
 			$num_rand=rand(0,$num);
 		}
+		
 		$re = $column_family->insert($num_rand, array('tm_fullname' => $arg->name));
 		$re = $column_family->insert($num_rand, array('tm_author' => $arg->username));
 		$re = $column_family->insert($num_rand, array('tm_lastupdate' => $arg->pushed_at));
@@ -31,6 +32,7 @@ $column_family = new ColumnFamily($conn, 'tm');
 	}
 	for($qnt=0;$qnt<$num; $qnt++)
 	{
+	//gera um numero aleatorio para a posição que se vai aceder
 	$num_rand=rand(0,$num-1);
 	$re = $column_family->get($num_rand);
     print_r($re);

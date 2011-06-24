@@ -12,7 +12,7 @@ $logs = new ColumnFamily($conn, 'teste_logs');
 $numproj = 0;
 
 
-		$index = $column_family->get_range($key_start='mod_psgi', $key_finish='Epixa',1000000);
+		$index = $column_family->get_range($key_start='', $key_finish='',1000000);
 
 		foreach($index as $key => $result) {
 			$perc_rand1=rand(0,100);

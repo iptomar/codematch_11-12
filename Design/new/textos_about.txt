@@ -1,37 +1,46 @@
 ----------Vista Inicial----------
 
+No canto superior esquerdo encontra-se o About.
 Na Home Page temos disponível a seguinte informação:
 As funcionalidades e aos objectivos gerais do projecto. 
-Uma nuvem de linguagens dos projectos disponíveis.
-Uma pesquisa geral em todo o site, desde repositórios, projectos, autor ou linguagens. Esta pesquisa pode ser visualizada na tab Pesquisa.
-Quando o utilizador pretender ter acesso à informação sobre os repositórios (github, sourceforge e launchpad) deve clicar no respectivo ícone para ser redireccionado para a tab Repositório.
+Uma nuvem de linguagens dos projectos disponíveis na qual podemos escolher uma linguagem e ser redireccionados para a tab Linguagens para ter acesso à informação dessa linguagem.
+Uma pesquisa geral em todo o site, desde repositórios, projectos, autor ou linguagens. 
+Quando o utilizador pretender ter acesso à informação sobre os repositórios (github, sourceforge e launchpad) deve clicar no respectivo icone( ou no numero referente a esse icon) para ser redireccionado para a tab Repositório.
 
 ----------Vista de Repositório----------
 
+No canto superior esquerdo encontra-se o About.
 Após ter sido escolhido o repositório na Home Page, é mostrada a seguinte informação:
-Uma lista com todos os projectos pertencentes a esse mesmo repositório.
 Os detalhes gerais do repositório.
-O número de projectos existentes em cada repositório.
-Uma pesquisa por projectos (o resultado desta pesquisa pode ser visualizado do lado esquerdo onde anteriormente se encontrava a lista de todos os projectos existentes no repositório).
-Quando o utilizador pretender ter acesso à informação específica sobre um projecto clica sobre a imagem desse mesmo projecto para ser redireccionado para a tab Projecto.
+Uma lista com todos os projectos pertencentes a esse mesmo repositório.
+O número de projectos existentes no repositório.
+Uma nuvem de linguagens dos projectos disponíveis na qual podemos escolher uma linguagem e ser redireccionados para a tab Linguagens para ter acesso à informação dessa linguagem.
+A lista dos repositórios disponíveis. Caso deseje obter informação de um desses repositórios é só clicar sobre o icon ou sobre o respectivo número e a informação é actualizada de acordo com o repositório escolhido.
+Uma pesquisa por projectos dentro do repositório seleccionado anteriormente.
+Um gráfico com o número de projectos do repositório seleccionado anteriormente.
+Quando o utilizador pretender ter acesso à informação específica sobre um projecto clica sobre o nome desse mesmo projecto para ser redireccionado para a tab Projecto.
+Para voltar a Home page pode clicar no banner ou na tab Home Page
 
 ----------Vista de Projecto----------
 
+No canto superior esquerdo encontra-se o About.
 Após ter escolhido o projecto na tab Repositório, é mostrada a seguinte informação:
-Uma lista com os colaboradores do projecto seleccionado.
 Os detalhes do projecto.
-Um gráfico referente ao número de ficheiros contidos nesse projecto.
-Quando o utilizador pretender ter acesso à informação específica sobre uma linguagem deve clicar na linguangem em causa que se encontra nos detalhes do projecto.
+Uma lista com os colaboradores do projecto seleccionado.
+O número de ficheiros contidos nesse projecto.
+Uma pesquisa por autores.
+Uma nuvem de linguagens dos projectos disponíveis na qual podemos escolher uma linguagem e ser redireccionados para a tab Linguagens para ter acesso à informação dessa linguagem.
+A lista dos repositórios disponíveis. Caso deseje obter informação de um desses repositórios é só clicar sobre o icon ou sobre o respectivo número e a informação é actualizada de acordo com o repositório escolhido.
+Quando o utilizador pretender ter acesso à informação específica sobre uma linguagem deve clicar na linguangem em causa que se encontra nos detalhes do projecto ou na núvem de linguagens.
+Para voltar a Home page pode clicar no banner ou na tab Home Page
 
 ----------Vista de Linguagem----------
 
+No canto superior esquerdo encontra-se o About.
 Após ter escolhido a linguagem na tab Projecto, é mostrada a seguinte informação:
 Um gráfico com as linguagens existentes no repositório.
-Um gráfico com o top de linguagens (este top é referente aos repositórios github, sourceforge e launchpad).
+Um gráfico percentagem da linguagem no repositório.
 Código com o "Hello World" na linguagem seleccionada.
+Uma nuvem de linguagens dos projectos disponíveis na qual podemos alterar uma linguagem escolhida anteriormente e visualizar informação sobre a nova linguagem seleccionada.
+Para voltar a Home page pode clicar no banner ou na tab Home Page
 
-----------Vista de Pesquisa----------
-
-Após ter realizado uma pesquisa na Home Page, é mostrada toda a informação encontrada.
-A informação apresentada fica visivel na tab até que se realize uma nova pesquisa para que a qualquer momento o utilizador possa visualizar o que pesquisou. Para isso basta clicar na tab Pesquisa.
-Para sair desta tab basta clicar na tab Home Page.

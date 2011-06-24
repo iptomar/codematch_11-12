@@ -1,0 +1,7 @@
+Os scrpits que se encontram nesta pasta, encontram-se a utilizar a biblioteca do php do svn, mas estes scripts são muito lentos.
+
+o script 3 é o que ta mais correcto, mas e muito lento.
+
+irá ser posto um mais eficiente e mais rápido, onde se utiliza a função preg_match para se obter os ficheiros atraves do codigo da página.
+
+cumps Alvaro

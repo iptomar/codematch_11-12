@@ -20,6 +20,7 @@ author - autor/es do projecto <array -string> LOWERCASE
 
 function insert($proj_name,$desc,$source,$repos,$data_c,$data_lst,$logo,$lang,$author){
 $proj_name = strtolower($proj_name);
+$repos = ucfirst($repos);
 
 $conn = new Connection('DBCola');
 //select databases
@@ -44,11 +45,6 @@ to the same project on different
 repos.
 ***********************************/
 
-//split url by '.'
-$temp = explode('.',$source);
-//get the repository name and change the first letter to Uppcase
-$presence = ucfirst($temp[1]);
-
 //search the project presences on repositorys
 
 $search = $column_presence -> get($proj_name);
@@ -59,9 +55,9 @@ $y = $search['repo_G']; //github check
 $z = $search['repo_L']; //launchpad check
 
 //test repository presence
-if(strcmp($presence,$x)==0) {
-	}elseif(strcmp($presence,$y)==0) {
-		}elseif(strcmp($presence,$z)==0) {}
+if(strcmp($repos,$x)==0) { return 0;
+	}elseif(strcmp($repos,$y)==0) { return 0;
+		}elseif(strcmp($repos,$z)==0) {return 0;}
 			else {
 //*****Insert data
 //project details DB
@@ -84,15 +80,15 @@ for ($j = 0; $j < $comp; $j++){
 $column_repos ->insert($repos,array(CassandraUtil::uuid1() => $proj_name));
 
 //repository presence DB
-if($presence == "Sourceforge"){
+if($repos == "Sourceforge"){
 $column_presence -> insert($proj_name, array('repo_S' => "Sourceforge"));
 }
 
-if($presence == "Github"){
+if($repos == "Github"){
 $column_presence -> insert($proj_name, array('repo_G' => "Github"));
 }
 
-if($presence == "Launchpad"){
+if($repos == "Launchpad"){
 $column_presence -> insert($proj_name, array('repo_L' => "Launchpad"));
 }
 

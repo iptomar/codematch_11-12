@@ -21,8 +21,8 @@ foreach($get_details as $project => $owner) {
 		$string_link = $sourceforge_json->Project->SVNRepository->location;
 	}
     $matches = null;
-    preg_match('/https:\\/\\/([A-Za-z0-9-_~]*).([A-Za-z0-9-_~]*).\\/*/', 'https://toohardforyou.svn.sourceforge.net/svnroot/toohardforyou/', $match);
-    if ($match2 == "svn"){
+    preg_match('/https:\\/\\/([A-Za-z0-9-_~]*).([A-Za-z0-9-_~]*).\\/*/', 'https://$project.svn.sourceforge.net/svnroot/$project/', $match);
+    if ($match == "svn"){
       $array=svn_ls("https://".$project.".svn.sourceforge.net/svnroot/".$project."/");
   $link_dirs=array();
   $files_names=array();

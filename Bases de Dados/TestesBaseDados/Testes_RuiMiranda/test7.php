@@ -9,7 +9,7 @@ $conn = new Connection('tolmai');
 
 $column_family = new ColumnFamily($conn, 'tm_logs');
 $time_start = microtime(true);
-for($num=0;$num < 100000000; $num++) {
+for($num=0;$num < 10000000; $num++) {
 	$numproj=0;
 	
 	$index = $column_family->get_range($key_start='', $key_finish='',100000000, $columns=array('language1', 'plang1'));

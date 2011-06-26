@@ -10,7 +10,20 @@ foreach($get_details as $project => $owner) {
   $exe_array=array();
   $total_files = 0;
   $i=0;
-  $array=svn_ls("https://".$project.".svn.sourceforge.net/svnroot/".$project."/");
+  $ch = @curl_init(); //inicia uma nova sessao
+    curl_setopt($ch, CURLOPT_URL, "http://sourceforge.net/api/project/name/$project/json");  //faz a pesquisa contida no url
+	curl_setopt($ch, CURLOPT_USERAGENT, 'Googlebot/2.1'); //utiliza Googlebot 2.1
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);	//define o retorno como string
+    $page = curl_exec($ch);	//executa as opcoes definidas
+    curl_close($ch);	//encerra sessao
+	$sourceforge_json = json_decode($page); //descodifica string JSON
+    if(isset($sourceforge_json->Project->SVNRepository->location)){
+		$string_link = $sourceforge_json->Project->SVNRepository->location;
+	}
+    $matches = null;
+    preg_match('/https:\\/\\/([A-Za-z0-9-_~]*).([A-Za-z0-9-_~]*).\\/*/', 'https://toohardforyou.svn.sourceforge.net/svnroot/toohardforyou/', $match);
+    if ($match2 == "svn"){
+      $array=svn_ls("https://".$project.".svn.sourceforge.net/svnroot/".$project."/");
   $link_dirs=array();
   $files_names=array();
   $dirs_names=array();
@@ -80,6 +93,8 @@ foreach($get_details as $project => $owner) {
       $i++;
 }
 }
+    }
+
 }
     echo "<br />";
     print_r($total_files);

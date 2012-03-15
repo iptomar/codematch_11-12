@@ -1,51 +1,54 @@
-NOTA - este documento foi feito com base na apresentação da aula teórica de hoje (11-05-2011). Parte do pressuposto que o modelo de dados a utilizar é o que está em vigor, ou seja, não depende de uma nova implementação da base de dados. Por esta razão todas as tarefas podem ser executadas (os dados estão disponíveis na base de dados). Cada seta --> indica uma tarefa. Para aceitar uma tarefa colocar o nome à frente. Se faltar alguma tarefa pf acrescentar.
+NOTA - este documento foi feito com base na apresentaï¿½ï¿½o da aula teï¿½rica de hoje (11-05-2011). Parte do pressuposto que o modelo de dados a utilizar ï¿½ o que estï¿½ em vigor, ou seja, nï¿½o depende de uma nova implementaï¿½ï¿½o da base de dados. Por esta razï¿½o todas as tarefas podem ser executadas (os dados estï¿½o disponï¿½veis na base de dados). Cada seta --> indica uma tarefa. Para aceitar uma tarefa colocar o nome ï¿½ frente. Se faltar alguma tarefa pf acrescentar.
 
 
+
+
+s
 
 Tarefas:
--->Construção do site: --------------------------------------------------------------------------------------------------------------- Raquel
+-->Construï¿½ï¿½o do site: --------------------------------------------------------------------------------------------------------------- Raquel
 
 Vista inicial
--->5 últimos projectos de cada repositório (últimos acedidos)
+-->5 ï¿½ltimos projectos de cada repositï¿½rio (ï¿½ltimos acedidos)
 -->Nuvem de linguagens
 
 
-Vista de repositório (Github, Launchpad,...)
--->Edição de HTML com: --------------------------------------------------------------------------------------------------------------- Raquel (style)
-	lista de repositórios com
-	 -nome do repositório, 
-	 -descrição do repositório,
-	 -logótipo do repositório,
-	 -URL do repositório
+Vista de repositï¿½rio (Github, Launchpad,...)
+-->Ediï¿½ï¿½o de HTML com: --------------------------------------------------------------------------------------------------------------- Raquel (style)
+	lista de repositï¿½rios com
+	 -nome do repositï¿½rio, 
+	 -descriï¿½ï¿½o do repositï¿½rio,
+	 -logï¿½tipo do repositï¿½rio,
+	 -URL do repositï¿½rio
 	 -linguagens
 
--->Pesquisa de projectos por nome (para vários repositórios)
--->Pesquisa de projectos por linguagem (para vários repositórios) --->impossivel neste momento
--->Pesquisa de projectos por autor (para vários repositórios) --->impossivel neste momento
--->Pesquisa de projectos por data (para vários repositórios) (data de criação) --->impossivel neste momento
--->Pesquisa de projectos mais acedidos de um repositório --->impossivel neste momento
+-->Pesquisa de projectos por nome (para vï¿½rios repositï¿½rios)
+-->Pesquisa de projectos por linguagem (para vï¿½rios repositï¿½rios) --->impossivel neste momento
+-->Pesquisa de projectos por autor (para vï¿½rios repositï¿½rios) --->impossivel neste momento
+-->Pesquisa de projectos por data (para vï¿½rios repositï¿½rios) (data de criaï¿½ï¿½o) --->impossivel neste momento
+-->Pesquisa de projectos mais acedidos de um repositï¿½rio --->impossivel neste momento
 
 
 
-Link de vista inicial (Gráfico linguagens):
---> Gráfico de linguagens para cada repositório -------------------------------------------------------------------------------------- Carma
+Link de vista inicial (Grï¿½fico linguagens):
+--> Grï¿½fico de linguagens para cada repositï¿½rio -------------------------------------------------------------------------------------- Carma
 
 
 
 Vista de Projecto
-(esta vista abre depois da pesquisa de projecto ou depois da visualização dos 5 últimos projectos de cada repositório)
--->Percentagem do projecto em cada repositório --------------------------------------------------------------------------------------- Raquel (style)
--->informação do projecto (uma das informações é a linguagem - link para vista de linguagens ) --------------------------------------- Raquel (style)
+(esta vista abre depois da pesquisa de projecto ou depois da visualizaï¿½ï¿½o dos 5 ï¿½ltimos projectos de cada repositï¿½rio)
+-->Percentagem do projecto em cada repositï¿½rio --------------------------------------------------------------------------------------- Raquel (style)
+-->informaï¿½ï¿½o do projecto (uma das informaï¿½ï¿½es ï¿½ a linguagem - link para vista de linguagens ) --------------------------------------- Raquel (style)
 
 Vista de linguagens:
--->olá mundo da linguagem seleccionada na vista de projecto -------------------------------------------------------------------------- Raquel (style)
--->percentagem da linguagem em cada repositório -------------------------------------------------------------------------------------- Carma 
+-->olï¿½ mundo da linguagem seleccionada na vista de projecto -------------------------------------------------------------------------- Raquel (style)
+-->percentagem da linguagem em cada repositï¿½rio -------------------------------------------------------------------------------------- Carma 
 
 
-Construção de outras páginas:
+Construï¿½ï¿½o de outras pï¿½ginas:
 
--->Informação sobre o site (About) --------------------------------------------------------------------------------------------------- Raquel (Pesquisa)
+-->Informaï¿½ï¿½o sobre o site (About) --------------------------------------------------------------------------------------------------- Raquel (Pesquisa)
 -->Tutorial sobre o site
 
 Outras tarefas
--->Apresentação de dados com Ajax (coordenação entre programadores e designers) ------------------------------------------------------ Carma
+-->Apresentaï¿½ï¿½o de dados com Ajax (coordenaï¿½ï¿½o entre programadores e designers) ------------------------------------------------------ Carma
